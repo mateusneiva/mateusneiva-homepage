@@ -34,7 +34,7 @@ export default function Home() {
               </a>
             </Button>
 
-            <Button className="bg-blue-500 text-white" asChild>
+            <Button className="bg-blue-600 text-white" asChild>
               <a
                 href="https://www.linkedin.com/in/mateus-neiva-a120b0210/"
                 target="_blank"
@@ -46,7 +46,7 @@ export default function Home() {
               </a>
             </Button>
 
-            <Button className="bg-red-500 text-white" asChild>
+            <Button className="bg-red-600 text-white" asChild>
               <a
                 href="mailto:mateusneiva.dev@gmail.com"
                 target="_blank"
