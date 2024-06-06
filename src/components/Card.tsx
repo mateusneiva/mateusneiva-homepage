@@ -1,19 +1,17 @@
 import { tv, type VariantProps } from 'tailwind-variants'
-import Image from 'next/image'
 import { Badge } from './Badge'
 
 const card = tv({
   slots: {
     container:
       'flex flex-col border border-gray-700 transition hover:-translate-x-1 hover:-translate-y-1 hover:border-yellow-400 hover:bg-gray-800 hover:shadow-[5px_5px_0px_#FACC15]',
-    image: 'h-32 w-full object-cover',
-    badgesWrapper: 't-3 flex flex-wrap gap-1',
+    badgesWrapper: 'pt-3 flex flex-wrap gap-1',
   },
 })
 
 type CardVariants = VariantProps<typeof card>
 
-const { container, image, badgesWrapper } = card()
+const { container, badgesWrapper } = card()
 
 interface CardProps extends React.HTMLAttributes<HTMLDivElement>, CardVariants {
   title: string
