@@ -9,17 +9,22 @@ const IBMPlexMono = IBM_Plex_Mono({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://mateusneiva.com/'),
   title: 'Mateus Neiva - Homepage',
-  authors: [
-    {
-      name: 'Mateus Neiva',
-    },
-  ],
   description: 'Mateus Neiva - Homepage',
+  authors: {
+    name: 'Mateus Neiva',
+  },
+  icons: {
+    shortcut: '/favicon.ico',
+    icon: '/icon.png',
+    apple: '/apple-icon.png',
+  },
   openGraph: {
-    type: 'website',
-    title: 'Mateus Neiva',
     siteName: 'Mateus Neiva',
+    title: 'Mateus Neiva',
+    images: '/opengraph-image.png',
+    type: 'website',
   },
 }
 
