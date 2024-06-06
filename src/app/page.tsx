@@ -13,7 +13,7 @@ export default function Home() {
     <main className="m-auto w-full px-6 sm:w-[730px]">
       <Shiba />
 
-      <Section className="flex flex-col" delay={0}>
+      <Section className="flex flex-col" delay={0.1}>
         <div className="flex items-center justify-between pb-2">
           <div className="flex flex-col gap-1">
             <h1 className="pt-2 text-2xl tracking-tight text-white">
@@ -101,7 +101,7 @@ export default function Home() {
         </div>
       </Section>
 
-      <Section id="social" delay={0.8}>
+      <Section id="social" delay={0.6}>
         <div>
           <h3 className="uppercase text-white">Let’s create together!</h3>
 
@@ -182,7 +182,7 @@ export default function Home() {
         </div>
       </Section>
 
-      <Footer delay={0.8} />
+      <Footer delay={0.6} />
     </main>
   )
 }

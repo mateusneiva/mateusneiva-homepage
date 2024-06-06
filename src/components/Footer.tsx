@@ -19,7 +19,7 @@ export function Footer({ delay = 0, ...props }: FooterProps) {
       className={footer()}
       initial={{ y: 10, opacity: 0, display: 'none' }}
       animate={{ y: 0, opacity: 1, display: 'block' }}
-      transition={{ duration: 1, delay }}
+      transition={{ duration: 0.5, delay }}
       {...props}
     >
       <p>
