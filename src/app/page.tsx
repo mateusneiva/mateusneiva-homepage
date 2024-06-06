@@ -66,7 +66,7 @@ export default function Home() {
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
           <Link href="https://markdown-blog-drab.vercel.app" target="_blank">
             <Card
-              imageSrc="/images/markdown-blog.gif"
+              videoSrc="/webm/markdown-blog.webm"
               title="Markdown Blog"
               description="A markdown blog made with Next.js, Styled-Components and GraphQL."
               badges={['Next.js', 'TypeScript', 'Styled Components']}
@@ -75,7 +75,7 @@ export default function Home() {
 
           <Link href="https://cute-cupcake-a3f6ae.netlify.app" target="_blank">
             <Card
-              imageSrc="/images/dnd-todo.gif"
+              videoSrc="/webm/dnd-todo.webm"
               title="Dnd Todo"
               description="Todo app with drag and drop feature."
               badges={[
@@ -89,7 +89,7 @@ export default function Home() {
 
           <Link href="https://github.com/mateusneiva/chatapp" target="_blank">
             <Card
-              imageSrc="/images/chatapp.gif"
+              videoSrc="/webm/chatapp.webm"
               title="ChatApp"
               description="Still working on it."
               badges={['Next.js', 'TailwindCSS', 'PrismaORM']}

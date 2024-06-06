@@ -18,26 +18,26 @@ const { container, image, badgesWrapper } = card()
 interface CardProps extends React.HTMLAttributes<HTMLDivElement>, CardVariants {
   title: string
   description: string
-  imageSrc: string
+  videoSrc: string
   badges: string[]
 }
 
 export function Card({
   title,
   description,
-  imageSrc,
+  videoSrc,
   badges,
   ...props
 }: CardProps) {
   return (
     <div className={container()} {...props}>
-      <Image
-        className={image()}
-        src={imageSrc}
-        alt="project-image"
-        width={1000}
-        height={1000}
-        unoptimized
+      <video
+        src={videoSrc}
+        preload="none"
+        autoPlay
+        loop
+        muted
+        disablePictureInPicture
       />
 
       <div className="px-4 pb-4 pt-3">
