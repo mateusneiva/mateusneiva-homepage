@@ -64,10 +64,7 @@ export default function Home() {
         </div>
 
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-          <Link
-            href="https://github.com/mateusneiva/markdown-blog"
-            target="_blank"
-          >
+          <Link href="https://markdown-blog-drab.vercel.app" target="_blank">
             <Card
               imageSrc="/images/markdown-blog.gif"
               title="Markdown Blog"
@@ -76,7 +73,7 @@ export default function Home() {
             />
           </Link>
 
-          <Link href="https://github.com/mateusneiva/dnd-todo" target="_blank">
+          <Link href="https://cute-cupcake-a3f6ae.netlify.app" target="_blank">
             <Card
               imageSrc="/images/dnd-todo.gif"
               title="Dnd Todo"
