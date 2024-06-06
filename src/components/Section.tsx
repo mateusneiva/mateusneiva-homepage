@@ -17,9 +17,9 @@ export function Section({ children, delay = 0, ...props }: SectionProps) {
   return (
     <motion.section
       className={section()}
-      initial={{ y: 10, opacity: 0, display: 'none' }}
-      animate={{ y: 0, opacity: 1, display: 'block' }}
-      transition={{ duration: 1, delay }}
+      initial={{ y: 10, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.5, delay }}
       {...props}
     >
       {children}
