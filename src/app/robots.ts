@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: '*',
       allow: '/',
     },
-    sitemap: 'https://mateusneiva.vercel.app/sitemap.xml',
+    sitemap: 'https://mateusneiva.com/sitemap.xml',
   }
 }
