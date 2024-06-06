@@ -14,7 +14,6 @@
     "clsx": "^2.1.1",
     "cssnano": "^7.0.2",
     "framer-motion": "^11.2.10",
-    "framer-motion-3d": "^11.2.10",
     "next": "14.1.4",
     "postcss-nested": "^6.0.1",
     "react": "^18",

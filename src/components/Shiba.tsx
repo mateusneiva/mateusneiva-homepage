@@ -6,20 +6,13 @@
 import { Suspense } from 'react'
 import { Canvas, type GroupProps, type MeshProps } from '@react-three/fiber'
 import { SoftShadows, OrbitControls, useGLTF } from '@react-three/drei'
-import { motion } from 'framer-motion'
-import { motion as motion3d } from 'framer-motion-3d'
 
 function Model(props: GroupProps) {
   const { nodes, materials } = useGLTF('/shiba.glb')
 
   return (
     <group {...props} dispose={null}>
-      <motion3d.mesh
-        initial={{ y: 5, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{
-          duration: 1,
-        }}
+      <mesh
         geometry={nodes.Shiba_inu.geometry}
         material={materials.DIF}
         position={[0.08, 0.02, -0.02]}
@@ -50,7 +43,7 @@ function Floor(props: MeshProps) {
 
 export function Shiba() {
   return (
-    <motion.div className="h-[300px] w-full">
+    <div className="h-[300px] w-full">
       <Canvas
         gl={{ antialias: true }}
         shadows
@@ -86,6 +79,6 @@ export function Shiba() {
           </group>
         </Suspense>
       </Canvas>
-    </motion.div>
+    </div>
   )
 }
