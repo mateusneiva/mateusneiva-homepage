@@ -103,8 +103,7 @@ export default function Home() {
           <h3 className="uppercase text-white">Let’s create together!</h3>
 
           <p className="pb-4 pt-1">
-            Feel free to send me an email. I am open for collaboration &
-            internships.
+            Feel free to send me an email
           </p>
         </div>
 
