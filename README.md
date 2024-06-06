@@ -16,7 +16,7 @@
 **Cloning the Repository**
 
 ```
-$ git clone https://github.com/mateusneiva/mateusneiva-homepage
+$ git clone https://github.com/mateusneiva/mateusneiva-homepage.git
 
 $ cd mateusneiva-homepage
 ```
