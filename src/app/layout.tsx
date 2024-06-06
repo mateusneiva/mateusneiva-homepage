@@ -9,8 +9,18 @@ const IBMPlexMono = IBM_Plex_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'Mateus Neiva',
-  description: 'Web Developer',
+  title: 'Mateus Neiva - Homepage',
+  authors: [
+    {
+      name: 'Mateus Neiva',
+    },
+  ],
+  description: 'Mateus Neiva - Homepage',
+  openGraph: {
+    type: 'website',
+    title: 'Mateus Neiva',
+    siteName: 'Mateus Neiva',
+  },
 }
 
 export default function RootLayout({
