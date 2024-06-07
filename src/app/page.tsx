@@ -60,7 +60,7 @@ export default function Home() {
       <Section delay={0.4}>
         <div>
           <h3 className="uppercase text-white">Projects</h3>
-          <p className="pb-4 pt-1">Some Things I’ve Built</p>
+          <p className="pb-4 pt-1">Here are a few projects I&apos;ve worked on, showcasing my skills in developing creative solutions across various domains</p>
         </div>
 
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
@@ -102,9 +102,7 @@ export default function Home() {
         <div>
           <h3 className="uppercase text-white">Let’s create together!</h3>
 
-          <p className="pb-4 pt-1">
-            Feel free to send me an email
-          </p>
+          <p className="pb-4 pt-1">Feel free to send me an email</p>
         </div>
 
         <div className="flex w-full flex-col gap-2">
