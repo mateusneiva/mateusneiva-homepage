@@ -40,7 +40,7 @@ export default function Home() {
 
           <p>
             With solid experience in solving technical problems and developing
-            innovative solutions, I am committed to driving business success
+            creative solutions, I am committed to driving business success
             through the efficient application of technology.
           </p>
 
