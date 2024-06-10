@@ -60,7 +60,7 @@ export default function Home() {
       <Section delay={0.4}>
         <div>
           <h3 className="uppercase text-white">Projects</h3>
-          <p className="pb-4 pt-1">Here are a few projects I&apos;ve worked on, showcasing my skills in developing creative solutions across various domains</p>
+          <p className="pb-4 pt-1">Some Things I’ve Built</p>
         </div>
 
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
@@ -98,7 +98,7 @@ export default function Home() {
         </div>
       </Section>
 
-      <Section id="social" delay={0.6}>
+      <Section id="social" delay={0.4}>
         <div>
           <h3 className="uppercase text-white">Let’s create together!</h3>
 
@@ -176,7 +176,7 @@ export default function Home() {
         </div>
       </Section>
 
-      <Footer delay={0.6} />
+      <Footer />
     </main>
   )
 }
