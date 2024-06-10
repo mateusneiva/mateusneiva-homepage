@@ -10,8 +10,8 @@ const IBMPlexMono = IBM_Plex_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://mateusneiva.com/'),
-  title: 'Mateus Neiva - Homepage',
-  description: 'Mateus Neiva - Homepage',
+  title: 'Mateus Neiva',
+  description: 'Mateus Neiva',
   authors: {
     name: 'Mateus Neiva',
   },
