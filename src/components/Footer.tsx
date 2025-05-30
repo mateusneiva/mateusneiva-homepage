@@ -1,7 +1,7 @@
 import { tv, type VariantProps } from 'tailwind-variants'
 
 const footer = tv({
-  base: 'mt-5 flex w-full flex-col items-center gap-4 py-14 text-center text-sm',
+  base: 'mt-28 flex w-full flex-col items-center gap-4 py-14 text-center text-sm',
 })
 
 type BadgeVariants = VariantProps<typeof footer>

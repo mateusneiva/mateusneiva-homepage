@@ -10,7 +10,7 @@ import { Shiba } from '@/components/Shiba'
 
 export default function Home() {
   return (
-    <main className="m-auto w-full px-6 sm:w-[730px]">
+    <main className="m-auto w-full px-6 sm:w-[800px]">
       <Shiba />
 
       <Section className="flex flex-col" delay={0.1}>
@@ -20,7 +20,7 @@ export default function Home() {
               Mateus Neiva
             </h1>
             <h2 className="text-lg tracking-tight text-gray-400">
-              Web Developer
+              Software Developer
             </h2>
           </div>
 
@@ -31,28 +31,29 @@ export default function Home() {
 
         <div className="mt-4 flex flex-col gap-4 leading-7">
           <p>
-            I have been passionate about technology since I was five years old,
-            and this passion led me to a career in IT. I have dedicated my
-            professional life to the constant pursuit of knowledge and
-            specialization, always updating my skills to keep up with industry
-            developments.
+           I’ve been passionate about technology since I was five years old, 
+           and that passion naturally led me to a career in IT. 
+           Throughout my journey, I’ve consistently sought to expand my skills and stay up to date with the latest industry trends.
           </p>
 
           <p>
-            With solid experience in solving technical problems and developing
-            creative solutions, I am committed to driving business success
-            through the efficient application of technology.
+           With hands-on experience solving technical challenges and building creative solutions, 
+           I’m driven by the impact technology can have on real-world problems. 
+           My goal is to help businesses thrive through thoughtful, efficient, and modern software development.
           </p>
 
-          <p>Here are a few technologies I’ve been working:</p>
+          <p>Technologies I’ve been working with:</p>
 
-          <ul className="grid list-inside list-[square] grid-cols-1 gap-0.5 marker:text-yellow-400 sm:grid-cols-2">
-            <li>TypeScript</li>
-            <li>React</li>
-            <li>JavaScript (ES6+)</li>
-            <li>React Native</li>
-            <li>Node.js</li>
-            <li>Next.js</li>
+          <ul className="grid list-inside list-[square] grid-cols-1 gap-0.5 marker:text-yellow-400 sm:grid-cols-3">
+            <li className="order-1">TypeScript</li>
+            <li className="order-4">JavaScript (ES6+)</li>
+            <li className="order-7">React</li>
+            <li className="order-2">React Native</li>
+            <li className="order-5">Node.js</li>
+            <li className="order-8">Next.js</li>
+            <li className="order-3">Python</li>
+            <li className="order-6">Django</li>
+            <li className="order-9">Flask</li>
           </ul>
         </div>
       </Section>
@@ -109,7 +110,7 @@ export default function Home() {
           <Link href="mailto:mateus.fneiva@gmail.com" target="_blank">
             <Button color="primary">
               <div className="flex items-center gap-3">
-                <FaAt size={16} />
+                <FaAt size={18} />
                 <p>Email</p>
               </div>
 
@@ -122,7 +123,7 @@ export default function Home() {
           <Link href="/resume.pdf" target="_blank">
             <Button>
               <div className="flex items-center gap-3">
-                <FaFileAlt size={16} />
+                <FaFileAlt size={18} />
                 <p>Resume</p>
               </div>
 
@@ -135,7 +136,7 @@ export default function Home() {
           <Link href="https://github.com/mateusneiva" target="_blank">
             <Button>
               <div className="flex items-center gap-3">
-                <FaGithub size={18} />
+                <FaGithub size={20} />
                 <p>Github</p>
               </div>
 
@@ -148,7 +149,7 @@ export default function Home() {
           <Link href="https://codepen.io/mateusneiva" target="_blank">
             <Button>
               <div className="flex items-center gap-3">
-                <FaCodepen size={18} />
+                <FaCodepen size={20} />
                 <p>Codepen</p>
               </div>
 
@@ -164,7 +165,7 @@ export default function Home() {
           >
             <Button>
               <div className="flex items-center gap-3">
-                <FaLinkedin size={18} />
+                <FaLinkedin size={20} />
                 <p>Linkedin</p>
               </div>
 
