@@ -1,6 +1,6 @@
 # Homepage
 
-[https://mateusneiva.vercel.app/](https://mateusneiva.vercel.app/)
+[https://mateusneiva.com/](https://mateusneiva.com)
 
 ## Build with
 
