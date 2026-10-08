@@ -41,7 +41,18 @@ seguem em sequência na coluna direita. No mobile, o DOM segue
 apresentação → jornada → princípios → skills → Spotify.
 A ordem do DOM acompanha a leitura visual e a navegação por teclado; no desktop,
 os blocos usam as duas colunas da composição. Links e numeração acompanham essa sequência.
-No Hero mobile, os dois botões ficam empilhados, ocupando toda a largura. Os projetos voltam à grade original de três
+O Hero ocupa a altura da tela. Atrás do texto, um campo de pontos em canvas 2D
+(`src/components/ui/dots`) cobre a largura inteira e desenha uma fita de duas camadas
+que se torce devagar: estreita e mais intensa quando fica de lado, larga e mais suave
+quando fica de frente, com bordas que se desfazem em pontos menores e uma rampa de tons
+do verde do tema. Uma crista mais forte percorre a fita, as pontas ficam mais fracas e
+cada ponto tem uma opacidade própria. A fita sobe pela metade direita e deixa livre a
+área do texto. O cursor deixa um rastro que adensa a fita e se dissipa em pouco mais de
+um segundo. O desenho roda em um Web Worker com `OffscreenCanvas`, fora da thread
+principal, com fallback na thread principal quando o navegador não oferece suporte. O
+canvas limita a densidade de pixels, pausa fora da tela ou com a aba oculta, acompanha o
+tema e fica estático com movimento reduzido. O visual rola junto com a página. No
+Hero mobile, os dois botões ficam empilhados, ocupando toda a largura. Os projetos voltam à grade original de três
 cards no desktop. No About, a composição de duas colunas segue o agrupamento acima.
 Não há navegação por capítulos ou deslocamento global da página pelo mouse.
 Hero e Contato compartilham `src/components/home/social-links.tsx`: ícones compactos

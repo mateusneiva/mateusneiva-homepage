@@ -26,6 +26,7 @@ const themeClasses = [
   '[--color-muted:78_83_73] data-[theme=dark]:[--color-muted:168_162_158]',
   '[--color-subtle:103_108_96] data-[theme=dark]:[--color-subtle:141_139_130]',
   '[--color-accent:65_91_22] data-[theme=dark]:[--color-accent:190_242_100]',
+  '[--color-wave:86_140_18] data-[theme=dark]:[--color-wave:190_242_100]',
   '[--color-accent-ink:250_252_244] data-[theme=dark]:[--color-accent-ink:17_18_16]',
   '[--color-danger:185_28_28] data-[theme=dark]:[--color-danger:252_165_165]',
   '[--color-scroll-thumb:156_156_156] data-[theme=dark]:[--color-scroll-thumb:92_92_92]',
@@ -45,7 +46,7 @@ export function DocumentShell({ locale, children }: { locale: Locale; children: 
       className={`${sans.variable} ${mono.variable} ${serif.variable} ${themeClasses} ${scrollbarClasses}`}
       suppressHydrationWarning
     >
-      <body id="top" className="relative isolate">
+      <body id="top" className="relative isolate [container-type:inline-size]">
         <ThemeScript />
         {children}
       </body>
