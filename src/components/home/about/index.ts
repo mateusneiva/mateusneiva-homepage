@@ -1,6 +1,5 @@
 export { About } from './about'
 export { AboutSkills } from './skills/about-skills'
-export { AboutWorkspace } from './about-workspace'
 export { AboutPrinciples } from './about-principles'
 export { AboutTimeline } from './about-timeline'
 export { AboutSpotify } from './spotify/about-spotify'

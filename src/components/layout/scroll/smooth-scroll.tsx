@@ -43,6 +43,8 @@ export function SmoothScroll() {
       if (!target || !lenis) return
       event.preventDefault()
       if (url.hash !== current.hash) window.history.pushState(window.history.state, '', url.hash)
+      // Native scroll events arrive a frame late, so Lenis may still hold a stale position here.
+      lenis.scrollTo(lenis.actualScroll, { immediate: true })
       lenis.scrollTo(target, {
         onComplete: () => {
           if (event.detail === 0) {

@@ -7,7 +7,7 @@ export const test = base.extend<{ runtimeErrors: string[] }>({
       page.on('pageerror', (error) => errors.push(error.message))
       page.on('console', (message) => {
         const text = message.text()
-        if (/THREE\.(?:Clock|WebGLShadowMap):.*(?:deprecated|PCFSoftShadowMap)|Encountered a script tag while rendering React component/.test(text)) {
+        if (/Encountered a script tag while rendering React component/.test(text)) {
           errors.push(text)
         }
       })

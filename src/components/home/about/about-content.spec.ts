@@ -10,7 +10,6 @@ test('About presents its story before the journey and connects principles to pro
     await about.scrollIntoViewIfNeeded()
     const intro = about.locator('[data-about-intro]')
     const journey = about.locator('[data-about-journey]')
-    const workspace = about.locator('[data-voxel-workspace="02"]')
     await expect(intro.locator('p')).toHaveCount(4)
     await expect(intro).toContainText('Zelda')
     await expect(intro).toContainText('Minecraft')
@@ -21,10 +20,8 @@ test('About presents its story before the journey and connects principles to pro
     }
     const introBounds = await intro.boundingBox()
     const journeyBounds = await journey.boundingBox()
-    const workspaceBounds = await workspace.boundingBox()
     expect(journeyBounds!.y).toBeGreaterThanOrEqual(introBounds!.y + introBounds!.height)
     const skillsBounds = await about.locator('[data-skills-matrix]').boundingBox()
-    expect(workspaceBounds!.y).toBeGreaterThanOrEqual(skillsBounds!.y + skillsBounds!.height)
 
     const principles = about.locator('[data-about-principles]')
     if (!isMobile) expect((await principles.boundingBox())!.x).toBeLessThan(skillsBounds!.x)
