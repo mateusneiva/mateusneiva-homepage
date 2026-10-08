@@ -16,18 +16,15 @@ test('homepage keeps the original section order and coherent About reading order
       '[data-about-journey]',
       '[data-about-principles]',
       '[data-skills-matrix]',
-      '[data-voxel-workspace="02"]',
       '[data-spotify-widget]',
     ]
     const domOrder = await about.locator(selectors.join(', ')).evaluateAll(
       (items, patterns) => items.map((item) => patterns.findIndex((pattern) => item.matches(pattern))),
       selectors,
     )
-    expect(domOrder).toEqual([0, 1, 2, 3, 4, 5])
+    expect(domOrder).toEqual([0, 1, 2, 3, 4])
     const skills = await about.locator('[data-skills-matrix]').boundingBox()
-    const workspace = await about.locator('[data-voxel-workspace="02"]').boundingBox()
     const principles = await about.locator('[data-about-principles]').boundingBox()
-    expect(workspace!.y).toBeGreaterThanOrEqual(skills!.y + skills!.height)
     if (!isMobile) expect(principles!.x).toBeLessThan(skills!.x)
 
     if (isMobile) {

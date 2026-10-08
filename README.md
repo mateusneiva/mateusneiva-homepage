@@ -1,7 +1,7 @@
 # Mateus Neiva — Portfolio & Blog
 
 Portfólio bilíngue com Next.js 16.3 (App Router), TypeScript estrito, Tailwind CSS,
-Framer Motion, React Three Fiber, next-intl e Zod.
+Framer Motion, next-intl e Zod.
 
 ## Rodar o projeto
 
@@ -36,13 +36,12 @@ largura máxima de 1200px; os artigos mantêm uma coluna editorial mais estreita
 As tecnologias mantêm
 a mesma experiência em desktop e mobile, com tags que se ajustam à largura disponível.
 No mobile, os links do footer aparecem antes da identidade; no desktop, ficam lado a lado. O About
-agrupa apresentação, jornada e princípios na coluna esquerda; skills, workspace
-Minecraft e Spotify seguem em sequência na coluna direita. No mobile, o DOM segue
-apresentação → jornada → princípios → skills → workspace → Spotify.
+agrupa apresentação, jornada e princípios na coluna esquerda; skills e Spotify
+seguem em sequência na coluna direita. No mobile, o DOM segue
+apresentação → jornada → princípios → skills → Spotify.
 A ordem do DOM acompanha a leitura visual e a navegação por teclado; no desktop,
 os blocos usam as duas colunas da composição. Links e numeração acompanham essa sequência.
-No Hero mobile, o computador 3D aparece antes do texto e os dois botões ficam
-empilhados, ocupando toda a largura. Os projetos voltam à grade original de três
+No Hero mobile, os dois botões ficam empilhados, ocupando toda a largura. Os projetos voltam à grade original de três
 cards no desktop. No About, a composição de duas colunas segue o agrupamento acima.
 Não há navegação por capítulos ou deslocamento global da página pelo mouse.
 Hero e Contato compartilham `src/components/home/social-links.tsx`: ícones compactos
@@ -54,12 +53,11 @@ interferir na navegação, e também são dispensados ao ocultar a aba. A saída
 normal continua ao apenas sair do hover.
 O footer não tem animação de entrada; duas faixas serif se movem em sentidos opostos,
 com velocidades diferentes, sem símbolos nas faixas, e uma versão estática para movimento reduzido.
-O computador do Hero tem parallax vertical durante o scroll, sem deslocamento
-automático por movimento do mouse. Os títulos de seção, Hero e Contato usam duas
+Os títulos de seção, Hero e Contato usam duas
 camadas: texto principal fixo e uma cópia decorativa em contorno que reage apenas
 ao mouse. A rolagem não altera esse efeito, e os trechos verdes são preservados.
 As camadas mantêm a altura do layout e a cópia é ignorada por leitores de tela.
-Movimento reduzido mantém o computador estático e oculta a cópia decorativa.
+Movimento reduzido oculta a cópia decorativa.
 O link para a faixa no Spotify tem levitação no hover e tooltip com título e artista.
 O nome e o avatar também mostram um tooltip para abrir o perfil público do usuário.
 Os títulos revelam palavras por máscara com um escalonamento curto na entrada;
@@ -92,14 +90,14 @@ O gerador usa Sharp já instalado com o Next.js. Nas bordas das seções, as fai
 laterais e hachuras de gutters foram removidas; linhas e marcações de construction
 continuam presentes.
 
-Os arquivos de componentes seguem kebab-case (por exemplo, `hero-scene.tsx` e
+Os arquivos de componentes seguem kebab-case (por exemplo, `about-timeline.tsx` e
 `footer-columns.tsx`). Os componentes React exportados usam PascalCase.
 
 - `src/app/[locale]`: layouts, páginas e metadados; as páginas compõem os módulos.
 - `src/components/home/hero` e `src/components/home/about`: componentes agrupados por seção.
 - `src/components/ui/buttons`: ações, links com aparência de botão, seleção e estilos compartilhados.
 - `src/components/ui/tags`, `ui/icons` e `ui/typography`: tags, setas, títulos e destaques reutilizáveis.
-- `src/components/home/about`: apresentação, jornada, princípios e workspace; skills e Spotify têm seus próprios módulos.
+- `src/components/home/about`: apresentação, jornada e princípios; skills e Spotify têm seus próprios módulos.
 - `src/components/home/projects` e `home/posts`: seções de projetos e posts exibidas na homepage.
 - `src/components/home/contact/form`: contato da homepage, campos, envio e feedback; testes junto do formulário.
 - `src/components/home/index.ts`: entrada pública das seções Hero, About, Projects, Posts e Contact.
@@ -108,7 +106,6 @@ Os arquivos de componentes seguem kebab-case (por exemplo, `hero-scene.tsx` e
 - `src/components/layout/background`, `construction`, `footer` e `navigation`: composição visual e navegação.
 - `src/components/ui/motion`: animações, efeitos de proximidade e observação de atividade no viewport.
 - `src/components/ui/theme`: botão animado sol/lua e integração com o sistema.
-- `src/components/three/scenes`, `models` e `hooks`: cenas 3D, modelos voxel e carregamento/capacidades WebGL.
 - `src/data`: projetos, habilidades e links sociais.
 - `src/lib/posts`: carregamento de Markdown local, tempo de leitura e schemas.
 - `src/components/layout/scroll`: Lenis integrado ao loop do Framer Motion, âncoras e histórico.
@@ -329,23 +326,9 @@ na configuração; o e-mail do visitante é usado como `reply_to`, permitindo re
 diretamente. Sem configuração completa, a API retorna erro e não informa sucesso.
 O envio usa uma função Node.js da Vercel, sem servidor SMTP ou processo persistente.
 
-As animações respeitam `prefers-reduced-motion`. A cena 3D é carregada sob demanda,
-limita a densidade de pixels e pausa a rotação fora da área visível. Sem WebGL,
-há uma apresentação alternativa. Navegação por teclado, foco visível e link para
-pular ao conteúdo estão incluídos.
+As animações respeitam `prefers-reduced-motion`. Navegação por teclado, foco
+visível e link para pular ao conteúdo estão incluídos.
 
-Three.js e seus tipos estão fixados em `0.182.0`, compatível com o relógio ainda
-utilizado internamente pelo React Three Fiber 9.8. A partir da r183, `Clock` é
-depreciado em favor de `Timer`; essa atualização depende da adaptação do Fiber.
-As cenas com sombras usam `shadows="percentage"` (`PCFShadowMap`) explicitamente.
-Os testes de navegador também detectam os avisos de depreciação de relógio e sombras.
-
-Os modelos de `public` são configurados em `voxel-assets.ts`. O workspace do About
-alterna entre Allay, abelha e axolote, um por vez. O Allay também voa acima dos
-posts e o axolote fica perto do contato.
-As asas e os movimentos usam as animações embarcadas; o deslocamento lateral é
-feito separadamente. As cenas decorativas carregam ao entrar na tela, pausam fora
-da área visível ou com a aba oculta e não bloqueiam cliques nem a leitura.
 O footer fica sem linhas de construção; guias discretas acompanham os textos nas
 outras áreas.
 
