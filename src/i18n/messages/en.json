@@ -31,8 +31,6 @@
     "description": "I'm <name>Mateus Neiva</name>. I turn challenges into <highlight>digital experiences</highlight> — with care for design, architecture, and the details that make a difference.",
     "projects": "Explore projects",
     "contact": "Let's Talk",
-    "scene": "A 3D computer on a voxel workbench. Drag to rotate.",
-    "sceneFallback": "A little companion for big ideas.",
     "caption": "A little curiosity. A lot of code.",
     "scroll": "Keep exploring"
   },
@@ -42,7 +40,7 @@
     "description": "My connection with technology started when I was <highlight>five</highlight>. Since then, I've kept exploring, learning, and building solutions that connect good ideas with real-world problems.",
     "detail": "I'm really particular about <highlight>well-structured code</highlight>: <strong>clean reading</strong>, names that explain intent, and logic that makes sense from start to finish. I enjoy organizing responsibilities and making the pieces fit — so the solution is as clear under the hood as it is in the interface.",
     "focus": "My projects span web applications, APIs, automation, and component libraries. That variety helps me connect <strong>user experience, architecture, and maintenance</strong> — while keeping the problem each solution needs to address in focus.",
-    "personal": "Outside of code, I love <highlight>Zelda and Minecraft</highlight>. Adventure, exploration, and the freedom to build are part of my curious side, too. The little voxel companions around here bring a bit of that personality into the project.",
+    "personal": "Outside of code, I love <highlight>Zelda and Minecraft</highlight>. Adventure, exploration, and the freedom to build are part of my curious side, too.",
     "frontend": "Interfaces",
     "backend": "Back-end",
     "tooling": "Tools & architecture",
@@ -112,19 +110,6 @@
         "description": "Reusable components, well-defined contracts, and tests help a project grow. I like to build with future changes in mind."
       },
       "projects": "See these decisions in my projects"
-    },
-    "workspace": {
-      "collection": "Little curiosities / Minecraft",
-      "scene": "{name} on a 3D voxel workbench. Drag to rotate.",
-      "fallback": "A little universe of curiosity, block by block.",
-      "loading": "loading model…",
-      "previous": "Previous model",
-      "next": "Next model",
-      "select": "Select a Minecraft model",
-      "hint": "Drag to explore · Choose a companion",
-      "allay": { "name": "Allay", "description": "A little magic between the blocks." },
-      "bee": { "name": "Bee", "description": "Small, curious, and always on the move." },
-      "axolotl": { "name": "Axolotl", "description": "A moment to explore another universe." }
     },
     "timeline": {
       "discover": "Explore",

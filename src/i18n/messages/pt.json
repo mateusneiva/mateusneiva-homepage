@@ -31,8 +31,6 @@
     "description": "Sou <name>Mateus Neiva</name>. Transformo desafios em <highlight>experiências digitais</highlight> — com atenção ao design, à arquitetura e aos detalhes que fazem a diferença.",
     "projects": "Explore os projetos",
     "contact": "Vamos conversar",
-    "scene": "Computador 3D em uma bancada voxel. Arraste para girar.",
-    "sceneFallback": "Um pequeno companheiro para grandes ideias.",
     "caption": "Um pouco de curiosidade. Muito código.",
     "scroll": "Continue explorando"
   },
@@ -42,7 +40,7 @@
     "description": "Minha conexão com a tecnologia começou aos <highlight>cinco anos</highlight>. Desde então, sigo explorando, aprendendo e construindo soluções que aproximam boas ideias de problemas reais.",
     "detail": "Sou fissurado em <highlight>estruturar bom código</highlight>: <strong>leitura limpa</strong>, nomes que expliquem a intenção e uma lógica que faça sentido do começo ao fim. Gosto de organizar responsabilidades e fazer as peças se encaixarem — para que a solução seja tão clara por dentro quanto na interface.",
     "focus": "Meus projetos passam por aplicações web, APIs, automações e bibliotecas de componentes. Essa variedade me ajuda a conectar <strong>experiência de uso, arquitetura e manutenção</strong> — sem perder de vista o problema que cada solução precisa resolver.",
-    "personal": "Fora do código, amo <highlight>Zelda e Minecraft</highlight>. A aventura, a exploração e a liberdade de construir também fazem parte do meu lado curioso. Os pequenos companheiros voxel por aqui são um pouco dessa personalidade entrando no projeto.",
+    "personal": "Fora do código, amo <highlight>Zelda e Minecraft</highlight>. A aventura, a exploração e a liberdade de construir também fazem parte do meu lado curioso.",
     "frontend": "Interfaces",
     "backend": "Back-end",
     "tooling": "Ferramentas & arquitetura",
@@ -112,19 +110,6 @@
         "description": "Componentes reutilizáveis, contratos bem definidos e testes ajudam o projeto a crescer. Gosto de construir pensando também nas próximas mudanças."
       },
       "projects": "Veja essas escolhas nos projetos"
-    },
-    "workspace": {
-      "collection": "Pequenas curiosidades / Minecraft",
-      "scene": "{name} em uma bancada voxel 3D. Arraste para girar.",
-      "fallback": "Um pequeno universo de curiosidade, bloco por bloco.",
-      "loading": "carregando modelo…",
-      "previous": "Modelo anterior",
-      "next": "Próximo modelo",
-      "select": "Selecionar modelo do Minecraft",
-      "hint": "Arraste para explorar · Escolha um companheiro",
-      "allay": { "name": "Allay", "description": "Um pouco de magia entre os blocos." },
-      "bee": { "name": "Abelha", "description": "Pequena, curiosa e sempre em movimento." },
-      "axolotl": { "name": "Axolote", "description": "Uma pausa para explorar outro universo." }
     },
     "timeline": {
       "discover": "Explorar",

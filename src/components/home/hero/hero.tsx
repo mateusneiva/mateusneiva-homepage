@@ -1,8 +1,6 @@
 'use client'
 
-import dynamic from 'next/dynamic'
-import { useRef } from 'react'
-import { motion, useReducedMotion, useScroll, useSpring, useTransform } from 'framer-motion'
+import { motion, useReducedMotion } from 'framer-motion'
 import { useTranslations } from 'next-intl'
 import { AnimatedArrow } from '@/components/ui/icons/animated-arrow'
 import { ActionLink } from '@/components/ui/buttons/action-link'
@@ -14,39 +12,16 @@ import { HomeSocialLinks } from '../social-links'
 import { ParallaxTitle } from '@/components/ui/typography/parallax-title'
 import { usePageReady } from '@/components/layout/loading/initial-loading-provider'
 
-const HeroScene = dynamic(() => import('./hero-scene').then((module) => module.HeroScene), {
-  ssr: false,
-  loading: () => (
-    <div className="flex h-full items-center justify-center font-mono text-xs text-subtle" aria-hidden="true">
-      loading scene…
-    </div>
-  ),
-})
-
 export function Hero() {
   const t = useTranslations('Hero')
   const reduced = useReducedMotion()
   const ready = usePageReady()
-  const ref = useRef<HTMLElement>(null)
-  const { scrollYProgress } = useScroll({ target: ref, offset: ['start start', 'end start'] })
-  const workspaceOffset = useTransform(scrollYProgress, [0, 1], [0, 64])
-  const workspaceY = useSpring(workspaceOffset, { stiffness: 140, damping: 28 })
 
   return (
-    <section ref={ref} className="relative pb-16 pt-16 sm:pb-24 sm:pt-24">
-      <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)] lg:gap-6">
+    <section className="relative pb-16 pt-16 sm:pb-24 sm:pt-24">
+      <div className="grid grid-cols-1 items-center gap-12">
         <motion.div
-          className="relative isolate motion-reduce:!transform-none lg:col-start-2 lg:row-start-1"
-          data-hero-workspace
-          style={{ y: workspaceY }}
-        >
-          <ConstructionFrame variant="cards" caption="Voxel workspace / 01" />
-          <div className="h-[320px] sm:h-[390px]">
-            <HeroScene />
-          </div>
-        </motion.div>
-        <motion.div
-          className="motion-reduce:!transform-none lg:col-start-1 lg:row-start-1"
+          className="motion-reduce:!transform-none"
           data-hero-copy
           initial={{ opacity: 0 }}
           animate={{ opacity: ready ? 1 : 0 }}

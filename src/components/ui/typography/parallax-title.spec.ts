@@ -1,14 +1,10 @@
 import { test, expect } from '@/test/browser-fixtures'
 
-test('hero keeps its scroll parallax while title layers stay still without mouse movement', async ({ page }) => {
+test('title layers stay still without mouse movement', async ({ page }) => {
   await page.emulateMedia({ reducedMotion: 'no-preference' })
   await page.goto('/pt')
   await page.evaluate(() => document.fonts.ready)
   await expect(page.locator('[data-initial-loading]')).toHaveCount(0)
-  const workspace = page.locator('[data-hero-workspace]')
-  const before = await workspace.evaluate((node) => new DOMMatrix(getComputedStyle(node).transform).m42)
-  await page.evaluate(() => window.scrollTo({ top: 200, behavior: 'instant' }))
-  await expect.poll(() => workspace.evaluate((node) => new DOMMatrix(getComputedStyle(node).transform).m42)).toBeGreaterThan(before + 2)
   const title = page.locator('#about [data-parallax-title]')
   await title.scrollIntoViewIfNeeded()
   const outline = title.locator('[data-parallax-title-outline]')
@@ -18,10 +14,9 @@ test('hero keeps its scroll parallax while title layers stay still without mouse
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= document.documentElement.clientWidth)).toBe(true)
 })
 
-test('reduced motion keeps the parallax static and hides the decorative title copy', async ({ page }) => {
+test('reduced motion hides the decorative title copy', async ({ page }) => {
   await page.goto('/pt')
   await page.evaluate(() => window.scrollTo({ top: 250, behavior: 'instant' }))
-  await expect(page.locator('[data-hero-workspace]')).toHaveCSS('transform', 'none')
   const title = page.locator('#about [data-parallax-title]')
   await expect(title.locator('[data-parallax-title-outline]')).toBeHidden()
   await expect(title.getByRole('heading', { level: 2 })).toHaveCSS('transform', 'none')

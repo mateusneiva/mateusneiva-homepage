@@ -10,7 +10,6 @@ import { TextHighlight } from '@/components/ui/typography/text-highlight'
 import { AboutPrinciples } from './about-principles'
 import { AboutSkills } from './skills/about-skills'
 import { AboutTimeline } from './about-timeline'
-import { AboutWorkspace } from './about-workspace'
 import { AboutSpotify } from './spotify/about-spotify'
 import { FadeIn } from '@/components/ui/motion/fade-in'
 
@@ -41,7 +40,6 @@ export function About() {
 
         <div className="space-y-8 lg:col-start-2 lg:row-start-1">
           <FadeIn><AboutSkills /></FadeIn>
-          <FadeIn><AboutWorkspace /></FadeIn>
           <FadeIn><AboutSpotify /></FadeIn>
         </div>
       </div>
