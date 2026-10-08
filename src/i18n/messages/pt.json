@@ -1,0 +1,272 @@
+{
+  "Navigation": {
+    "projects": "Projetos",
+    "about": "Sobre",
+    "posts": "Posts",
+    "contact": "Vamos conversar",
+    "label": "Navegação principal",
+    "skip": "Pular para o conteúdo",
+    "language": "Mudar idioma"
+  },
+  "Theme": {
+    "label": "Alternar tema",
+    "switchToLight": "Ativar modo claro",
+    "switchToDark": "Ativar modo escuro",
+    "system": "Sistema",
+    "light": "Claro",
+    "dark": "Escuro"
+  },
+  "Loading": {
+    "label": "Carregando o site de Mateus Neiva…"
+  },
+  "Social": {
+    "label": "Redes sociais",
+    "resumeDescription": "Abrir currículo em PDF",
+    "profileDescription": "Visitar perfil"
+  },
+  "Hero": {
+    "eyebrow": "DESENVOLVEDOR DE SOFTWARE",
+    "title": "Boas ideias merecem",
+    "highlight": "bom código.",
+    "description": "Sou <name>Mateus Neiva</name>. Transformo desafios em <highlight>experiências digitais</highlight> — com atenção ao design, à arquitetura e aos detalhes que fazem a diferença.",
+    "projects": "Explore os projetos",
+    "contact": "Vamos conversar",
+    "scene": "Computador 3D em uma bancada voxel. Arraste para girar.",
+    "sceneFallback": "Um pequeno companheiro para grandes ideias.",
+    "caption": "Um pouco de curiosidade. Muito código.",
+    "scroll": "Continue explorando"
+  },
+  "About": {
+    "eyebrow": "01 / SOBRE",
+    "title": "Curiosidade como ponto de partida.",
+    "description": "Minha conexão com a tecnologia começou aos <highlight>cinco anos</highlight>. Desde então, sigo explorando, aprendendo e construindo soluções que aproximam boas ideias de problemas reais.",
+    "detail": "Sou fissurado em <highlight>estruturar bom código</highlight>: <strong>leitura limpa</strong>, nomes que expliquem a intenção e uma lógica que faça sentido do começo ao fim. Gosto de organizar responsabilidades e fazer as peças se encaixarem — para que a solução seja tão clara por dentro quanto na interface.",
+    "focus": "Meus projetos passam por aplicações web, APIs, automações e bibliotecas de componentes. Essa variedade me ajuda a conectar <strong>experiência de uso, arquitetura e manutenção</strong> — sem perder de vista o problema que cada solução precisa resolver.",
+    "personal": "Fora do código, amo <highlight>Zelda e Minecraft</highlight>. A aventura, a exploração e a liberdade de construir também fazem parte do meu lado curioso. Os pequenos companheiros voxel por aqui são um pouco dessa personalidade entrando no projeto.",
+    "frontend": "Interfaces",
+    "backend": "Back-end",
+    "tooling": "Ferramentas & arquitetura",
+    "skillsView": {
+      "summary": "Stack principal",
+      "complete": "Stack completa",
+      "expand": "Ver stack completa",
+      "collapse": "Voltar ao resumo"
+    },
+    "skillDescriptions": {
+      "frontend": "Interfaces responsivas, componentes reutilizáveis e movimento.",
+      "backend": "APIs, validação de dados e persistência.",
+      "tooling": "Qualidade, infraestrutura e ferramentas do meu fluxo de desenvolvimento."
+    },
+    "frontendGroups": {
+      "languages": "Linguagens",
+      "platforms": "Web, desktop & mobile",
+      "state": "Estado & formulários",
+      "presentation": "UI & design system",
+      "experience": "Acessibilidade, performance & i18n"
+    },
+    "backendGroups": {
+      "apis": "APIs & servidores",
+      "data": "Dados & ORM",
+      "contracts": "Validação & documentação",
+      "authentication": "Autenticação"
+    },
+    "toolingGroups": {
+      "development": "Desenvolvimento",
+      "testing": "Testes & CI",
+      "infrastructure": "Infraestrutura",
+      "observability": "Observabilidade",
+      "quality": "Qualidade de código"
+    },
+    "timelineTitle": "Da curiosidade à prática.",
+    "spotify": {
+      "eyebrow": "ENTRE IDEIAS / SPOTIFY",
+      "title": "Na minha trilha sonora.",
+      "playing": "Ouvindo agora",
+      "paused": "Em pausa",
+      "recent": "Última faixa ouvida",
+      "cached": "Última faixa ouvida",
+      "synced": "Atualizada {time}",
+      "idle": "Nada tocando no momento. A próxima faixa aparece por aqui.",
+      "unconfigured": "Spotify ainda não conectado.",
+      "unavailable": "A trilha sonora está indisponível por enquanto.",
+      "loading": "Consultando o Spotify…",
+      "cover": "Capa de {album}",
+      "open": "Abrir no Spotify",
+      "openProfile": "Abrir perfil no Spotify",
+      "profile": "Perfil de {name} no Spotify",
+      "avatar": "Foto de {name}"
+    },
+    "principles": {
+      "eyebrow": "PRINCÍPIOS DE TRABALHO",
+      "title": "O que guia minhas escolhas.",
+      "clarity": {
+        "title": "Clareza antes da complexidade",
+        "description": "Gosto que a lógica possa ser acompanhada pela leitura. Responsabilidades claras e nomes coerentes ajudam o código a explicar sua intenção, sem complicação desnecessária."
+      },
+      "care": {
+        "title": "Cuidado com a experiência",
+        "description": "Acessibilidade, desempenho e estados de interação fazem parte da construção. Os detalhes visuais precisam acompanhar um uso claro e consistente."
+      },
+      "continuity": {
+        "title": "Uma base para continuar",
+        "description": "Componentes reutilizáveis, contratos bem definidos e testes ajudam o projeto a crescer. Gosto de construir pensando também nas próximas mudanças."
+      },
+      "projects": "Veja essas escolhas nos projetos"
+    },
+    "workspace": {
+      "collection": "Pequenas curiosidades / Minecraft",
+      "scene": "{name} em uma bancada voxel 3D. Arraste para girar.",
+      "fallback": "Um pequeno universo de curiosidade, bloco por bloco.",
+      "loading": "carregando modelo…",
+      "previous": "Modelo anterior",
+      "next": "Próximo modelo",
+      "select": "Selecionar modelo do Minecraft",
+      "hint": "Arraste para explorar · Escolha um companheiro",
+      "allay": { "name": "Allay", "description": "Um pouco de magia entre os blocos." },
+      "bee": { "name": "Abelha", "description": "Pequena, curiosa e sempre em movimento." },
+      "axolotl": { "name": "Axolote", "description": "Uma pausa para explorar outro universo." }
+    },
+    "timeline": {
+      "discover": "Explorar",
+      "discoverText": "Entender o problema vem primeiro. Investigo referências, testo possibilidades e procuro o que faz sentido para quem vai usar.",
+      "build": "Construir",
+      "buildText": "Transformo essas escolhas em interfaces, APIs e componentes. Busco uma base clara, com testes e espaço para evoluir.",
+      "share": "Compartilhar",
+      "shareText": "Documento decisões e compartilho código e aprendizados. Projetos abertos e peças reutilizáveis ajudam o conhecimento a circular."
+    }
+  },
+  "Projects": {
+    "eyebrow": "02 / PROJETOS",
+    "title": "Ideias em produção.",
+    "description": "Produtos, ferramentas e experimentos. Uma seleção do que venho construindo.",
+    "all": "Todos",
+    "web": "Aplicações web",
+    "ui": "Design system",
+    "automation": "Automação",
+    "source": "Código no GitHub",
+    "visit": "Ver projeto",
+    "details": "Ver detalhes",
+    "filterLabel": "Filtrar projetos",
+    "softness": "E-commerce de streetwear com vitrine, painel administrativo, carrinho, checkout com Stripe e gerenciamento de conta.",
+    "polaris": "Biblioteca de UI React acessível e composável. Componentes, design tokens e temas em um monorepo com Turborepo.",
+    "shiva": "Bot modular para Discord com cargos automáticos, alertas de lives, cargos por reação e configuração por servidor."
+  },
+  "ProjectDetails": {
+    "back": "Voltar aos projetos",
+    "guide": "Nesta página",
+    "intro": "Apresentação",
+    "architecture": "Como foi construído",
+    "overview": "Sobre o projeto",
+    "features": "O que ele faz",
+    "stack": "Tecnologias",
+    "links": "Explore o projeto",
+    "softness": {
+      "overview": "Softness reúne a experiência de compra e a operação de uma loja de streetwear em uma aplicação full-stack. Na vitrine, o visitante pode explorar produtos e coleções, buscar peças, consultar avaliações e montar o carrinho. A navegação segue até o checkout e a área de conta, conectando a descoberta do produto às etapas que acontecem depois da compra.",
+      "overviewMore": "O outro lado do projeto é o painel administrativo, que concentra produtos, coleções, banners, cupons, pedidos e configurações da loja. Essas áreas compartilham uma API Fastify dedicada, enquanto o front-end organiza os fluxos de catálogo, autenticação, checkout e administração em rotas do Next.js. O resultado é um projeto que apresenta tanto a interface voltada ao cliente quanto as ferramentas necessárias para gerenciar a operação.",
+      "architecture": {
+        "one": "O front-end usa o App Router do Next.js e componentes React para estruturar a vitrine, as páginas de conta e o painel administrativo. Componentes, serviços HTTP, tipos e estado ficam em áreas próprias do código. O Axios faz a comunicação com a API, e o Zustand organiza o estado compartilhado da interface, incluindo o carrinho.",
+        "two": "Os formulários usam React Hook Form e Zod, combinando gerenciamento dos campos com validação de dados. A API concentra os fluxos de autenticação e os recursos da loja; o front-end consome esses contratos e apresenta as ações ao usuário. Essa separação também aparece no deploy: a aplicação recebe o endereço público da API por configuração de ambiente."
+      },
+      "stackNote": "Next.js e React formam a base da aplicação, com TypeScript para os contratos do front-end e Tailwind CSS para as interfaces. Zustand organiza o estado do cliente, enquanto Stripe participa dos fluxos de pagamento e dos métodos de pagamento da conta. React Hook Form, Zod e Axios completam a integração entre os formulários, a interface e a API.",
+      "linksNote": "A demonstração permite explorar a vitrine e a experiência da loja. No GitHub estão a estrutura da aplicação, os scripts de desenvolvimento e as instruções para conectá-la à API dedicada.",
+      "features": {
+        "one": "Descoberta de produtos por catálogo, coleções e busca. As páginas de produto também incluem avaliações, reunindo informações que ajudam o visitante a escolher uma peça antes de adicioná-la ao carrinho.",
+        "two": "Carrinho e checkout com regras de frete fixo ou gratuito. A integração com Stripe faz parte da experiência de pagamento, conectando a seleção dos produtos à conclusão da compra.",
+        "three": "Área de conta com perfil, endereços, pedidos e métodos de pagamento. Os fluxos de autenticação incluem cadastro e login, além de verificação de e-mail opcional e Google OAuth conforme a configuração da API.",
+        "four": "Painel administrativo com gerenciamento de produtos, coleções, banners, cupons, pedidos e configurações. Ele complementa a vitrine com as tarefas de manutenção do catálogo e acompanhamento da loja."
+      }
+    },
+    "polaris": {
+      "overview": "Polaris Kit é uma biblioteca de UI React com foco em composição, acessibilidade e consistência visual. Em vez de concentrar todas as decisões em um único pacote, o projeto separa componentes, design tokens e temas. Essa organização permite que a base visual seja compartilhada entre interfaces, enquanto cada aplicação compõe os componentes de acordo com suas necessidades.",
+      "overviewMore": "A biblioteca também é um projeto de infraestrutura para desenvolvimento de interfaces. O Storybook oferece um espaço para explorar os componentes, e a documentação publicada no Chromatic acompanha o código do monorepo. A proposta é aproximar uso, documentação e manutenção: quem constrói uma tela encontra os componentes e a mesma linguagem visual que orienta a biblioteca.",
+      "architecture": {
+        "one": "O monorepo usa Turborepo e pnpm para organizar os pacotes e a aplicação de documentação. O pacote React reúne os componentes, o pacote de tokens concentra os valores de design e o pacote de temas oferece a base para os modos claro e escuro. Essa divisão torna explícito o papel de cada parte do sistema.",
+        "two": "O fluxo de manutenção inclui testes com Vitest, verificação de tipos e build dos pacotes. Changesets organiza o versionamento e as releases, enquanto a integração contínua reúne essas etapas com a publicação do Storybook. A arquitetura segue a filosofia de composição e busca manter a experiência de quem utiliza e de quem desenvolve a biblioteca consistente."
+      },
+      "stackNote": "React e TypeScript sustentam os componentes e suas interfaces públicas. Turborepo coordena o monorepo, e Storybook documenta a biblioteca em um ambiente interativo. Os pacotes de tokens e temas compartilham a linguagem visual, enquanto Vitest e Changesets participam do ciclo de testes e publicação.",
+      "linksNote": "A documentação interativa mostra a biblioteca no Storybook. O repositório reúne os pacotes, a organização dos tokens e temas e o fluxo de desenvolvimento, testes e releases.",
+      "features": {
+        "one": "Pacotes modulares para componentes React, design tokens e temas. Essa separação permite trabalhar na interface dos componentes e na linguagem visual sem misturar suas responsabilidades.",
+        "two": "Sistema de temas claro e escuro apoiado em uma base visual compartilhada. Tokens e temas oferecem os elementos para manter cores e outras decisões de design coerentes entre as interfaces.",
+        "three": "Documentação interativa no Storybook, publicada no Chromatic. A aplicação de documentação faz parte do monorepo e acompanha os componentes durante o desenvolvimento.",
+        "four": "Testes com Vitest e um fluxo de versionamento e releases com Changesets. A integração contínua também reúne lint, verificação de tipos, build e publicação da documentação."
+      }
+    },
+    "shiva": {
+      "overview": "Shiva Toolbox reúne automações para comunidades no Discord em um bot modular escrito em TypeScript. O projeto cobre tarefas recorrentes de um servidor, como atribuição de cargos, mensagens de entrada e saída e notificações de transmissões. Cada comunidade pode configurar os recursos por meio de comandos, incluindo a escolha do idioma usado pelo bot.",
+      "overviewMore": "A configuração é organizada por servidor e persistida em PostgreSQL. Isso conecta os comandos da interface do Discord aos módulos que executam cada tarefa, sem tratar todas as comunidades como uma única configuração global. O projeto também inclui uma estrutura de execução com Docker e migrações de banco, aproximando o desenvolvimento local da operação do bot.",
+      "architecture": {
+        "one": "A aplicação do bot usa discord.js para lidar com comandos e eventos. Pacotes separados concentram os contratos compartilhados e a camada de dados, com Prisma e PostgreSQL. Os módulos ficam associados aos seus casos de uso, como cargos automáticos, alertas de membros, transmissões e cargos por reação.",
+        "two": "A integração com Twitch e YouTube utiliza as configurações dessas plataformas para habilitar os alertas. No ambiente de execução, Docker Compose organiza o banco e o bot, e as migrações são aplicadas antes da inicialização. O processo também contempla o encerramento do cliente Discord e das conexões com o banco ao receber os sinais de parada."
+      },
+      "stackNote": "TypeScript mantém os contratos entre comandos, módulos e configuração. Discord.js oferece a integração com o Discord, enquanto Prisma organiza o acesso ao PostgreSQL. A estrutura de pacotes compartilhados e a execução com Docker dão suporte ao desenvolvimento e à operação dos módulos.",
+      "linksNote": "O repositório é o ponto de entrada para conhecer os módulos, os comandos disponíveis e a configuração local. A documentação também apresenta as etapas de banco de dados e execução do bot com Docker.",
+      "features": {
+        "one": "Cargos automáticos e cargos atribuídos por reação. Os módulos oferecem maneiras diferentes de organizar a participação dos membros e associar interações a cargos dentro do servidor.",
+        "two": "Mensagens de entrada e saída configuráveis por servidor. O módulo de alertas de membros complementa a organização da comunidade com notificações relacionadas à chegada e à saída de participantes.",
+        "three": "Alertas de transmissões da Twitch e do YouTube. Os comandos dedicados conectam a configuração dessas plataformas às notificações usadas pela comunidade no Discord.",
+        "four": "Comandos de idioma e status, com configuração persistida via Prisma e PostgreSQL. O idioma é definido por servidor, e os comandos de status ajudam a consultar a execução do bot."
+      }
+    }
+  },
+  "Posts": {
+    "eyebrow": "03 / POSTS",
+    "title": "Notas pelo caminho.",
+    "description": "Código, decisões e descobertas. Um espaço para compartilhar o que aprendo construindo.",
+    "all": "Todos os posts",
+    "read": "Ler artigo",
+    "minutes": "{count} min de leitura",
+    "empty": "Novas notas chegam em breve.",
+    "back": "Voltar",
+    "notFound": "Post não encontrado",
+    "indexDescription": "Notas sobre desenvolvimento, projetos e tecnologia."
+  },
+  "Contact": {
+    "eyebrow": "04 / CONTATO",
+    "title": "Vamos construir algo",
+    "highlight": "juntos?",
+    "description": "Tem uma ideia, um projeto ou só quer trocar uma conversa sobre tecnologia? Minha caixa de entrada está aberta.",
+    "email": "Envie um e-mail",
+    "resume": "Currículo",
+    "formLabel": "Formulário de contato",
+    "validation": {
+      "name": "Use entre 2 e 100 caracteres para seu nome.",
+      "email": "Informe um e-mail válido.",
+      "message": "Escreva uma mensagem entre 10 e 5000 caracteres."
+    },
+    "name": "Seu nome",
+    "address": "Seu e-mail",
+    "message": "Conte sobre sua ideia",
+    "namePlaceholder": "Ex.: Ana Silva",
+    "emailPlaceholder": "voce@exemplo.com",
+    "messagePlaceholder": "Ex.: Quero desenvolver uma loja online para minha marca. Podemos conversar sobre o projeto?",
+    "submit": "Enviar mensagem",
+    "sending": "Enviando…",
+    "success": "Mensagem enviada! Obrigado pelo contato. Responderei por e-mail.",
+    "error": "Não foi possível enviar sua mensagem. Tente novamente ou entre em contato pelo e-mail acima.",
+    "hint": "Sua mensagem será enviada diretamente para meu e-mail.",
+    "invalid": "Confira seu nome, um e-mail válido e uma mensagem com pelo menos 10 caracteres."
+  },
+  "Footer": {
+    "note": "Código, design e muito amor — com o apoio da pessoa que eu amo ❤️",
+    "role": "Desenvolvedor de software",
+    "navigation": "Navegação",
+    "social": "Social",
+    "contact": "Contato",
+    "home": "Início",
+    "rights": "Todos os direitos reservados.",
+    "top": "Voltar ao topo",
+    "signature": "Da curiosidade às boas ideias.",
+    "signatureReturn": "Do código às novas possibilidades.",
+    "stars": "estrelas",
+    "repositoryStars": "{count, plural, one {# estrela no GitHub} other {# estrelas no GitHub}}",
+    "repositoryForks": "{count, plural, one {# fork no GitHub} other {# forks no GitHub}}"
+  },
+  "NotFound": {
+    "title": "Este caminho saiu do mapa.",
+    "description": "A página que você procura não existe ou foi movida. Que tal voltar para as boas ideias?",
+    "eyebrow": "ROTA NÃO ENCONTRADA",
+    "back": "Voltar ao início",
+    "projects": "Explorar projetos"
+  }
+}

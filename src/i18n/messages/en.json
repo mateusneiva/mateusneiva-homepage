@@ -1,0 +1,272 @@
+{
+  "Navigation": {
+    "projects": "Projects",
+    "about": "About",
+    "posts": "Posts",
+    "contact": "Let's talk",
+    "label": "Main navigation",
+    "skip": "Skip to content",
+    "language": "Change language"
+  },
+  "Theme": {
+    "label": "Toggle theme",
+    "switchToLight": "Switch to light mode",
+    "switchToDark": "Switch to dark mode",
+    "system": "System",
+    "light": "Light",
+    "dark": "Dark"
+  },
+  "Loading": {
+    "label": "Loading Mateus Neiva's website…"
+  },
+  "Social": {
+    "label": "Social links",
+    "resumeDescription": "Open résumé PDF",
+    "profileDescription": "Visit profile"
+  },
+  "Hero": {
+    "eyebrow": "SOFTWARE DEVELOPER",
+    "title": "Good ideas deserve",
+    "highlight": "great code.",
+    "description": "I'm <name>Mateus Neiva</name>. I turn challenges into <highlight>digital experiences</highlight> — with care for design, architecture, and the details that make a difference.",
+    "projects": "Explore projects",
+    "contact": "Let's Talk",
+    "scene": "A 3D computer on a voxel workbench. Drag to rotate.",
+    "sceneFallback": "A little companion for big ideas.",
+    "caption": "A little curiosity. A lot of code.",
+    "scroll": "Keep exploring"
+  },
+  "About": {
+    "eyebrow": "01 / ABOUT",
+    "title": "It starts with curiosity.",
+    "description": "My connection with technology started when I was <highlight>five</highlight>. Since then, I've kept exploring, learning, and building solutions that connect good ideas with real-world problems.",
+    "detail": "I'm really particular about <highlight>well-structured code</highlight>: <strong>clean reading</strong>, names that explain intent, and logic that makes sense from start to finish. I enjoy organizing responsibilities and making the pieces fit — so the solution is as clear under the hood as it is in the interface.",
+    "focus": "My projects span web applications, APIs, automation, and component libraries. That variety helps me connect <strong>user experience, architecture, and maintenance</strong> — while keeping the problem each solution needs to address in focus.",
+    "personal": "Outside of code, I love <highlight>Zelda and Minecraft</highlight>. Adventure, exploration, and the freedom to build are part of my curious side, too. The little voxel companions around here bring a bit of that personality into the project.",
+    "frontend": "Interfaces",
+    "backend": "Back-end",
+    "tooling": "Tools & architecture",
+    "skillsView": {
+      "summary": "Core stack",
+      "complete": "Full stack",
+      "expand": "Explore the full stack",
+      "collapse": "Back to summary"
+    },
+    "skillDescriptions": {
+      "frontend": "Responsive interfaces, reusable components, and motion.",
+      "backend": "APIs, data validation, and persistence.",
+      "tooling": "Quality, infrastructure, and tools in my development workflow."
+    },
+    "frontendGroups": {
+      "languages": "Languages",
+      "platforms": "Web, desktop & mobile",
+      "state": "State & forms",
+      "presentation": "UI & design system",
+      "experience": "Accessibility, performance & i18n"
+    },
+    "backendGroups": {
+      "apis": "APIs & servers",
+      "data": "Data & ORM",
+      "contracts": "Validation & documentation",
+      "authentication": "Authentication"
+    },
+    "toolingGroups": {
+      "development": "Development",
+      "testing": "Testing & CI",
+      "infrastructure": "Infrastructure",
+      "observability": "Observability",
+      "quality": "Code quality"
+    },
+    "timelineTitle": "From curiosity to practice.",
+    "spotify": {
+      "eyebrow": "BETWEEN IDEAS / SPOTIFY",
+      "title": "On my soundtrack.",
+      "playing": "Listening now",
+      "paused": "Paused",
+      "recent": "Last Played",
+      "cached": "Last Played",
+      "synced": "Updated {time}",
+      "idle": "Nothing playing right now. The next track will appear here.",
+      "unconfigured": "Spotify is not connected yet.",
+      "unavailable": "The soundtrack is unavailable for now.",
+      "loading": "Checking Spotify…",
+      "cover": "Cover of {album}",
+      "open": "Open in Spotify",
+      "openProfile": "Open Spotify profile",
+      "profile": "{name}'s Spotify profile",
+      "avatar": "Photo of {name}"
+    },
+    "principles": {
+      "eyebrow": "WORKING PRINCIPLES",
+      "title": "What guides my decisions.",
+      "clarity": {
+        "title": "Clarity before complexity",
+        "description": "I like being able to follow the logic just by reading. Clear responsibilities and consistent naming help code explain its intent without unnecessary complexity."
+      },
+      "care": {
+        "title": "Care for the experience",
+        "description": "Accessibility, performance, and interaction states are part of the build. Visual details should support a clear and consistent experience."
+      },
+      "continuity": {
+        "title": "A foundation to build on",
+        "description": "Reusable components, well-defined contracts, and tests help a project grow. I like to build with future changes in mind."
+      },
+      "projects": "See these decisions in my projects"
+    },
+    "workspace": {
+      "collection": "Little curiosities / Minecraft",
+      "scene": "{name} on a 3D voxel workbench. Drag to rotate.",
+      "fallback": "A little universe of curiosity, block by block.",
+      "loading": "loading model…",
+      "previous": "Previous model",
+      "next": "Next model",
+      "select": "Select a Minecraft model",
+      "hint": "Drag to explore · Choose a companion",
+      "allay": { "name": "Allay", "description": "A little magic between the blocks." },
+      "bee": { "name": "Bee", "description": "Small, curious, and always on the move." },
+      "axolotl": { "name": "Axolotl", "description": "A moment to explore another universe." }
+    },
+    "timeline": {
+      "discover": "Explore",
+      "discoverText": "Understanding the problem comes first. I explore references, test possibilities, and look for what makes sense for the people using it.",
+      "build": "Build",
+      "buildText": "I turn those decisions into interfaces, APIs, and components, aiming for a clear foundation with tests and room to evolve.",
+      "share": "Share",
+      "shareText": "I document decisions and share code and lessons learned. Open projects and reusable pieces help knowledge travel further."
+    }
+  },
+  "Projects": {
+    "eyebrow": "02 / PROJECTS",
+    "title": "Ideas brought to life.",
+    "description": "Products, tools, and experiments. A selection of what I've been building.",
+    "all": "All",
+    "web": "Web apps",
+    "ui": "Design system",
+    "automation": "Automation",
+    "source": "Code on GitHub",
+    "visit": "View project",
+    "details": "View details",
+    "filterLabel": "Filter projects",
+    "softness": "A streetwear e-commerce platform with storefront, admin panel, cart, Stripe checkout, and account management.",
+    "polaris": "An accessible, composable React UI library. Components, design tokens, and theming in a Turborepo monorepo.",
+    "shiva": "A modular Discord bot with automatic roles, live alerts, reaction roles, and per-server configuration."
+  },
+  "ProjectDetails": {
+    "back": "Back to projects",
+    "guide": "On this page",
+    "intro": "Introduction",
+    "architecture": "How it's built",
+    "overview": "About the project",
+    "features": "What it does",
+    "stack": "Technologies",
+    "links": "Explore the project",
+    "softness": {
+      "overview": "Softness brings the shopping experience and the operation of a streetwear store together in a full-stack application. The storefront lets visitors explore products and collections, search for items, read reviews, and build a cart. The journey continues through checkout and the account area, connecting product discovery with the steps that happen after a purchase.",
+      "overviewMore": "The other side of the project is the admin dashboard, covering products, collections, banners, coupons, orders, and store settings. These areas share a dedicated Fastify API, while the front-end organizes catalog, authentication, checkout, and administration flows through Next.js routes. The project presents both the customer-facing experience and the tools needed to manage the store.",
+      "architecture": {
+        "one": "The front-end uses the Next.js App Router and React components to structure the storefront, account pages, and admin dashboard. Components, HTTP services, types, and state have their own areas in the codebase. Axios handles communication with the API, and Zustand organizes shared interface state, including the cart.",
+        "two": "Forms use React Hook Form and Zod to combine field management with data validation. The API owns authentication and store resources; the front-end consumes those contracts and presents actions to the user. This separation also carries into deployment, where the application receives the public API URL through environment configuration."
+      },
+      "stackNote": "Next.js and React form the application foundation, with TypeScript for front-end contracts and Tailwind CSS for the interfaces. Zustand organizes client state, while Stripe participates in payment flows and account payment methods. React Hook Form, Zod, and Axios complete the connection between forms, the interface, and the API.",
+      "linksNote": "The demo lets you explore the storefront and shopping experience. GitHub contains the application structure, development scripts, and instructions for connecting it to the dedicated API.",
+      "features": {
+        "one": "Product discovery through a catalog, collections, and search. Product pages also include reviews, bringing together information that helps visitors choose an item before adding it to the cart.",
+        "two": "Cart and checkout with flat-rate or free shipping rules. Stripe integration is part of the payment experience, connecting the selected products to the completion of a purchase.",
+        "three": "An account area with profile, addresses, orders, and payment methods. Authentication flows include registration and login, plus optional email verification and Google OAuth according to the API configuration.",
+        "four": "An admin dashboard for products, collections, banners, coupons, orders, and settings. It complements the storefront with the tasks needed to maintain the catalog and manage the store."
+      }
+    },
+    "polaris": {
+      "overview": "Polaris Kit is a React UI library focused on composition, accessibility, and visual consistency. Rather than concentrating every decision in a single package, it separates components, design tokens, and themes. This organization lets interfaces share a visual foundation while each application composes the components according to its own needs.",
+      "overviewMore": "The library also provides infrastructure for interface development. Storybook offers a place to explore components, and documentation published through Chromatic follows the monorepo code. The aim is to bring usage, documentation, and maintenance closer together: developers building a screen can work with the same components and visual language that guide the library.",
+      "architecture": {
+        "one": "The monorepo uses Turborepo and pnpm to organize packages and the documentation application. The React package contains components, the tokens package holds design values, and the themes package provides the foundation for light and dark modes. This division makes each part of the system's role explicit.",
+        "two": "The maintenance workflow includes Vitest tests, type checking, and package builds. Changesets organizes versioning and releases, while continuous integration brings these steps together with Storybook publishing. The architecture follows a composition-first philosophy and aims to keep the experience consistent for both library users and contributors."
+      },
+      "stackNote": "React and TypeScript underpin the components and their public interfaces. Turborepo coordinates the monorepo, and Storybook documents the library in an interactive environment. Tokens and theme packages share the visual language, while Vitest and Changesets support testing and publishing.",
+      "linksNote": "The interactive documentation presents the library in Storybook. The repository brings together packages, the organization of tokens and themes, and the development, testing, and release workflow.",
+      "features": {
+        "one": "Modular packages for React components, design tokens, and themes. This separation allows component interfaces and the visual language to evolve without mixing their responsibilities.",
+        "two": "Light and dark themes backed by a shared visual foundation. Tokens and themes provide the elements for keeping colors and other design decisions coherent across interfaces.",
+        "three": "Interactive Storybook documentation published on Chromatic. The documentation application is part of the monorepo and follows the components during development.",
+        "four": "Vitest tests and a versioning and release workflow using Changesets. Continuous integration also brings together linting, type checking, builds, and documentation publishing."
+      }
+    },
+    "shiva": {
+      "overview": "Shiva Toolbox brings automation for Discord communities together in a modular TypeScript bot. It covers recurring server tasks such as assigning roles, sending join and leave messages, and notifying members about streams. Each community can configure its resources through commands, including the language used by the bot.",
+      "overviewMore": "Configuration is organized per server and persisted in PostgreSQL. This connects Discord commands to the modules that perform each task, without treating all communities as a single global configuration. The project also includes Docker-based execution and database migrations, bringing local development closer to the bot's operation.",
+      "architecture": {
+        "one": "The bot application uses discord.js to handle commands and events. Separate packages hold shared contracts and the data layer, built with Prisma and PostgreSQL. Modules are associated with their use cases, including automatic roles, member alerts, streams, and reaction roles.",
+        "two": "Twitch and YouTube integrations use platform configuration to enable alerts. In the execution environment, Docker Compose organizes the database and the bot, with migrations applied before startup. The process also includes shutting down the Discord client and database connections when stop signals arrive."
+      },
+      "stackNote": "TypeScript maintains contracts between commands, modules, and configuration. Discord.js provides Discord integration, while Prisma organizes PostgreSQL access. Shared packages and Docker-based execution support module development and operation.",
+      "linksNote": "The repository is the entry point for exploring modules, available commands, and local configuration. Its documentation also covers database setup and running the bot with Docker.",
+      "features": {
+        "one": "Automatic roles and reaction-based roles. The modules provide different ways to organize member participation and associate interactions with roles within a server.",
+        "two": "Join and leave messages configurable per server. The member alerts module complements community management with notifications about participants arriving or leaving.",
+        "three": "Twitch and YouTube stream alerts. Dedicated commands connect platform configuration with the notifications used by the community on Discord.",
+        "four": "Language and status commands, with configuration persisted through Prisma and PostgreSQL. Language is set per server, while status commands help inspect the bot's execution."
+      }
+    }
+  },
+  "Posts": {
+    "eyebrow": "03 / POSTS",
+    "title": "Notes along the way.",
+    "description": "Code, decisions, and discoveries. A place to share what I learn while building.",
+    "all": "All posts",
+    "read": "Read article",
+    "minutes": "{count} min read",
+    "empty": "New notes are coming soon.",
+    "back": "Back",
+    "notFound": "Post not found",
+    "indexDescription": "Notes on development, projects, and technology."
+  },
+  "Contact": {
+    "eyebrow": "04 / CONTACT",
+    "title": "Let's build something",
+    "highlight": "together.",
+    "description": "Have an idea, a project, or just want to talk about technology? My inbox is open.",
+    "email": "Send an email",
+    "resume": "Résumé",
+    "formLabel": "Contact form",
+    "validation": {
+      "name": "Use between 2 and 100 characters for your name.",
+      "email": "Enter a valid email address.",
+      "message": "Write a message between 10 and 5000 characters."
+    },
+    "name": "Your name",
+    "address": "Your email",
+    "message": "Tell me about your idea",
+    "namePlaceholder": "e.g. Alex Taylor",
+    "emailPlaceholder": "you@example.com",
+    "messagePlaceholder": "e.g. I'd like to build an online store for my brand. Can we talk about the project?",
+    "submit": "Send message",
+    "sending": "Sending…",
+    "success": "Message sent! Thanks for reaching out. I'll reply by email.",
+    "error": "Your message could not be sent. Try again or contact me using the email above.",
+    "hint": "Your message will be sent directly to my inbox.",
+    "invalid": "Check your name, a valid email, and a message with at least 10 characters."
+  },
+  "Footer": {
+    "note": "Code, design, and lots of love — with the support of the person I love ❤️",
+    "role": "Software developer",
+    "navigation": "Navigation",
+    "social": "Social",
+    "contact": "Contact",
+    "home": "Home",
+    "rights": "All rights reserved.",
+    "top": "Back to top",
+    "signature": "From curiosity to good ideas.",
+    "signatureReturn": "From code to new possibilities.",
+    "stars": "stars",
+    "repositoryStars": "{count, plural, one {# star on GitHub} other {# stars on GitHub}}",
+    "repositoryForks": "{count, plural, one {# fork on GitHub} other {# forks on GitHub}}"
+  },
+  "NotFound": {
+    "title": "This path went off the map.",
+    "description": "The page you're looking for doesn't exist or has moved. Let's find our way back to good ideas.",
+    "eyebrow": "ROUTE NOT FOUND",
+    "back": "Back to home",
+    "projects": "Explore projects"
+  }
+}
