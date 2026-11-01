@@ -207,7 +207,7 @@ origem nos cards. As tags de assuntos permanecem. O tempo de leitura aparece com
 
 ## Scroll e página 404
 
-Lenis 1.3.26 suaviza wheel/trackpad sobre o scroll nativo, com inércia moderada. Seu
+Lenis 1.3.26 suaviza wheel/trackpad sobre o scroll nativo, com inércia leve. Seu
 RAF usa o mesmo loop de Framer Motion; não existe wrapper transformando a página.
 Touch permanece nativo e `prefers-reduced-motion` desativa a suavização. Âncoras,
 guia de projetos e botão de topo usam o mesmo motor; navegação interrompe a inércia
