@@ -61,7 +61,7 @@ export function InteractiveBackground() {
     <motion.div
       aria-hidden="true"
       data-background-pattern
-      className="pointer-events-none fixed inset-0 -z-10 overflow-hidden"
+      className="pointer-events-none fixed inset-0 -z-10 overflow-hidden [contain:paint]"
       initial={{ opacity: 0 }}
       animate={{ opacity: ready ? 1 : 0 }}
       transition={{ duration: reduced ? 0 : 0.9, ease: 'easeOut' }}
