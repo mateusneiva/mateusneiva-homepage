@@ -9,7 +9,7 @@ import { usePathname } from '@/i18n/navigation'
 
 const options: LenisOptions = {
   autoRaf: false,
-  lerp: 0.25,
+  lerp: 0.12,
   smoothWheel: true,
   syncTouch: false,
   respectReducedMotion: true,
