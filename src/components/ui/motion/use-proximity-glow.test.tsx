@@ -15,7 +15,8 @@ vi.mock('framer-motion', async (importOriginal) => ({
   useReducedMotion: mocks.reduced,
 }))
 
-let intersect: (entries: { isIntersecting: boolean }[]) => void
+let intersect: (entries: { isIntersecting: boolean; target: Element }[]) => void
+const entry = (isIntersecting: boolean) => [{ isIntersecting, target: screen.getByTestId('tag') }]
 let pointer: (position: { x: number; y: number } | null) => void
 let disconnect: ReturnType<typeof vi.fn>
 
@@ -38,6 +39,7 @@ beforeEach(() => {
   vi.stubGlobal('IntersectionObserver', class {
     constructor(callback: typeof intersect) { intersect = callback }
     observe() {}
+    unobserve() {}
     disconnect = disconnect
   })
 })
@@ -47,15 +49,15 @@ it('only reads element geometry while visible and releases subscriptions on exit
   const bounds = vi.spyOn(screen.getByTestId('tag'), 'getBoundingClientRect')
     .mockReturnValue(new DOMRect(0, 0, 100, 50))
   expect(mocks.subscribe).not.toHaveBeenCalled()
-  act(() => intersect([{ isIntersecting: false }]))
+  act(() => intersect(entry(false)))
   expect(bounds).not.toHaveBeenCalled()
-  act(() => intersect([{ isIntersecting: true }]))
+  act(() => intersect(entry(true)))
   expect(mocks.subscribe).toHaveBeenCalledTimes(1)
   act(() => pointer({ x: 20, y: 20 }))
   expect(bounds).toHaveBeenCalledTimes(1)
-  act(() => intersect([{ isIntersecting: false }]))
+  act(() => intersect(entry(false)))
   expect(mocks.unsubscribe).toHaveBeenCalledTimes(1)
-  act(() => intersect([{ isIntersecting: true }]))
+  act(() => intersect(entry(true)))
   expect(mocks.subscribe).toHaveBeenCalledTimes(2)
   unmount()
   expect(mocks.unsubscribe).toHaveBeenCalledTimes(2)

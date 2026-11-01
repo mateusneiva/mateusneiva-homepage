@@ -16,6 +16,28 @@ export type GlowStyle = MotionStyle & {
   '--glow-y': MotionValue<string>
 }
 
+type VisibilityListener = (intersecting: boolean) => void
+
+const visibilityListeners = new Map<Element, VisibilityListener>()
+let visibilityObserver: IntersectionObserver | null = null
+
+// Every glow element shares one observer instead of creating its own.
+function observeVisibility(element: Element, listener: VisibilityListener) {
+  visibilityObserver ??= new IntersectionObserver((entries) => {
+    entries.forEach((entry) => visibilityListeners.get(entry.target)?.(entry.isIntersecting))
+  })
+  visibilityListeners.set(element, listener)
+  visibilityObserver.observe(element)
+  return () => {
+    visibilityListeners.delete(element)
+    visibilityObserver?.unobserve(element)
+    if (visibilityListeners.size === 0) {
+      visibilityObserver?.disconnect()
+      visibilityObserver = null
+    }
+  }
+}
+
 export function useProximityGlow(ref: RefObject<HTMLElement | null>, reach = 150) {
   const reduced = useReducedMotion()
   const x = useMotionValue(0)
@@ -53,8 +75,8 @@ export function useProximityGlow(ref: RefObject<HTMLElement | null>, reach = 150
         x.set(position.x - bounds.left)
         y.set(position.y - bounds.top)
       })
-    const observer = new IntersectionObserver(([entry]) => {
-      if (entry.isIntersecting) {
+    const stopObserving = observeVisibility(element, (intersecting) => {
+      if (intersecting) {
         unsubscribe ??= subscribe()
       } else {
         unsubscribe?.()
@@ -63,9 +85,8 @@ export function useProximityGlow(ref: RefObject<HTMLElement | null>, reach = 150
         inside.set(0)
       }
     })
-    observer.observe(element)
     return () => {
-      observer.disconnect()
+      stopObserving()
       unsubscribe?.()
       nearby.set(0)
       inside.set(0)
