@@ -67,8 +67,9 @@ export function InteractiveBackground() {
       transition={{ duration: reduced ? 0 : 0.9, ease: 'easeOut' }}
     >
       <BackgroundDots style={{ opacity: baseOpacity }} />
-      <ConstructionLines style={cursorStyle} />
-      <BackgroundDots highlighted radius={dotRadius} style={cursorStyle} />
+      <ConstructionLines style={cursorStyle}>
+        <BackgroundDots highlighted radius={dotRadius} />
+      </ConstructionLines>
     </motion.div>
   )
 }
