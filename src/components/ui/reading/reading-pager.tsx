@@ -3,7 +3,7 @@ import { buttonClassName } from '@/components/ui/buttons/button-styles'
 import { Link } from '@/i18n/navigation'
 import { cn } from '@/lib/cn'
 
-export type ReadingPagerLink = { href: string; title: string; meta?: string }
+export type ReadingPagerLink = { href: string; title: string; description?: string; meta?: string }
 
 type ReadingPagerProps = {
   label: string
@@ -41,7 +41,10 @@ function PagerCard({
         {next && <AnimatedArrow direction="right" size={14} />}
       </span>
       <span className="font-serif text-xl font-medium text-ink">{link.title}</span>
-      {link.meta && <span className="font-mono text-xs text-subtle">{link.meta}</span>}
+      {link.description && (
+        <span className="line-clamp-2 text-sm font-normal leading-6 text-muted">{link.description}</span>
+      )}
+      {link.meta &&<span className="font-mono text-xs text-subtle">{link.meta}</span>}
     </Link>
   )
 }

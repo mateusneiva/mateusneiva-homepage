@@ -28,6 +28,11 @@ it('links to both neighbours with their titles and dates', () => {
   expect(screen.getByRole('link', { name: /Próximo\s*Terceiro/ })).toHaveAttribute('href', '/pt/posts/c')
 })
 
+it('clamps the description to two lines', () => {
+  renderPager({ next: { href: '/projects/b', title: 'Segundo', description: 'Uma descrição longa.' } })
+  expect(screen.getByText('Uma descrição longa.')).toHaveClass('line-clamp-2')
+})
+
 it('hides the side that has no destination', () => {
   renderPager({ next: { href: '/posts/b', title: 'Segundo' } })
   expect(screen.queryByRole('link', { name: /Anterior/ })).not.toBeInTheDocument()

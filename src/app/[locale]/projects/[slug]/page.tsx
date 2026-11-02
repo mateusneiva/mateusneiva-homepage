@@ -44,6 +44,7 @@ export default async function ProjectPage({ params }: Props) {
   if (!project) notFound()
   const caseStudy = await getCaseStudy(locale, slug)
   const t = await getTranslations({ locale, namespace: 'ProjectDetails' })
+  const summaries = await getTranslations({ locale, namespace: 'Projects' })
   const index = projects.findIndex((item) => item.slug === slug)
   const previous = projects[index - 1]
   const next = projects[index + 1]
@@ -62,8 +63,8 @@ export default async function ProjectPage({ params }: Props) {
           <ReadingPager
             label={t('pager')}
             previousLabel={t('previous')}
-            nextLabel={t('next')}            previous={previous && { href: `/projects/${previous.slug}`, title: previous.name }}
-            next={next && { href: `/projects/${next.slug}`, title: next.name }}
+            nextLabel={t('next')}            previous={previous && { href: `/projects/${previous.slug}`, title: previous.name, description: summaries(previous.id) }}
+            next={next && { href: `/projects/${next.slug}`, title: next.name, description: summaries(next.id) }}
           />
         </div>
       </ReadingArticle>
