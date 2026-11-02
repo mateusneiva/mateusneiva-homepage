@@ -1,0 +1,49 @@
+---
+title: 'AI and the new reality of software development'
+description: 'How AI changed the way software is built, how hard it was for me to adapt, and why tests, CI/CD, and documentation are no longer optional.'
+date: '2026-11-02'
+tags: ['ai', 'development', 'career']
+draft: false
+---
+
+## I was skeptical
+
+For a long time, I looked at AI in software development with suspicion. I have always been skeptical, and a good part of that came from a legitimate place: code that looks right and is not, confident answers about things that do not exist, the feeling that writing code by hand was exactly the part that built reasoning.
+
+I was not entirely wrong. But I was not seeing the whole picture either.
+
+## The market went somewhere else
+
+What moved me was not an argument, it was the path the market took. The tools became good enough to enter the routine of teams and personal projects, and the way of working started to change around me. At some point it became clear that staying out was not a neutral position: it was falling behind.
+
+So I went after the lost ground. I had to learn a different way of working from scratch, and it was not comfortable.
+
+## Adapting was hard
+
+It was really hard. Not only learning the tools, but changing habits: writing less code by hand and more instructions, context, and criteria; reviewing more than typing; distrusting what looks finished; accepting that production speed stopped being the bottleneck.
+
+It was also hard to leave part of my identity behind. I liked writing every line, and now the work is deciding what should exist, describing it well, checking it, and correcting course. It is a different skill, and it is learned by making mistakes.
+
+## This is the new reality
+
+I no longer see this as a passing trend. AI is already part of how software is made, and the emerging standard is a single one: **more code being written, in less time**.
+
+And that is the point that changed my mind the most. When more code is written, faster, what remains as the limit is the ability to guarantee that the code is right. Without that, speed only produces more problems, and faster.
+
+## What stopped being optional
+
+Some practices many people treated as "ideal, when there is time" are no longer optional. Today, to me, leaving them out makes no sense:
+
+- **Automated tests.** They tell you, in seconds, whether a change broke something. With code generated in volume, they are the main safety net.
+- **CI/CD.** Lint, types, tests, and build running on every change, always the same way, without depending on memory or goodwill.
+- **Documentation.** Project rules, decisions, and context written down serve people and also the tools, which work better when they know the conventions and the limits.
+- **Strict typing and lint.** They reject, before review, the most common and cheapest class of error to avoid.
+- **Careful review.** Whoever decides what goes in is still the one who signs the change.
+
+In my most recent projects, this became routine: a file with the project's rules, a roadmap to work one task at a time, tests that do not depend on the network, and CI that blocks whatever does not pass. None of it is new, but it used to be easier to ignore. Now, ignoring it is expensive.
+
+## Where I am now
+
+I still have reservations, and I think that is healthy: AI makes mistakes, and whoever uses it needs to recognize when it does. But I stopped believing the choice was between using it and not using it. The question that makes sense today is how to use it well, and that involves more engineering, not less.
+
+I keep learning, and sharing this here is part of the process. If you are also in the middle of this adaptation, know that the discomfort is normal. What helped me was treating it as a new craft to learn, with patience and with good practices alongside.
