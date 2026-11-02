@@ -16,8 +16,8 @@ export function FooterColumns() {
   ]
 
   return (
-    <div className="grid gap-10 md:grid-cols-[1.35fr_3.2fr]">
-      <div className="grid grid-cols-2 gap-x-6 gap-y-8 sm:grid-cols-3 md:col-start-2 md:row-start-1" data-footer-links>
+    <div className="grid gap-10 lg:grid-cols-[1.35fr_3.2fr]">
+      <div className="grid grid-cols-2 gap-x-6 gap-y-8 sm:grid-cols-3 lg:col-start-2 lg:row-start-1" data-footer-links>
         <FooterGroup title={t('navigation')}>
           {pages.map(({ href, label }) => (
             <li key={href}>
@@ -49,7 +49,7 @@ export function FooterColumns() {
           </li>
         </FooterGroup>
       </div>
-      <div className="md:col-start-1 md:row-start-1" data-footer-identity>
+      <div className="order-first lg:order-none lg:col-start-1 lg:row-start-1" data-footer-identity>
         <Wordmark />
         <p className="heading-feature mt-5">Mateus Neiva</p>
         <p className="mt-1 font-serif text-sm text-muted">{t('role')}</p>
