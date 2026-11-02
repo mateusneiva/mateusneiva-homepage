@@ -93,6 +93,3 @@ Há também limites conhecidos, registrados na própria documentação: a valida
 Tenho estado muito empolgado construindo o Licht. Cada nova funcionalidade, de um loader que passa a instalar corretamente a uma versão antiga do jogo que finalmente abre com som, vira um pequeno marco, e é isso que me faz querer voltar ao projeto todos os dias. Ainda há muito a refinar, mas ver o launcher ficando mais completo a cada etapa tem sido a parte mais divertida.
 
 Se você joga Minecraft Java no Windows ou no Linux, vai ser um prazer ver o Licht na sua máquina. Ele é gratuito, open source e está em Early Release, então o seu feedback molda o que vem a seguir: abra uma issue contando a versão do launcher, o sistema operacional e o que aconteceu.
-
-- **Site e downloads:** [licht-launcher.github.io](https://licht-launcher.github.io/)
-- **Código no GitHub:** [licht-launcher/licht-launcher](https://github.com/licht-launcher/licht-launcher)

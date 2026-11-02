@@ -23,7 +23,8 @@ test('section guide tracks scrolling and navigates to each section', async ({
   const sectionOrder = await page.locator('article section[id]').evaluateAll(
     (sections) => sections.map((section) => section.id)
   )
-  expect(sectionOrder.slice(0, 2)).toEqual(['project-links', 'project-stack'])
+  expect(sectionOrder[0]).toBe('project-stack')
+  expect(sectionOrder.at(-1)).toBe('project-links')
   const accent = await page.locator('html').evaluate((node) =>
     `rgb(${getComputedStyle(node).getPropertyValue('--color-accent').trim().split(/\s+/).join(', ')})`
   )

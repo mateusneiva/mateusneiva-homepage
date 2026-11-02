@@ -29,19 +29,14 @@ for (const project of projects) {
     ).toBeVisible()
     const links = page.locator('#project-links')
     await expect(
-      links.getByRole('link', { name: 'GitHub', exact: true })
+      links.getByRole('link', { name: 'Código no GitHub', exact: true })
     ).toHaveAttribute('href', project.repository)
     await expect(
-      links.getByRole('link', { name: 'GitHub', exact: true })
+      links.getByRole('link', { name: 'Código no GitHub', exact: true })
     ).toHaveAttribute('rel', 'noopener noreferrer')
+    await expect(links.getByRole('link')).toHaveCount(project.website ? 2 : 1)
     if (project.website)
-      await expect(
-        links.getByRole('link', { name: 'Ver projeto', exact: true })
-      ).toHaveAttribute('href', project.website)
-    else
-      await expect(
-        links.getByRole('link', { name: 'Ver projeto', exact: true })
-      ).toHaveCount(0)
+      await expect(links.getByRole('link').last()).toHaveAttribute('href', project.website)
     await page
       .getByRole('button', { name: 'Voltar aos projetos', exact: true })
       .click()
