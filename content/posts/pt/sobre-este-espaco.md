@@ -7,6 +7,8 @@ tags: ['portfolio', 'desenvolvimento']
 draft: false
 ---
 
+> **Atualizado em 1 de novembro de 2026.** O Licht Launcher entrou na lista de projetos e este texto ganhou mais detalhes sobre o espaço, as notas e o código aberto.
+
 ## De projetos a histórias
 
 Um projeto não é só o resultado final. Também é a soma das decisões, dos experimentos e dos detalhes que surgem no caminho. Este espaço reúne os dois lados: o que está sendo construído e o que pode ser aprendido durante a construção.
