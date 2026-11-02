@@ -201,6 +201,7 @@
     "all": "Todos os posts",
     "read": "Ler artigo",
     "minutes": "{count} min de leitura",
+    "updated": "Atualizado em {date}",
     "empty": "Novas notas chegam em breve.",
     "back": "Voltar",
     "notFound": "Post não encontrado",

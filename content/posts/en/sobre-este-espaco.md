@@ -2,6 +2,7 @@
 title: 'A space to build and share'
 description: "Projects, code, and lessons learned in a portfolio that's also a place to write."
 date: '2026-10-04'
+updated: '2026-11-01'
 tags: ['portfolio', 'development']
 draft: false
 ---

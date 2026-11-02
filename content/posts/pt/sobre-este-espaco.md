@@ -2,6 +2,7 @@
 title: 'Um espaço para construir e compartilhar'
 description: 'Projetos, código e aprendizados reunidos em um portfólio que também é um lugar para escrever.'
 date: '2026-10-04'
+updated: '2026-11-01'
 tags: ['portfolio', 'desenvolvimento']
 draft: false
 ---

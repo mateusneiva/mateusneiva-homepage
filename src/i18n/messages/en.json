@@ -201,6 +201,7 @@
     "all": "All posts",
     "read": "Read article",
     "minutes": "{count} min read",
+    "updated": "Updated on {date}",
     "empty": "New notes are coming soon.",
     "back": "Back",
     "notFound": "Post not found",

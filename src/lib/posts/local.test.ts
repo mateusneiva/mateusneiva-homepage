@@ -43,3 +43,14 @@ it('rejects incomplete metadata and impossible dates', async () => {
   await writeFile(path.join(folder, 'invalid.md'), article('2026-02-31'))
   await expect(getLocalPosts('pt')).rejects.toThrow()
 })
+
+it('keeps the optional updated date and rejects one earlier than the publication date', async () => {
+  const withUpdated = (updated: string) =>
+    article('2020-01-01').replace('date: "2020-01-01"', `date: "2020-01-01"
+updated: "${updated}"`)
+  await writeFile(path.join(folder, 'edited.md'), withUpdated('2020-02-01'))
+  const [post] = await getLocalPosts('pt')
+  expect(post.updated).toBe('2020-02-01')
+  await writeFile(path.join(folder, 'edited.md'), withUpdated('2019-12-31'))
+  await expect(getLocalPosts('pt')).rejects.toThrow()
+})

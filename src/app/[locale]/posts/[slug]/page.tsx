@@ -33,6 +33,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: post.description,
       type: 'article',
       publishedTime: post.date,
+      modifiedTime: post.updated,
       authors: ['Mateus Neiva'],
     },
   }
@@ -54,6 +55,16 @@ export default async function PostPage({ params }: Props) {
               timeZone: 'UTC',
             }).format(new Date(post.date))}
           </time>
+          {post.updated && (
+            <>
+              <span>·</span>
+              <time dateTime={post.updated}>
+                {t('updated', {
+                  date: new Intl.DateTimeFormat(locale, { dateStyle: 'long', timeZone: 'UTC' }).format(new Date(post.updated)),
+                })}
+              </time>
+            </>
+          )}
           <span>·</span>
           <span>{t('minutes', { count: post.readingTime })}</span>
         </div>
