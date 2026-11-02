@@ -42,6 +42,16 @@ Algumas práticas que muita gente tratava como "o ideal, quando der tempo" deixa
 
 Nos meus projetos mais recentes, isso virou rotina: um arquivo com as regras do projeto, um roadmap para trabalhar uma tarefa de cada vez, testes que não dependem da rede e CI que bloqueia o que não passa. Nada disso é novidade, mas antes era mais fácil ignorar. Agora, ignorar custa caro.
 
+## Um exemplo: o Licht
+
+O [Licht Launcher](/pt/projects/licht-launcher) mostra bem isso na prática. Usei IA ao longo do desenvolvimento, e o histórico do repositório conta o que mudou no ritmo e no método.
+
+- **Regras antes do código.** O primeiro commit, em 8 de outubro de 2026, foi um documento de diretrizes e um roadmap, não código. Cada tarefa vira uma branch e um pull request pequeno, com os testes e as verificações do CI como porta de entrada.
+- **Ritmo.** A primeira versão saiu em 11 de outubro, três dias depois, e em 17 de outubro já eram seis versões publicadas. Até o fim do mês, foram cerca de 170 pull requests mergeados.
+- **Marcos, não só volume.** O roadmap organiza o trabalho em fases e marcos: a execução do jogo no Windows, depois o login Microsoft, depois mod loaders e modpacks.
+
+Esse volume só é sustentável porque existe uma estrutura em volta dele. Sem testes, CI e regras escritas, o mesmo ritmo viraria acúmulo de problemas.
+
 ## Onde estou agora
 
 Ainda tenho ressalvas, e acho que é saudável tê-las: a IA erra, e quem usa precisa saber reconhecer quando erra. Mas deixei de achar que a escolha era entre usar e não usar. A pergunta que faz sentido hoje é como usar bem, e isso envolve mais engenharia, não menos.

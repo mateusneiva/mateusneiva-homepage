@@ -42,6 +42,16 @@ Some practices many people treated as "ideal, when there is time" are no longer 
 
 In my most recent projects, this became routine: a file with the project's rules, a roadmap to work one task at a time, tests that do not depend on the network, and CI that blocks whatever does not pass. None of it is new, but it used to be easier to ignore. Now, ignoring it is expensive.
 
+## An example: Licht
+
+[Licht Launcher](/en/projects/licht-launcher) shows this well in practice. I used AI throughout its development, and the repository history tells what changed in pace and method.
+
+- **Rules before code.** The first commit, on October 8, 2026, was a guidelines document and a roadmap, not code. Each task becomes a branch and a small pull request, with tests and CI checks as the gate.
+- **Pace.** The first version shipped on October 11, three days later, and by October 17 there were six published versions. By the end of the month, about 170 pull requests had been merged.
+- **Milestones, not just volume.** The roadmap organizes the work into phases and milestones: game execution on Windows, then Microsoft sign-in, then mod loaders and modpacks.
+
+That volume is only sustainable because there is structure around it. Without tests, CI, and written rules, the same pace would turn into piled-up problems.
+
 ## Where I am now
 
 I still have reservations, and I think that is healthy: AI makes mistakes, and whoever uses it needs to recognize when it does. But I stopped believing the choice was between using it and not using it. The question that makes sense today is how to use it well, and that involves more engineering, not less.
