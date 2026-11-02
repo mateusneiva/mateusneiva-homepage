@@ -87,3 +87,12 @@ Updates use the Tauri updater on top of the releases, with a Minisign signature 
 The foundation, Mojang data, downloads, Java, execution, interface, instances, sign-in, and mod loader phases are done, although manual validation of the resumable download engine is still in review. Still open are installing, updating, and resolving dependencies for individual mods (listing, enabling, disabling, and removing already work), the MSI and Flatpak formats, and a performance review of startup time, memory, and download speed.
 
 There are also known limits, recorded in the project's own documentation: graphical validation was done on Windows and Linux launch has not been rechecked, and the `${auth_session}` argument stays literal on very old versions such as 1.5.2. The next milestone is a public v1.0.
+
+## So far, and an invitation
+
+I have been really excited building Licht. Every new feature, from a loader that finally installs correctly to an old game version that at last opens with sound, becomes a small milestone, and that is what keeps me coming back to the project every day. There is still a lot to refine, but watching the launcher grow more complete with each step has been the most fun part.
+
+If you play Minecraft Java on Windows or Linux, I would love to see Licht on your machine. It is free, open source, and in Early Release, so your feedback shapes what comes next: open an issue with the launcher version, your operating system, and what happened.
+
+- **Website and downloads:** [licht-launcher.github.io](https://licht-launcher.github.io/)
+- **Code on GitHub:** [licht-launcher/licht-launcher](https://github.com/licht-launcher/licht-launcher)
