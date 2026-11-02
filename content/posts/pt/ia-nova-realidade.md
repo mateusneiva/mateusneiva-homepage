@@ -20,7 +20,7 @@ Então fui atrás do prejuízo. Precisei aprender do zero uma forma diferente de
 
 ## Uma referência que também foi estudar
 
-Quando o assunto era IA, a minha referência era o Fabio Akita. Eu acompanhava o que ele dizia sobre o tema, então vê-lo fazendo recentemente um intensivão com IAs pesou mais do que qualquer artigo ou demonstração.
+Quando o assunto era IA, a minha referência era o Fabio Akita. Eu acompanhava o que ele dizia sobre o tema, principalmente no blog dele, o [Akita on Rails](https://akitaonrails.com), onde ele publica com frequência. Por isso, vê-lo fazendo recentemente um intensivão com IAs pesou mais do que qualquer artigo ou demonstração.
 
 Foi o empurrão que faltava. Se alguém em quem eu confiava para pensar sobre o assunto estava estudando o tema com intensidade, eu não tinha mais como ficar só olhando. O meu conhecimento sobre o assunto já estava ficando datado. Decidi me atualizar: entender o estado atual da área e experimentar as ferramentas de IA mais recentes, em vez de julgá-las pelas impressões que eu tinha de antes.
 
@@ -55,10 +55,27 @@ O [Licht Launcher](/pt/projects/licht-launcher) mostra bem isso na prática. É 
 Usei IA ao longo do desenvolvimento, e o histórico do repositório conta o que mudou no ritmo e no método.
 
 - **Regras antes do código.** O primeiro commit, em 8 de outubro de 2026, foi um documento de diretrizes e um roadmap, não código. Cada tarefa vira uma branch e um pull request pequeno, com os testes e as verificações do CI como porta de entrada.
-- **Ritmo.** A primeira versão saiu em 11 de outubro, três dias depois, e em 17 de outubro já eram seis versões publicadas. Até o fim do mês, foram cerca de 170 pull requests mergeados.
+- **Ritmo.** A primeira versão saiu em 11 de outubro, três dias depois, e em 17 de outubro já eram seis versões publicadas.
 - **Marcos, não só volume.** O roadmap organiza o trabalho em fases e marcos: a execução do jogo no Windows, depois o login Microsoft, depois mod loaders e modpacks.
 
 Esse volume só é sustentável porque existe uma estrutura em volta dele. Sem testes, CI e regras escritas, o mesmo ritmo viraria acúmulo de problemas.
+
+## AGENTS.md: as regras que a IA lê
+
+O Licht tem na raiz um arquivo `AGENTS.md`, um formato que várias ferramentas de IA reconhecem. É onde as regras do projeto ficam escritas para elas, e é uma das práticas que mais mudou a minha experiência. Sem esse arquivo, cada conversa começa do zero e a IA decide por conta própria o que não sabe. Com ele, o contexto e os limites acompanham o projeto.
+
+No Licht, ele define coisas como:
+
+- **Contexto:** o que é o projeto, as tecnologias e a estrutura de pastas.
+- **Como trabalhar:** apresentar um plano curto antes de escrever código e esperar aprovação; perguntar quando há uma decisão, como uma dependência nova ou uma mudança de arquitetura; uma tarefa por branch e por pull request; não escrever nada além do que a tarefa pede.
+- **Arquitetura:** a lógica fica no núcleo em Rust, a camada do Tauri é fina e a interface não tem regra de Minecraft; os tipos compartilhados são gerados, não copiados à mão.
+- **Interface:** usar só os componentes e os tokens do design system, sem estilos soltos.
+- **Qualidade:** quais verificações precisam passar antes de abrir um PR, e que nenhum teste pode depender da rede.
+- **Regras do domínio:** verificar o SHA1 de tudo que é baixado e guardar tokens no keyring do sistema, nunca em logs.
+
+Isso importa por quatro motivos. **Consistência:** a IA segue as mesmas convenções que eu seguiria. **Segurança:** regras como verificar hashes e proteger tokens deixam de depender de alguém lembrar a cada pedido. **Controle:** o plano antes do código me mantém como quem decide, e a IA como quem executa. **Continuidade:** qualquer ferramenta nova que leia o arquivo parte do mesmo ponto.
+
+É documentação que serve a pessoas e a máquinas, então vale tratar como código: versionar, revisar e atualizar quando uma regra mudar.
 
 ## Onde estou agora
 

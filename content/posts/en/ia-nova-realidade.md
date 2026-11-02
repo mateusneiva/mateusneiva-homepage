@@ -20,7 +20,7 @@ So I went after the lost ground. I had to learn a different way of working from 
 
 ## A reference who went back to study
 
-When the subject was AI, my reference was Fabio Akita. I followed what he said about it, so seeing him recently do an intensive with AIs weighed more than any article or demo.
+When the subject was AI, my reference was Fabio Akita. I followed what he said about it, mainly on his blog, [Akita on Rails](https://akitaonrails.com), where he publishes often. So seeing him recently do an intensive with AIs weighed more than any article or demo.
 
 It was the push I was missing. If someone I trusted to think about the subject was studying it intensely, I could no longer just watch. My knowledge of the subject was already getting dated. I decided to catch up: understand the current state of the field and try the latest AI tools, instead of judging them by impressions from before.
 
@@ -55,10 +55,27 @@ In my most recent projects, this became routine: a file with the project's rules
 I used AI throughout its development, and the repository history tells what changed in pace and method.
 
 - **Rules before code.** The first commit, on October 8, 2026, was a guidelines document and a roadmap, not code. Each task becomes a branch and a small pull request, with tests and CI checks as the gate.
-- **Pace.** The first version shipped on October 11, three days later, and by October 17 there were six published versions. By the end of the month, about 170 pull requests had been merged.
+- **Pace.** The first version shipped on October 11, three days later, and by October 17 there were six published versions.
 - **Milestones, not just volume.** The roadmap organizes the work into phases and milestones: game execution on Windows, then Microsoft sign-in, then mod loaders and modpacks.
 
 That volume is only sustainable because there is structure around it. Without tests, CI, and written rules, the same pace would turn into piled-up problems.
+
+## AGENTS.md: the rules AI reads
+
+Licht has an `AGENTS.md` file at its root, a format that several AI tools recognize. It is where the project's rules are written for them, and it is one of the practices that changed my experience the most. Without that file, every conversation starts from scratch and the AI decides on its own whatever it does not know. With it, the context and the limits travel with the project.
+
+In Licht, it defines things like:
+
+- **Context:** what the project is, the technologies, and the folder structure.
+- **How to work:** present a short plan before writing code and wait for approval; ask when there is a decision, such as a new dependency or an architecture change; one task per branch and per pull request; write nothing beyond what the task asks.
+- **Architecture:** the logic lives in the Rust core, the Tauri layer is thin, and the interface has no Minecraft rules; shared types are generated, not copied by hand.
+- **Interface:** use only the design system's components and tokens, with no loose styles.
+- **Quality:** which checks must pass before opening a PR, and that no test may depend on the network.
+- **Domain rules:** verify the SHA1 of everything downloaded and keep tokens in the system keyring, never in logs.
+
+This matters for four reasons. **Consistency:** the AI follows the same conventions I would. **Safety:** rules like verifying hashes and protecting tokens stop depending on someone remembering them in every request. **Control:** the plan before the code keeps me as the one who decides, and the AI as the one who executes. **Continuity:** any new tool that reads the file starts from the same point.
+
+It is documentation that serves people and machines, so it is worth treating like code: version it, review it, and update it when a rule changes.
 
 ## Where I am now
 
