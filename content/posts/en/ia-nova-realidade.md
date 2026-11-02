@@ -18,6 +18,12 @@ What moved me was not an argument, it was the path the market took. The tools be
 
 So I went after the lost ground. I had to learn a different way of working from scratch, and it was not comfortable.
 
+## A reference who went back to study
+
+When the subject was AI, my reference was Fabio Akita. I followed what he said about it, so seeing him recently do an intensive with AIs weighed more than any article or demo.
+
+It was the push I was missing. If someone I trusted to think about the subject was studying it intensely, I could no longer just watch. My knowledge of the subject was already getting dated. I decided to catch up: understand the current state of the field and try the latest AI tools, instead of judging them by impressions from before.
+
 ## Adapting was hard
 
 It was really hard. Not only learning the tools, but changing habits: writing less code by hand and more instructions, context, and criteria; reviewing more than typing; distrusting what looks finished; accepting that production speed stopped being the bottleneck.
@@ -44,7 +50,9 @@ In my most recent projects, this became routine: a file with the project's rules
 
 ## An example: Licht
 
-[Licht Launcher](/en/projects/licht-launcher) shows this well in practice. I used AI throughout its development, and the repository history tells what changed in pace and method.
+[Licht Launcher](/en/projects/licht-launcher) shows this well in practice. It is an unofficial Minecraft Java launcher for Windows and Linux, built with Tauri, Rust, and React, with separate profiles, mod loaders (Fabric, Quilt, Forge, and NeoForge), and modpacks from Modrinth and CurseForge. It is a project with a large surface: version formats from 1.5.2 to 26.x, Forge installers, Microsoft sign-in, verified downloads. That scope is what made the practices above impossible to skip.
+
+I used AI throughout its development, and the repository history tells what changed in pace and method.
 
 - **Rules before code.** The first commit, on October 8, 2026, was a guidelines document and a roadmap, not code. Each task becomes a branch and a small pull request, with tests and CI checks as the gate.
 - **Pace.** The first version shipped on October 11, three days later, and by October 17 there were six published versions. By the end of the month, about 170 pull requests had been merged.

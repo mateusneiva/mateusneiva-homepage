@@ -18,6 +18,12 @@ O que me tirou do lugar não foi um argumento, foi o caminho que o mercado tomou
 
 Então fui atrás do prejuízo. Precisei aprender do zero uma forma diferente de trabalhar, e isso não foi confortável.
 
+## Uma referência que também foi estudar
+
+Quando o assunto era IA, a minha referência era o Fabio Akita. Eu acompanhava o que ele dizia sobre o tema, então vê-lo fazendo recentemente um intensivão com IAs pesou mais do que qualquer artigo ou demonstração.
+
+Foi o empurrão que faltava. Se alguém em quem eu confiava para pensar sobre o assunto estava estudando o tema com intensidade, eu não tinha mais como ficar só olhando. O meu conhecimento sobre o assunto já estava ficando datado. Decidi me atualizar: entender o estado atual da área e experimentar as ferramentas de IA mais recentes, em vez de julgá-las pelas impressões que eu tinha de antes.
+
 ## Adaptar-se foi difícil
 
 Foi difícil de verdade. Não só aprender as ferramentas, mas mudar de hábito: escrever menos código na mão e mais instruções, contexto e critérios; revisar mais do que digitar; desconfiar do que parece pronto; aceitar que a velocidade de produção deixou de ser o gargalo.
@@ -44,7 +50,9 @@ Nos meus projetos mais recentes, isso virou rotina: um arquivo com as regras do 
 
 ## Um exemplo: o Licht
 
-O [Licht Launcher](/pt/projects/licht-launcher) mostra bem isso na prática. Usei IA ao longo do desenvolvimento, e o histórico do repositório conta o que mudou no ritmo e no método.
+O [Licht Launcher](/pt/projects/licht-launcher) mostra bem isso na prática. É um launcher não oficial de Minecraft Java para Windows e Linux, feito com Tauri, Rust e React, com perfis separados, mod loaders (Fabric, Quilt, Forge e NeoForge) e modpacks do Modrinth e do CurseForge. É um projeto com superfície grande: formatos de versões que vão do 1.5.2 ao 26.x, instaladores do Forge, login Microsoft, downloads verificados. Foi esse escopo que tornou as práticas acima impossíveis de dispensar.
+
+Usei IA ao longo do desenvolvimento, e o histórico do repositório conta o que mudou no ritmo e no método.
 
 - **Regras antes do código.** O primeiro commit, em 8 de outubro de 2026, foi um documento de diretrizes e um roadmap, não código. Cada tarefa vira uma branch e um pull request pequeno, com os testes e as verificações do CI como porta de entrada.
 - **Ritmo.** A primeira versão saiu em 11 de outubro, três dias depois, e em 17 de outubro já eram seis versões publicadas. Até o fim do mês, foram cerca de 170 pull requests mergeados.
