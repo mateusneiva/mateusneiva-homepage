@@ -22,7 +22,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         },
         ...posts.map((post) => ({
           url: `${base}/${locale}${post.url}`,
-          lastModified: new Date(post.date),
+          lastModified: new Date(post.updated ?? post.date),
           priority: 0.7,
         })),
         ...projects.map((project) => ({
