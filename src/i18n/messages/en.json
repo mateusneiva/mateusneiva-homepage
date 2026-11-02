@@ -139,8 +139,11 @@
     "licht": "An unofficial Minecraft: Java Edition launcher with profiles, mod loaders, modpacks, and automatic Java setup."
   },
   "ProjectDetails": {
-    "back": "Back to projects",
+    "back": "Back to home",
     "guide": "On this page",
+    "pager": "More projects",
+    "previous": "Previous project",
+    "next": "Next project",
     "intro": "Introduction",
     "architecture": "How it's built",
     "overview": "About the project",
@@ -209,7 +212,11 @@
     "minutes": "{count} min read",
     "updated": "Updated on {date}",
     "empty": "New notes are coming soon.",
-    "back": "Back",
+    "back": "Back to home",
+    "guide": "On this page",
+    "pager": "More posts",
+    "previous": "Previous post",
+    "next": "Next post",
     "notFound": "Post not found",
     "indexDescription": "Notes on development, projects, and technology."
   },
