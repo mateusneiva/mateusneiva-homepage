@@ -169,9 +169,16 @@ test('visible technology tags retain their proximity hover', async ({ page, isMo
   await page.goto('/pt')
   const tag = page.locator('[data-skills-matrix] [data-proximity-tag]').filter({ hasText: 'TypeScript' })
   await tag.scrollIntoViewIfNeeded()
-  await tag.hover()
+  const box = (await tag.boundingBox())!
   const edge = tag.locator('[data-tag-edge-glow]')
-  await expect.poll(async () => Number(await edge.evaluate((node) => getComputedStyle(node).opacity))).toBeGreaterThan(0.95)
+  let nudge = 0
+  // The pointer tracker only listens once the tag is observed, so keep moving until it picks the pointer up.
+  await expect
+    .poll(async () => {
+      await page.mouse.move(box.x + box.width / 2 + (nudge++ % 2), box.y + box.height / 2)
+      return Number(await edge.evaluate((node) => getComputedStyle(node).opacity))
+    })
+    .toBeGreaterThan(0.95)
   await page.mouse.move(0, 0)
   await expect.poll(async () => Number(await edge.evaluate((node) => getComputedStyle(node).opacity))).toBeLessThan(0.05)
 })

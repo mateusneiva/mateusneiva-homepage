@@ -8,6 +8,7 @@
     "start": "next start",
     "spotify:auth": "node scripts/spotify-auth.mjs",
     "lint": "eslint src vitest.config.mts playwright.config.ts playwright.dev.config.ts eslint.config.mjs",
+    "typecheck": "tsc --noEmit",
     "test": "vitest run",
     "test:watch": "vitest",
     "test:e2e": "pnpm build && playwright test",

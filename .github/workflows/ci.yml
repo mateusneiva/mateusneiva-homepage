@@ -1,0 +1,82 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+env:
+  NEXT_TELEMETRY_DISABLED: '1'
+
+jobs:
+  quality:
+    name: Lint, typecheck and unit tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm lint
+      - run: pnpm exec next typegen
+      - run: pnpm typecheck
+      - run: pnpm test
+
+  e2e:
+    name: E2E (${{ matrix.project }})
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    strategy:
+      fail-fast: false
+      matrix:
+        project: [desktop-chromium, mobile-chromium]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - uses: actions/cache@v4
+        with:
+          path: .next/cache
+          key: next-${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml') }}-${{ hashFiles('src/**', 'content/**') }}
+          restore-keys: |
+            next-${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml') }}-
+      - run: pnpm build
+      - id: playwright
+        run: echo "version=$(pnpm exec playwright --version | awk '{print $2}')" >> "$GITHUB_OUTPUT"
+      - uses: actions/cache@v4
+        id: browsers
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-${{ runner.os }}-${{ steps.playwright.outputs.version }}
+      - if: steps.browsers.outputs.cache-hit != 'true'
+        run: pnpm exec playwright install --with-deps chromium
+      - if: steps.browsers.outputs.cache-hit == 'true'
+        run: pnpm exec playwright install-deps chromium
+      - run: pnpm exec playwright test --project=${{ matrix.project }}
+      - uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: playwright-${{ matrix.project }}
+          path: |
+            playwright-report/
+            test-results/
+          retention-days: 7

@@ -58,6 +58,7 @@ test('hero buttons keep their texture without an underline', async ({
   test.skip(isMobile, 'Hover is a pointer interaction.')
   await page.goto('/pt')
   await page.evaluate(() => document.fonts.ready)
+  await expect(page.locator('[data-initial-loading]')).toHaveCount(0)
   const button = page.getByRole('link', {
     name: 'Explore os projetos',
     exact: true,
