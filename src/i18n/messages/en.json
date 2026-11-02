@@ -174,6 +174,7 @@
         "two": "The maintenance workflow includes Vitest tests, type checking, and package builds. Changesets organizes versioning and releases, while continuous integration brings these steps together with Storybook publishing. The architecture follows a composition-first philosophy and aims to keep the experience consistent for both library users and contributors."
       },
       "stackNote": "React and TypeScript underpin the components and their public interfaces. Turborepo coordinates the monorepo, and Storybook documents the library in an interactive environment. Tokens and theme packages share the visual language, while Vitest and Changesets support testing and publishing.",
+      "websiteLabel": "Open Storybook",
       "linksNote": "The interactive documentation presents the library in Storybook. The repository brings together packages, the organization of tokens and themes, and the development, testing, and release workflow.",
       "features": {
         "one": "Modular packages for React components, design tokens, and themes. This separation allows component interfaces and the visual language to evolve without mixing their responsibilities.",
@@ -190,6 +191,7 @@
         "two": "Twitch and YouTube integrations use platform configuration to enable alerts. In the execution environment, Docker Compose organizes the database and the bot, with migrations applied before startup. The process also includes shutting down the Discord client and database connections when stop signals arrive."
       },
       "stackNote": "TypeScript maintains contracts between commands, modules, and configuration. Discord.js provides Discord integration, while Prisma organizes PostgreSQL access. Shared packages and Docker-based execution support module development and operation.",
+      "websiteLabel": "Invite to my server",
       "linksNote": "The repository is the entry point for exploring modules, available commands, and local configuration. Its documentation also covers database setup and running the bot with Docker.",
       "features": {
         "one": "Automatic roles and reaction-based roles. The modules provide different ways to organize member participation and associate interactions with roles within a server.",
@@ -200,6 +202,7 @@
     },
     "licht": {
       "stackNote": "Tauri and Rust provide the native shell and the logic that interacts with the system, while React and TypeScript build the interface. Vite handles the front-end build, and Vitest covers tests.",
+      "websiteLabel": "Site and downloads",
       "linksNote": "The website presents the launcher and its downloads. GitHub contains the source code, release notes, and the place to report issues."
     }
   },

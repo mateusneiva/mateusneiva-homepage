@@ -66,10 +66,10 @@ it('lists the case study headings after the lead sections', () => {
   ])
   expect(screen.getAllByRole('link').map((link) => link.getAttribute('href'))).toEqual([
     '#project-intro',
-    '#project-links',
     '#project-stack',
     '#contexto',
     '#desafios',
+    '#project-links',
   ])
   expect(screen.getByRole('link', { name: 'Desafios' })).toBeInTheDocument()
 })
