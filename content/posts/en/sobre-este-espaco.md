@@ -7,6 +7,8 @@ tags: ['portfolio', 'development']
 draft: false
 ---
 
+> **Updated on November 1, 2026.** Licht Launcher joined the project list, and this text gained more detail about the space, the notes, and the open code.
+
 ## From projects to stories
 
 A project is more than its final result. It's also the sum of the decisions, experiments, and details discovered along the way. This space brings together both sides: what's being built and what can be learned while building it.
