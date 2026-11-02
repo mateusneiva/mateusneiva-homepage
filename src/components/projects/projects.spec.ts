@@ -36,9 +36,9 @@ for (const project of projects) {
     ).toHaveAttribute('rel', 'noopener noreferrer')
     await expect(links.getByRole('link')).toHaveCount(project.website ? 2 : 1)
     if (project.website)
-      await expect(links.getByRole('link').last()).toHaveAttribute('href', project.website)
+      await expect(links.getByRole('link').first()).toHaveAttribute('href', project.website)
     await page
-      .getByRole('button', { name: 'Voltar aos projetos', exact: true })
+      .getByRole('link', { name: 'Voltar ao início', exact: true })
       .click()
     await expect(page).toHaveURL('/pt')
   })

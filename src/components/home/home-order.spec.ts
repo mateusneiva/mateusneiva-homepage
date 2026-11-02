@@ -42,7 +42,7 @@ test('homepage keeps the original section order and coherent About reading order
     const linksBox = await page.locator('[data-footer-links]').boundingBox()
     const identityBox = await page.locator('[data-footer-identity]').boundingBox()
     if (isMobile) {
-      expect(identityBox!.y).toBeGreaterThanOrEqual(linksBox!.y + linksBox!.height)
+      expect(linksBox!.y).toBeGreaterThanOrEqual(identityBox!.y + identityBox!.height)
     } else {
       expect(identityBox!.x + identityBox!.width).toBeLessThan(linksBox!.x)
       expect(identityBox!.y).toBeCloseTo(linksBox!.y, 0)
