@@ -8,6 +8,7 @@ import { ProjectDetailsContent } from '@/components/projects/details/project-det
 import { ProjectSectionGuide } from '@/components/projects/navigation/project-section-guide'
 import { getCaseStudy } from '@/lib/projects/case-study'
 import { ReadingArticle } from '@/components/ui/reading/reading-article'
+import { ReadingPager } from '@/components/ui/reading/reading-pager'
 
 type Props = { params: Promise<{ locale: Locale; slug: string }> }
 
@@ -42,6 +43,10 @@ export default async function ProjectPage({ params }: Props) {
   const project = getProject(slug)
   if (!project) notFound()
   const caseStudy = await getCaseStudy(locale, slug)
+  const t = await getTranslations({ locale, namespace: 'ProjectDetails' })
+  const index = projects.findIndex((item) => item.slug === slug)
+  const previous = projects[index - 1]
+  const next = projects[index + 1]
   return (
     <main
       id="content"
@@ -54,6 +59,15 @@ export default async function ProjectPage({ params }: Props) {
         <ProjectSectionGuide headings={caseStudy?.headings} />
         <div className="min-w-0 lg:col-start-2 lg:row-start-2" data-project-content>
           <ProjectDetailsContent project={project} caseStudy={caseStudy?.content} />
+          <ReadingPager
+            label={t('pager')}
+            previousLabel={t('previous')}
+            nextLabel={t('next')}
+            previousEmpty={t('firstProject')}
+            nextEmpty={t('lastProject')}
+            previous={previous && { href: `/projects/${previous.slug}`, title: previous.name }}
+            next={next && { href: `/projects/${next.slug}`, title: next.name }}
+          />
         </div>
       </ReadingArticle>
     </main>

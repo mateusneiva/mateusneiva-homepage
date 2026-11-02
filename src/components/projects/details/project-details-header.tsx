@@ -1,6 +1,6 @@
 import { useTranslations } from 'next-intl'
 import type { Project } from '@/data/projects'
-import { HistoryBackButton } from '@/components/ui/buttons/history-back-button'
+import { BackLink } from '@/components/ui/buttons/back-link'
 import { ProjectVisual } from '../cards/project-visual'
 import { ConstructionFrame } from '@/components/layout/construction/construction-frame'
 
@@ -9,7 +9,7 @@ export function ProjectDetailsHeader({ project }: { project: Project }) {
   const details = useTranslations('ProjectDetails')
   return (
     <header id="project-intro" className="scroll-mt-8">
-      <HistoryBackButton label={details('back')} fallback="/#projects" />
+      <BackLink label={details('back')} />
       <p className="mb-5 font-mono text-xs uppercase tracking-widest text-accent">{t(project.category)}</p>
       <div className="relative isolate">
         <ConstructionFrame variant="title" />
