@@ -108,8 +108,6 @@ export default async function PostPage({ params }: Props) {
           label={t('pager')}
           previousLabel={t('previous')}
           nextLabel={t('next')}
-          previousEmpty={t('firstPost')}
-          nextEmpty={t('lastPost')}
           previous={older && { href: older.url, title: older.title, meta: formatDate(older.date) }}
           next={newer && { href: newer.url, title: newer.title, meta: formatDate(newer.date) }}
         />

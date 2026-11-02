@@ -62,10 +62,7 @@ export default async function ProjectPage({ params }: Props) {
           <ReadingPager
             label={t('pager')}
             previousLabel={t('previous')}
-            nextLabel={t('next')}
-            previousEmpty={t('firstProject')}
-            nextEmpty={t('lastProject')}
-            previous={previous && { href: `/projects/${previous.slug}`, title: previous.name }}
+            nextLabel={t('next')}            previous={previous && { href: `/projects/${previous.slug}`, title: previous.name }}
             next={next && { href: `/projects/${next.slug}`, title: next.name }}
           />
         </div>
