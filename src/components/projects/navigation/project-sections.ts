@@ -7,5 +7,7 @@ export const projectSections = [
   { id: 'project-architecture', label: 'architecture' },
 ] as const
 
+export const projectLeadSections = projectSections.slice(0, 3)
+
 export type ProjectSectionId = (typeof projectSections)[number]['id']
 export const projectSectionIds = projectSections.map((section) => section.id)

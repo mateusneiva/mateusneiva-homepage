@@ -25,7 +25,7 @@ export function Projects() {
         >
           <ConstructionFrame variant="controls" />
 
-          {(['all', 'web', 'ui', 'automation'] as const).map((category) => (
+          {(['all', 'web', 'ui', 'automation', 'desktop'] as const).map((category) => (
             <SelectionButton
               key={category}
               onClick={() => setFilter(category)}

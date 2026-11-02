@@ -48,6 +48,8 @@ import {
   SiFramer,
   SiStripe,
   SiDiscord,
+  SiRust,
+  SiTauri,
 } from 'react-icons/si'
 import type { SkillName } from './skills'
 
@@ -113,8 +115,10 @@ export const technologies = {
   'GitHub Actions (CI/CD)': { icon: SiGithubactions, color: 'text-[#0969DA] [[data-theme=dark]_&]:text-[#58A6FF]' },
   Linux: { icon: SiLinux, color: 'text-ink' },
   'Discord.js': { icon: SiDiscord, color: 'text-[#5865F2]' },
+  Rust: { icon: SiRust, color: 'text-[#B7410E] [[data-theme=dark]_&]:text-[#F74C00]' },
+  Tauri: { icon: SiTauri, color: 'text-[#B8860B] [[data-theme=dark]_&]:text-[#FFC131]' },
 } satisfies Record<
-  SkillName | 'Stripe' | 'Zustand' | 'Discord.js',
+  SkillName | 'Stripe' | 'Zustand' | 'Discord.js' | 'Rust' | 'Tauri',
   { icon: IconType; color: string; iconSize?: number }
 >
 

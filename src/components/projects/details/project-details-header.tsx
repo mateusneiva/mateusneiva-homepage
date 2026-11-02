@@ -18,10 +18,11 @@ export function ProjectDetailsHeader({ project }: { project: Project }) {
         </h1>
       </div>
       <p className="mb-10 mt-6 max-w-2xl text-lg leading-relaxed text-muted">{t(project.id)}</p>
-      <div className="[&>div]:h-64 sm:[&>div]:h-80">
+      <div className={project.image ? undefined : '[&>div]:h-64 sm:[&>div]:h-80'}>
         <ProjectVisual
           id={project.id}
           image={project.image}
+          uncropped
           sizes="(min-width: 1280px) 864px, (min-width: 1024px) calc(100vw - 336px), calc(100vw - 48px)"
         />
       </div>

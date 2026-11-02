@@ -6,23 +6,37 @@ const backgrounds = {
   softness: 'bg-[#d7d4cd] text-[#252520]',
   polaris: 'bg-[#29253e] text-stone-200',
   shiva: 'bg-[#1a3025] text-stone-200',
+  licht: 'bg-[#2b2417] text-stone-200',
 }
 
 export function ProjectVisual({
   id,
   image,
+  uncropped = false,
   className,
-  sizes = '(min-width: 1280px) 360px, (min-width: 768px) calc((100vw - 120px) / 3), calc(100vw - 48px)',
+  // Twice the displayed width, so the downscaled screenshot stays sharp.
+  sizes = '(min-width: 1280px) 720px, (min-width: 768px) calc((100vw - 120px) * 2 / 3), calc((100vw - 48px) * 2)',
 }: {
   id: Project['id']
   image?: Project['image']
+  uncropped?: boolean
   className?: string
   sizes?: string
 }) {
   if (image) {
     return (
-      <div aria-hidden="true" className={cn('relative h-52 overflow-hidden bg-surface', className)}>
-        <Image src={image} alt="" fill sizes={sizes} className="object-contain" />
+      <div
+        aria-hidden="true"
+        className={cn('relative overflow-hidden bg-surface', uncropped ? 'aspect-[3/2]' : 'h-52', className)}
+      >
+        <Image
+          src={image}
+          alt=""
+          fill
+          sizes={sizes}
+          quality={95}
+          className={uncropped ? 'object-contain' : 'object-cover object-top'}
+        />
       </div>
     )
   }

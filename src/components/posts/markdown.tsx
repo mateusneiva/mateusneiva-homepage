@@ -1,6 +1,9 @@
+import Image from 'next/image'
+import type { ReactNode } from 'react'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import { LinkLabel } from '@/components/ui/typography/link-label'
+import { slugify } from '@/lib/slugify'
 
 const markdownClasses = [
   'text-muted text-[1.075rem] leading-[1.85] [&>*+*]:mt-6',
@@ -17,12 +20,44 @@ const markdownClasses = [
   '[&_img]:h-auto [&_img]:max-w-full [&_hr]:h-px [&_hr]:border-0 [&_hr]:bg-raised',
 ].join(' ')
 
+function textOf(node: ReactNode): string {
+  if (typeof node === 'string' || typeof node === 'number') return String(node)
+  if (Array.isArray(node)) return node.map(textOf).join('')
+  if (node && typeof node === 'object' && 'props' in node) return textOf((node.props as { children?: ReactNode }).children)
+  return ''
+}
+
 export function Markdown({ content }: { content: string }) {
   return (
     <div className={markdownClasses}>
       <ReactMarkdown
         remarkPlugins={[remarkGfm]}
+        skipHtml
         components={{
+          h2: ({ children }) => (
+            <h2 id={slugify(textOf(children))} className="scroll-mt-8">
+              {children}
+            </h2>
+          ),
+          p: ({ node, children }) => {
+            const [only] = node?.children ?? []
+            const isImage = node?.children.length === 1 && only?.type === 'element' && only.tagName === 'img'
+            return isImage ? <>{children}</> : <p>{children}</p>
+          },
+          img: ({ src, alt, title }) =>
+            typeof src === 'string' && src.startsWith('/') ? (
+              <figure className="my-10">
+                <Image
+                  src={src}
+                  alt={alt ?? ''}
+                  width={1600}
+                  height={900}
+                  sizes="(min-width: 1280px) 864px, (min-width: 1024px) calc(100vw - 336px), calc(100vw - 48px)"
+                  className="h-auto w-full bg-surface"
+                />
+                {title && <figcaption className="mt-3 text-sm leading-6 text-subtle">{title}</figcaption>}
+              </figure>
+            ) : null,
           a: ({ href, children }) => {
             const external = href?.startsWith('https://') || href?.startsWith('http://')
             return (

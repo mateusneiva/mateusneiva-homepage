@@ -1,8 +1,8 @@
 import type { TechnologyName } from './technologies'
 
-export type ProjectCategory = 'web' | 'ui' | 'automation'
+export type ProjectCategory = 'web' | 'ui' | 'automation' | 'desktop'
 export type Project = {
-  id: 'softness' | 'polaris' | 'shiva'
+  id: 'softness' | 'polaris' | 'shiva' | 'licht'
   name: string
   slug: string
   category: ProjectCategory
@@ -12,7 +12,20 @@ export type Project = {
   stack: TechnologyName[]
 }
 
+/** Projects whose details text lives in the translation files; the others use a Markdown case study. */
+export type NarrativeProjectId = Exclude<Project['id'], 'licht'>
+
 export const projects: Project[] = [
+  {
+    id: 'licht',
+    name: 'Licht Launcher',
+    slug: 'licht-launcher',
+    category: 'desktop',
+    repository: 'https://github.com/licht-launcher/licht-launcher',
+    website: 'https://licht-launcher.github.io/',
+    image: '/projects/licht-launcher.png',
+    stack: ['Tauri', 'Rust', 'React', 'TypeScript'],
+  },
   {
     id: 'softness',
     name: 'Softness',
@@ -37,6 +50,7 @@ export const projects: Project[] = [
     slug: 'shiva-toolbox',
     category: 'automation',
     repository: 'https://github.com/shiva-toolbox/shiva-toolbox',
+    website: 'https://shiva.mateusneiva.com',
     stack: ['TypeScript', 'Discord.js', 'Prisma', 'PostgreSQL'],
   },
 ]

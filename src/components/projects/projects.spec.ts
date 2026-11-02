@@ -22,7 +22,10 @@ for (const project of projects) {
       page.getByRole('heading', { level: 1, name: project.name })
     ).toBeVisible()
     await expect(
-      page.getByRole('heading', { name: 'O que ele faz', exact: true })
+      page.getByRole('heading', {
+        name: project.id === 'licht' ? 'Um lugar simples para o Minecraft Java' : 'O que ele faz',
+        exact: true,
+      })
     ).toBeVisible()
     const links = page.locator('#project-links')
     await expect(
@@ -54,6 +57,7 @@ test('project filtering preserves the selected category and the internal link', 
     ['Aplicações web', 'Softness'],
     ['Design system', 'Polaris Kit'],
     ['Automação', 'Shiva Toolbox'],
+    ['Apps desktop', 'Licht Launcher'],
   ]) {
     const filter = page
       .locator('#projects')
@@ -67,7 +71,7 @@ test('project filtering preserves the selected category and the internal link', 
     .locator('#projects')
     .getByRole('button', { name: 'Todos', exact: true })
     .click()
-  await expect(page.locator('#projects article')).toHaveCount(3)
+  await expect(page.locator('#projects article')).toHaveCount(4)
 })
 
 test('project details preserve their slug when switching languages', async ({
