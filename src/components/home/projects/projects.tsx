@@ -36,7 +36,7 @@ export function Projects() {
             </SelectionButton>
           ))}
         </div>
-        <div className="relative isolate grid gap-5 md:grid-cols-3">
+        <div className="relative isolate grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           <ConstructionFrame
             variant="cards"
             columns={selected.length > 1 ? 'projects' : undefined}

@@ -49,7 +49,7 @@ export function FooterColumns() {
           </li>
         </FooterGroup>
       </div>
-      <div className="lg:col-start-1 lg:row-start-1" data-footer-identity>
+      <div className="order-first lg:order-none lg:col-start-1 lg:row-start-1" data-footer-identity>
         <Wordmark />
         <p className="heading-feature mt-5">Mateus Neiva</p>
         <p className="mt-1 font-serif text-sm text-muted">{t('role')}</p>

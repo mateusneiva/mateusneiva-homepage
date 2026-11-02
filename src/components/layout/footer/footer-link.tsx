@@ -18,7 +18,7 @@ export function FooterLink({
 }) {
   const className = cn(
     'interactive-link group/link',
-    'inline-flex items-center justify-start gap-2 py-1 text-left font-sans text-sm text-muted hover:text-accent sm:justify-end sm:text-right',
+    'inline-flex items-center justify-start gap-2 py-1 text-left font-sans text-sm text-muted hover:text-accent lg:justify-end lg:text-right',
   )
   const contents = (
     <>
