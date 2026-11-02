@@ -93,6 +93,3 @@ There are also known limits, recorded in the project's own documentation: graphi
 I have been really excited building Licht. Every new feature, from a loader that finally installs correctly to an old game version that at last opens with sound, becomes a small milestone, and that is what keeps me coming back to the project every day. There is still a lot to refine, but watching the launcher grow more complete with each step has been the most fun part.
 
 If you play Minecraft Java on Windows or Linux, I would love to see Licht on your machine. It is free, open source, and in Early Release, so your feedback shapes what comes next: open an issue with the launcher version, your operating system, and what happened.
-
-- **Website and downloads:** [licht-launcher.github.io](https://licht-launcher.github.io/)
-- **Code on GitHub:** [licht-launcher/licht-launcher](https://github.com/licht-launcher/licht-launcher)
