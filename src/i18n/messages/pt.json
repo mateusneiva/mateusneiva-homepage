@@ -128,13 +128,15 @@
     "web": "Aplicações web",
     "ui": "Design system",
     "automation": "Automação",
+    "desktop": "Apps desktop",
     "source": "Código no GitHub",
     "visit": "Ver projeto",
     "details": "Ver detalhes",
     "filterLabel": "Filtrar projetos",
     "softness": "E-commerce de streetwear com vitrine, painel administrativo, carrinho, checkout com Stripe e gerenciamento de conta.",
     "polaris": "Biblioteca de UI React acessível e composável. Componentes, design tokens e temas em um monorepo com Turborepo.",
-    "shiva": "Bot modular para Discord com cargos automáticos, alertas de lives, cargos por reação e configuração por servidor."
+    "shiva": "Bot modular para Discord com cargos automáticos, alertas de lives, cargos por reação e configuração por servidor.",
+    "licht": "Launcher não oficial de Minecraft: Java Edition com perfis, mod loaders, modpacks e configuração automática do Java."
   },
   "ProjectDetails": {
     "back": "Voltar aos projetos",
@@ -192,6 +194,10 @@
         "three": "Alertas de transmissões da Twitch e do YouTube. Os comandos dedicados conectam a configuração dessas plataformas às notificações usadas pela comunidade no Discord.",
         "four": "Comandos de idioma e status, com configuração persistida via Prisma e PostgreSQL. O idioma é definido por servidor, e os comandos de status ajudam a consultar a execução do bot."
       }
+    },
+    "licht": {
+      "stackNote": "Tauri e Rust oferecem a camada nativa e a lógica que interage com o sistema, enquanto React e TypeScript constroem a interface. Vite cuida do build do front-end, e Vitest cobre os testes.",
+      "linksNote": "O site apresenta o launcher e seus downloads. O GitHub reúne o código-fonte, as notas de versão e o espaço para reportar problemas."
     }
   },
   "Posts": {

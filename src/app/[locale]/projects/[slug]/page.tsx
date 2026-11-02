@@ -6,6 +6,7 @@ import { routing, type Locale } from '@/i18n/routing'
 import { ProjectDetailsHeader } from '@/components/projects/details/project-details-header'
 import { ProjectDetailsContent } from '@/components/projects/details/project-details-content'
 import { ProjectSectionGuide } from '@/components/projects/navigation/project-section-guide'
+import { getCaseStudy } from '@/lib/projects/case-study'
 import { ReadingArticle } from '@/components/ui/reading/reading-article'
 
 type Props = { params: Promise<{ locale: Locale; slug: string }> }
@@ -37,9 +38,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function ProjectPage({ params }: Props) {
-  const { slug } = await params
+  const { locale, slug } = await params
   const project = getProject(slug)
   if (!project) notFound()
+  const caseStudy = await getCaseStudy(locale, slug)
   return (
     <main
       id="content"
@@ -49,9 +51,9 @@ export default async function ProjectPage({ params }: Props) {
         <div className="min-w-0 lg:col-start-2 lg:row-start-1">
           <ProjectDetailsHeader project={project} />
         </div>
-        <ProjectSectionGuide />
+        <ProjectSectionGuide headings={caseStudy?.headings} />
         <div className="min-w-0 lg:col-start-2 lg:row-start-2" data-project-content>
-          <ProjectDetailsContent project={project} />
+          <ProjectDetailsContent project={project} caseStudy={caseStudy?.content} />
         </div>
       </ReadingArticle>
     </main>

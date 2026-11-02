@@ -7,10 +7,10 @@ import { ProjectSectionGuide } from './project-section-guide'
 import { projectSections } from './project-sections'
 import messages from '@/i18n/messages/pt.json'
 
-function renderGuide() {
+function renderGuide(headings?: { id: string; title: string }[]) {
   return render(
     <NextIntlClientProvider locale="pt" messages={messages} timeZone="UTC">
-      <ProjectSectionGuide />
+      <ProjectSectionGuide headings={headings} />
     </NextIntlClientProvider>
   )
 }
@@ -57,4 +57,19 @@ it('scrolls to a section without adding extra back-history entries', async () =>
     section.remove()
     window.history.replaceState(null, '', '/')
   }
+})
+
+it('lists the case study headings after the lead sections', () => {
+  renderGuide([
+    { id: 'contexto', title: 'Contexto' },
+    { id: 'desafios', title: 'Desafios' },
+  ])
+  expect(screen.getAllByRole('link').map((link) => link.getAttribute('href'))).toEqual([
+    '#project-intro',
+    '#project-links',
+    '#project-stack',
+    '#contexto',
+    '#desafios',
+  ])
+  expect(screen.getByRole('link', { name: 'Desafios' })).toBeInTheDocument()
 })

@@ -5,8 +5,9 @@ import { ProjectLink } from './project-link'
 import { ProjectDetailSection } from './project-detail-section'
 import { ProjectNarrative } from './project-narrative'
 import { ProjectFeatures } from './project-features'
+import { Markdown } from '@/components/posts/markdown'
 
-export function ProjectDetailsContent({ project }: { project: Project }) {
+export function ProjectDetailsContent({ project, caseStudy }: { project: Project; caseStudy?: string }) {
   const t = useTranslations('ProjectDetails')
   const projects = useTranslations('Projects')
   return (
@@ -28,9 +29,17 @@ export function ProjectDetailsContent({ project }: { project: Project }) {
           ))}
         </ul>
       </ProjectDetailSection>
-      <ProjectNarrative project={project} kind="overview" />
-      <ProjectFeatures project={project} />
-      <ProjectNarrative project={project} kind="architecture" />
+      {caseStudy ? (
+        <Markdown content={caseStudy} />
+      ) : (
+        project.id !== 'licht' && (
+          <>
+            <ProjectNarrative id={project.id} kind="overview" />
+            <ProjectFeatures id={project.id} />
+            <ProjectNarrative id={project.id} kind="architecture" />
+          </>
+        )
+      )}
     </div>
   )
 }

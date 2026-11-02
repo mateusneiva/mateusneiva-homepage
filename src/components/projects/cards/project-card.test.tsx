@@ -3,6 +3,7 @@ import { render, screen } from '@testing-library/react'
 import { NextIntlClientProvider } from 'next-intl'
 import { expect, it } from 'vitest'
 import { ProjectCard } from './project-card'
+import { ProjectVisual } from './project-visual'
 import { projects } from '@/data/projects'
 import messages from '@/i18n/messages/pt.json'
 
@@ -23,7 +24,7 @@ it.each(projects)('renders $name as one accessible link to its details page', (p
 })
 
 it('uses the chosen project image while preserving the accessible card link', () => {
-  const project = { ...projects[0], image: '/projects/custom-softness.png' }
+  const project = { ...projects.find(({ id }) => id === 'softness')!, image: '/projects/custom-softness.png' }
   const { container } = render(
     <NextIntlClientProvider locale="pt" messages={messages} timeZone="UTC">
       <ProjectCard project={project} index={0} />
@@ -33,7 +34,13 @@ it('uses the chosen project image while preserving the accessible card link', ()
   expect(image).toBeInTheDocument()
   expect(decodeURIComponent(image.getAttribute('src')!)).toContain(project.image)
   expect(image).toHaveAttribute('alt', '')
-  expect(image).toHaveClass('object-contain')
+  expect(image).toHaveClass('object-cover', 'object-top')
   expect(screen.getByRole('link')).toHaveAccessibleName('Softness — Ver detalhes')
   expect(screen.queryByText('LESS NOISE. MORE YOU.')).not.toBeInTheDocument()
+})
+
+it('shows the whole project image when uncropped', () => {
+  const { container } = render(<ProjectVisual id="licht" image="/projects/licht-launcher.png" uncropped />)
+  expect(container.querySelector('img')).toHaveClass('object-contain')
+  expect(container.firstElementChild).toHaveClass('aspect-[3/2]')
 })

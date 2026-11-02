@@ -7,21 +7,22 @@ import { LinkLabel } from '@/components/ui/typography/link-label'
 import { cn } from '@/lib/cn'
 import {
   projectSections,
-  projectSectionIds,
-  type ProjectSectionId,
+  projectLeadSections,
 } from './project-sections'
 import { useActiveSection } from '@/components/ui/reading/use-active-section'
 import { useLenis } from 'lenis/react'
 
-export function ProjectSectionGuide() {
+export function ProjectSectionGuide({ headings }: { headings?: { id: string; title: string }[] }) {
   const t = useTranslations('ProjectDetails')
   const reduced = useReducedMotion()
-  const activeId = useActiveSection(projectSectionIds)
+  const sections = (headings ? projectLeadSections : projectSections).map(({ id, label }) => ({ id: id as string, label: t(label) }))
+  if (headings) sections.push(...headings.map(({ id, title }) => ({ id, label: title })))
+  const activeId = useActiveSection(sections.map(({ id }) => id))
   const lenis = useLenis()
 
   function navigate(
     event: MouseEvent<HTMLAnchorElement>,
-    id: ProjectSectionId
+    id: string
   ) {
     if (
       event.button !== 0 ||
@@ -49,7 +50,7 @@ export function ProjectSectionGuide() {
           {t('guide')}
         </h2>
         <ol className="flex flex-wrap gap-1 lg:flex-col">
-          {projectSections.map(({ id, label }, index) => (
+          {sections.map(({ id, label }, index) => (
             <li key={id}>
               <a
                 href={`#${id}`}
@@ -61,9 +62,9 @@ export function ProjectSectionGuide() {
                   )}
               >
                 <span aria-hidden="true" className="text-[10px] opacity-60">
-                  0{index + 1}
+                  {String(index + 1).padStart(2, '0')}
                 </span>
-                <LinkLabel>{t(label)}</LinkLabel>
+                <LinkLabel>{label}</LinkLabel>
               </a>
             </li>
           ))}
