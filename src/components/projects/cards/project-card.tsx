@@ -14,12 +14,8 @@ export function ProjectCard({ project, index }: { project: Project; index: numbe
   const reduced = useReducedMotion()
   return (
     <motion.article
-      layout
-      layoutId={`project-${project.id}`}
       initial={{ opacity: 0, y: 14 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.15 }}
-      exit={{ opacity: 0, scale: reduced ? 1 : 0.97 }}
+      animate={{ opacity: 1, y: 0 }}
       transition={{
         duration: reduced ? 0 : 0.45,
         delay: reduced ? 0 : index * 0.06,

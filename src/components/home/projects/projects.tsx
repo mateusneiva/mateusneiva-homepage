@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { AnimatePresence, LayoutGroup, motion } from 'framer-motion'
+import { LayoutGroup } from 'framer-motion'
 import { useTranslations } from 'next-intl'
 import { Section } from '@/components/ui/motion/animated-section'
 import { SectionHeading } from '@/components/ui/typography/section-heading'
@@ -36,18 +36,16 @@ export function Projects() {
             </SelectionButton>
           ))}
         </div>
-        <motion.div layout className="relative isolate grid gap-5 md:grid-cols-3">
+        <div className="relative isolate grid gap-5 md:grid-cols-3">
           <ConstructionFrame
             variant="cards"
             columns={selected.length > 1 ? 'projects' : undefined}
             caption={`${String(selected.length).padStart(2, '0')} / projects`}
           />
-          <AnimatePresence mode="popLayout">
-            {selected.map((project, index) => (
-              <ProjectCard key={project.id} project={project} index={index} />
-            ))}
-          </AnimatePresence>
-        </motion.div>
+          {selected.map((project, index) => (
+            <ProjectCard key={`${filter}-${project.id}`} project={project} index={index} />
+          ))}
+        </div>
       </LayoutGroup>
     </Section>
   )
