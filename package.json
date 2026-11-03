@@ -16,7 +16,7 @@
     "test:all": "pnpm test && pnpm test:e2e"
   },
   "dependencies": {
-    "@hookform/resolvers": "^5.9.1",
+    "@hookform/resolvers": "^6.0.2",
     "clsx": "^2.1.1",
     "cssnano": "^7.0.2",
     "framer-motion": "^12.43.0",
