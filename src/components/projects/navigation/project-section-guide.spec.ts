@@ -15,7 +15,7 @@ test('section guide tracks scrolling and navigates to each section', async ({
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true)
     return
   }
-  await expect(guide.getByRole('link')).toHaveCount(6)
+  await expect(guide.getByRole('link')).toHaveCount(5)
   await expect(
     guide.getByRole('link', { name: 'Apresentação', exact: true })
   ).toHaveAttribute('aria-current', 'location')
@@ -35,7 +35,6 @@ test('section guide tracks scrolling and navigates to each section', async ({
     ['O que ele faz', 'project-features'],
     ['Como foi construído', 'project-architecture'],
     ['Tecnologias', 'project-stack'],
-    ['Explore o projeto', 'project-links'],
   ]) {
     await guide.getByRole('link', { name, exact: true }).click()
     await expect(page).toHaveURL(new RegExp(`#${id}$`))
