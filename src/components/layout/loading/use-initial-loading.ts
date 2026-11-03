@@ -12,7 +12,9 @@ export function useInitialLoading() {
     if (!loading) return
     let cancelled = false
     const finish = async () => {
-      await document.fonts.ready
+      // Motion features must be loaded before `ready` flips, otherwise late-mounted
+      // animations never run their initial `animate` target.
+      await Promise.all([document.fonts.ready, import('@/components/ui/motion/motion-features')])
       if (cancelled) return
       finished = true
       setLoading(false)

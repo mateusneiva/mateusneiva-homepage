@@ -1,6 +1,6 @@
 'use client'
 
-import { motion, useReducedMotion } from 'framer-motion'
+import { m, useReducedMotion } from 'framer-motion'
 import { ActionButton, type ActionButtonProps } from './action-button'
 
 type SelectionButtonProps = Omit<ActionButtonProps, 'tone' | 'selected' | 'aria-pressed'> & {
@@ -19,7 +19,7 @@ export function SelectionButton({
   return (
     <ActionButton {...props} size={size} selected={selected} aria-pressed={selected}>
       {selected && (
-        <motion.span
+        <m.span
           layoutId={layoutId}
           className="absolute inset-0 bg-accent"
           transition={reduced ? { duration: 0 } : { type: 'spring', bounce: 0.15, duration: 0.4 }}

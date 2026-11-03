@@ -1,6 +1,6 @@
 'use client'
 
-import { motion, useReducedMotion } from 'framer-motion'
+import { m, useReducedMotion } from 'framer-motion'
 import { useTranslations } from 'next-intl'
 import type { Project } from '@/data/projects'
 import { ProjectVisual } from './project-visual'
@@ -13,7 +13,7 @@ export function ProjectCard({ project, index }: { project: Project; index: numbe
   const t = useTranslations('Projects')
   const reduced = useReducedMotion()
   return (
-    <motion.article
+    <m.article
       initial={{ opacity: 0, y: 14 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{
@@ -48,6 +48,6 @@ export function ProjectCard({ project, index }: { project: Project; index: numbe
           </div>
         </Link>
       </MouseCardSurface>
-    </motion.article>
+    </m.article>
   )
 }

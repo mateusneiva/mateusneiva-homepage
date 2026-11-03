@@ -1,6 +1,6 @@
 'use client'
 
-import { motion, useReducedMotion } from 'framer-motion'
+import { m, useReducedMotion } from 'framer-motion'
 import { useTranslations } from 'next-intl'
 import { DotFieldCanvas } from '@/components/ui/dots/dot-field-canvas'
 import { AnimatedArrow } from '@/components/ui/icons/animated-arrow'
@@ -20,7 +20,7 @@ export function Hero() {
 
   return (
     <section className="relative isolate flex min-h-[calc(100svh-5rem)] flex-col pb-10 pt-16 sm:pt-20">
-      <motion.div
+      <m.div
         className="pointer-events-none absolute -top-20 bottom-0 left-[calc(50%-50cqw)] -z-10 w-[100cqw]"
         data-hero-visual
         initial={{ opacity: 0 }}
@@ -28,9 +28,9 @@ export function Hero() {
         transition={{ duration: reduced ? 0 : 1.2, delay: reduced ? 0 : 0.2 }}
       >
         <DotFieldCanvas mask="wave" radius={4.5} spacing={12} alpha={1} trailRadius={180} />
-      </motion.div>
+      </m.div>
       <div className="flex max-w-2xl flex-1 items-center">
-        <motion.div
+        <m.div
           className="motion-reduce:!transform-none"
           data-hero-copy
           initial={{ opacity: 0 }}
@@ -64,7 +64,7 @@ export function Hero() {
             </ActionLink>
           </div>
           <HomeSocialLinks />
-        </motion.div>
+        </m.div>
       </div>
 
       <div className="mt-14 flex items-center justify-between font-mono text-[11px] text-subtle">

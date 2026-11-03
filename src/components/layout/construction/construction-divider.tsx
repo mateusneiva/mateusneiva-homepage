@@ -2,13 +2,13 @@
 
 import { useId } from 'react'
 import { ConstructionHatch } from './construction-hatch'
-import { motion, useReducedMotion } from 'framer-motion'
+import { m, useReducedMotion } from 'framer-motion'
 
 export function ConstructionDivider({ delay = 0 }: { delay?: number }) {
   const id = `divider-${useId().replace(/:/g, '')}`
   const reduced = useReducedMotion()
   return (
-    <motion.div
+    <m.div
       aria-hidden="true"
       data-construction-divider
       className="pointer-events-none absolute inset-x-0 -top-4 h-8 origin-left motion-reduce:!transform-none"
@@ -39,6 +39,6 @@ export function ConstructionDivider({ delay = 0 }: { delay?: number }) {
           <path d="M-5 16H5M0 11V21" stroke="currentColor" strokeWidth="1" className="opacity-[0.12]" />
         </svg>
       </svg>
-    </motion.div>
+    </m.div>
   )
 }

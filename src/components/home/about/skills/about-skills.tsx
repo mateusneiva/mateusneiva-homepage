@@ -1,7 +1,7 @@
 'use client'
 
 import { useId, useState } from 'react'
-import { AnimatePresence, motion, useReducedMotion } from 'framer-motion'
+import { AnimatePresence, m, useReducedMotion } from 'framer-motion'
 import { useTranslations } from 'next-intl'
 import { LinkLabel } from '@/components/ui/typography/link-label'
 import { ActionButton } from '@/components/ui/buttons/action-button'
@@ -34,7 +34,7 @@ export function AboutSkills() {
 
       <div id={contentId}>
         <AnimatePresence mode="wait" initial={false}>
-          <motion.div
+          <m.div
             key={expanded ? 'complete' : 'summary'}
             initial={{ opacity: 0, y: reduced ? 0 : 6 }}
             animate={{ opacity: 1, y: 0 }}
@@ -42,7 +42,7 @@ export function AboutSkills() {
             transition={{ duration: reduced ? 0 : 0.15 }}
           >
             <AboutSkillsContent expanded={expanded} />
-          </motion.div>
+          </m.div>
         </AnimatePresence>
       </div>
     </div>

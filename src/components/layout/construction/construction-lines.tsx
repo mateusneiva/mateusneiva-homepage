@@ -1,6 +1,6 @@
 'use client'
 
-import { motion, type MotionStyle } from 'framer-motion'
+import { m, type MotionStyle } from 'framer-motion'
 import { ConstructionGrid } from './construction-grid'
 import { ConstructionRails } from './construction-rails'
 
@@ -11,12 +11,12 @@ export function ConstructionLines({ style }: { style: MotionStyle }) {
     <div data-construction-lines className="pointer-events-none absolute inset-0">
       <ConstructionGrid />
       <ConstructionRails />
-      <motion.div className={spotlight} style={style}>
+      <m.div className={spotlight} style={style}>
         <ConstructionGrid highlighted />
-      </motion.div>
-      <motion.div className={spotlight} style={style}>
+      </m.div>
+      <m.div className={spotlight} style={style}>
         <ConstructionRails highlighted />
-      </motion.div>
+      </m.div>
     </div>
   )
 }

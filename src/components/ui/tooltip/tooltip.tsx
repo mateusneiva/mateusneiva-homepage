@@ -2,7 +2,7 @@
 
 import { cloneElement, useEffect, useId, useRef, useState, useSyncExternalStore, type ReactNode, type ReactElement } from 'react'
 import { createPortal, flushSync } from 'react-dom'
-import { AnimatePresence, motion, useReducedMotion } from 'framer-motion'
+import { AnimatePresence, m, useReducedMotion } from 'framer-motion'
 import { useTooltipPosition } from './use-tooltip-position'
 import { ConstructionFrame } from '@/components/layout/construction/construction-frame'
 
@@ -111,8 +111,8 @@ export function Tooltip({ label, description, icon, children }: {
       {mounted && !immediate && createPortal(
         <AnimatePresence>
           {open && (
-            <motion.div key="tooltip" ref={popup} className="pointer-events-none fixed left-0 top-0 z-50" style={{ x, y }}>
-              <motion.div
+            <m.div key="tooltip" ref={popup} className="pointer-events-none fixed left-0 top-0 z-50" style={{ x, y }}>
+              <m.div
                 id={id}
                 role="tooltip"
                 data-custom-tooltip
@@ -130,8 +130,8 @@ export function Tooltip({ label, description, icon, children }: {
                     {description && <p className="mt-0.5 break-words font-mono text-[10px] leading-4 text-muted [overflow-wrap:anywhere]">{description}</p>}
                   </div>
                 </div>
-              </motion.div>
-            </motion.div>
+              </m.div>
+            </m.div>
           )}
         </AnimatePresence>,
         document.body,

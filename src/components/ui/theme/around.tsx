@@ -1,7 +1,7 @@
 'use client'
 
 import { useId, type ButtonHTMLAttributes, type CSSProperties } from 'react'
-import { motion, useReducedMotion } from 'framer-motion'
+import { m, useReducedMotion } from 'framer-motion'
 import { buttonClassName } from '@/components/ui/buttons/button-styles'
 import { cn } from '@/lib/cn'
 
@@ -54,7 +54,7 @@ export function Around({
             id={clipId}
             className="[transform-origin:center] motion-safe:transition-transform motion-safe:duration-[var(--toggles-around--duration)] group-data-[toggled=true]/theme:-rotate-90"
           >
-            <motion.path
+            <m.path
               initial={false}
               animate={{ d: toggled ? 'M-12 -14 h42 v30 a1 1 0 0 0 -16 13 H0 Z' : 'M0 0 h42 v30 a1 1 0 0 0 -16 13 H0 Z' }}
               transition={{ duration: reduced ? 0 : duration / 1000 * 0.6, ease: 'easeInOut' }}

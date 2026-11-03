@@ -1,6 +1,6 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { m } from 'framer-motion'
 import type { GlowStyle } from './use-proximity-glow'
 
 export function ProximityEdge({
@@ -17,7 +17,7 @@ export function ProximityEdge({
     '--glow-radius': `${radius}px`,
   }
   return (
-    <motion.span
+    <m.span
       aria-hidden="true"
       data-card-edge-glow={kind === 'card' ? true : undefined}
       data-tag-edge-glow={kind === 'tag' ? true : undefined}
