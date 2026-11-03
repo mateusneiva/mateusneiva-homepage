@@ -18,7 +18,7 @@ export function BackgroundDots({
     <motion.svg
       aria-hidden="true"
       data-cursor-dots={highlighted ? true : undefined}
-      className={`absolute inset-0 h-full w-full ${highlighted ? 'text-accent [mask-image:radial-gradient(220px_circle_at_var(--cursor-x)_var(--cursor-y),black,transparent)] motion-reduce:hidden [@media(hover:none)]:hidden [@media(pointer:coarse)]:hidden' : 'text-ink opacity-[0.035] motion-reduce:!opacity-[0.035]'}`}
+      className={`absolute inset-0 h-full w-full ${highlighted ? 'text-accent' : 'text-ink opacity-[0.035] motion-reduce:!opacity-[0.035]'}`}
       style={style}
     >
       <defs>
