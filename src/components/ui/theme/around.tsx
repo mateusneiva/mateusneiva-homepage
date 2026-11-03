@@ -52,7 +52,7 @@ export function Around({
         <defs>
           <clipPath
             id={clipId}
-            className="[transform-origin:center] motion-safe:transition-transform motion-safe:duration-[var(--toggles-around--duration)] group-data-[toggled=true]/theme:-rotate-90"
+            className="[transform-origin:center] motion-safe:transition-transform motion-safe:duration-[var(--toggles-around--duration)] group-data-[toggled=true]/theme:[transform:rotate(-90deg)]"
           >
             <m.path
               initial={false}
@@ -66,7 +66,7 @@ export function Around({
             cx={16}
             cy={16}
             r={8.4}
-            className="[transform-origin:center] motion-safe:transition-transform motion-safe:duration-[var(--toggles-around--duration)] group-data-[toggled=true]/theme:scale-[1.4]"
+            className="[transform-origin:center] motion-safe:transition-transform motion-safe:duration-[var(--toggles-around--duration)] group-data-[toggled=true]/theme:[transform:scale(1.4)]"
           />
           {rays.map(({ cx, cy, delay }) => (
             <circle
@@ -75,7 +75,7 @@ export function Around({
               cy={cy}
               r={2.3}
               style={{ '--ray-delay': `calc(var(--toggles-around--duration) * ${delay})` } as CSSProperties}
-              className="[transform-origin:center] motion-safe:transition-transform motion-safe:[transition-duration:calc(var(--toggles-around--duration)*0.2)] motion-safe:[transition-delay:var(--ray-delay)] group-data-[toggled=true]/theme:scale-0 motion-safe:group-data-[toggled=true]/theme:[transition-duration:calc(var(--toggles-around--duration)*0.4)] motion-safe:group-data-[toggled=true]/theme:delay-0"
+              className="[transform-origin:center] motion-safe:transition-transform motion-safe:[transition-duration:calc(var(--toggles-around--duration)*0.2)] motion-safe:[transition-delay:var(--ray-delay)] group-data-[toggled=true]/theme:[transform:scale(0)] motion-safe:group-data-[toggled=true]/theme:[transition-duration:calc(var(--toggles-around--duration)*0.4)] motion-safe:group-data-[toggled=true]/theme:delay-0"
             />
           ))}
         </g>
