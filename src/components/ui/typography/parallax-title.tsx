@@ -1,7 +1,7 @@
 'use client'
 
 import { useRef } from 'react'
-import { motion, useTransform } from 'framer-motion'
+import { m, useTransform } from 'framer-motion'
 import { ConstructionFrame } from '@/components/layout/construction/construction-frame'
 import { useTitlePointerParallax } from './use-title-pointer-parallax'
 import { cn } from '@/lib/cn'
@@ -27,7 +27,7 @@ export function ParallaxTitle({ title, highlight, level = 2, variant = 'section'
   return (
     <div ref={ref} className="relative isolate" data-parallax-title>
       <ConstructionFrame variant="title" />
-      <motion.span
+      <m.span
         aria-hidden="true"
         data-parallax-title-outline
         className={cn(titleStyle({ variant }), 'pointer-events-none absolute inset-0 -z-[1] select-none text-transparent motion-reduce:hidden [-webkit-text-stroke:1px_rgb(var(--color-ink)/0.3)]')}
@@ -35,7 +35,7 @@ export function ParallaxTitle({ title, highlight, level = 2, variant = 'section'
       >
         {title}
         {highlight && <span className="block [-webkit-text-stroke-color:rgb(var(--color-accent)/0.3)]">{highlight}</span>}
-      </motion.span>
+      </m.span>
       <Heading className={titleStyle({ variant })} aria-label={`${title}${highlight ? ` ${highlight}` : ''}`}>
         <WordReveal text={title} />
         {highlight && <span className="block text-accent"><WordReveal text={highlight} delay={0.12} /></span>}

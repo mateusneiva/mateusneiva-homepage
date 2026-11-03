@@ -1,7 +1,7 @@
 'use client'
 
 import { useId } from 'react'
-import { motion, type MotionStyle, type MotionValue } from 'framer-motion'
+import { m, type MotionStyle, type MotionValue } from 'framer-motion'
 
 export function BackgroundDots({
   radius = 1,
@@ -15,7 +15,7 @@ export function BackgroundDots({
   const id = `dots-${useId().replace(/:/g, '')}`
 
   return (
-    <motion.svg
+    <m.svg
       aria-hidden="true"
       data-cursor-dots={highlighted ? true : undefined}
       className={`absolute inset-0 h-full w-full ${highlighted ? 'text-accent' : 'text-ink opacity-[0.035] motion-reduce:!opacity-[0.035]'}`}
@@ -23,10 +23,10 @@ export function BackgroundDots({
     >
       <defs>
         <pattern id={id} width="24" height="24" patternUnits="userSpaceOnUse">
-          <motion.circle cx="12.5" cy="12.5" r={radius} fill="currentColor" />
+          <m.circle cx="12.5" cy="12.5" r={radius} fill="currentColor" />
         </pattern>
       </defs>
       <rect width="100%" height="100%" fill={`url(#${id})`} />
-    </motion.svg>
+    </m.svg>
   )
 }

@@ -1,7 +1,7 @@
 'use client'
 
 import { useTranslations } from 'next-intl'
-import { motion, useReducedMotion } from 'framer-motion'
+import { m, useReducedMotion } from 'framer-motion'
 import { socialIconLinks } from '@/data/social'
 import { Tooltip } from '@/components/ui/tooltip/tooltip'
 import { cn } from '@/lib/cn'
@@ -24,7 +24,7 @@ export function HomeSocialLinks({ className }: { className?: string }) {
         const description = 'username' in link ? link.username : t('resumeDescription')
         return (
           <Tooltip key={href} label={name} description={description} icon={<Icon size={22} />}>
-            <motion.a
+            <m.a
               href={href}
               target="_blank"
               rel="noopener noreferrer"
@@ -35,7 +35,7 @@ export function HomeSocialLinks({ className }: { className?: string }) {
               whileHover="active"
               whileFocus="active"
             >
-              <motion.span
+              <m.span
                 aria-hidden="true"
                 data-social-icon
                 className="block h-[18px] w-[18px] text-muted transition-colors duration-200 group-hover/social:text-ink group-focus-visible/social:text-ink motion-reduce:transition-none"
@@ -43,8 +43,8 @@ export function HomeSocialLinks({ className }: { className?: string }) {
                 transition={{ type: 'spring', stiffness: 360, damping: 24 }}
               >
                 <Icon size={18} />
-              </motion.span>
-            </motion.a>
+              </m.span>
+            </m.a>
           </Tooltip>
         )
       })}

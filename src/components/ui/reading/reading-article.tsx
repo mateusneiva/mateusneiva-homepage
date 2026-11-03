@@ -2,7 +2,7 @@
 
 import { useRef, useSyncExternalStore, type ReactNode } from 'react'
 import { createPortal } from 'react-dom'
-import { motion } from 'framer-motion'
+import { m } from 'framer-motion'
 import { useReadingProgress } from './use-reading-progress'
 
 const subscribe = () => () => {}
@@ -16,7 +16,7 @@ export function ReadingArticle({ children, className }: { children: ReactNode; c
 
   return (
     <article ref={ref} className={className}>
-      {mounted && createPortal(<motion.div
+      {mounted && createPortal(<m.div
         aria-hidden="true"
         data-reading-progress
         className="pointer-events-none fixed inset-x-0 top-0 z-40 h-1 origin-left bg-emerald-700 [[data-theme=dark]_&]:bg-accent"

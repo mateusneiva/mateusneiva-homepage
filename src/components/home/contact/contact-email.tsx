@@ -1,6 +1,6 @@
 'use client'
 
-import { motion, useReducedMotion } from 'framer-motion'
+import { m, useReducedMotion } from 'framer-motion'
 import { useTranslations } from 'next-intl'
 import { EmailIcon } from '@/data/social'
 import { AnimatedArrow } from '@/components/ui/icons/animated-arrow'
@@ -15,7 +15,7 @@ export function ContactEmail() {
 
   return (
     <Tooltip label={t('email')} description={email} icon={<EmailIcon size={22} />}>
-      <motion.a
+      <m.a
         href={`mailto:${email}`}
         className="interactive-link group/link inline-flex items-center gap-2 text-accent hover:text-ink focus-visible:text-ink"
         initial="rest"
@@ -23,14 +23,14 @@ export function ContactEmail() {
         whileHover="active"
         whileFocus="active"
       >
-        <motion.span
+        <m.span
           variants={{ rest: { y: 0 }, active: { y: reduced ? 0 : -2 } }}
           transition={{ type: 'spring', stiffness: 360, damping: 24 }}
         >
           <LinkLabel className="break-all">{email}</LinkLabel>
-        </motion.span>
+        </m.span>
         <AnimatedArrow />
-      </motion.a>
+      </m.a>
     </Tooltip>
   )
 }

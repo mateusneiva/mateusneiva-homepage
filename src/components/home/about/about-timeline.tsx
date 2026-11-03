@@ -1,6 +1,6 @@
 'use client'
 
-import { motion, useReducedMotion } from 'framer-motion'
+import { m, useReducedMotion } from 'framer-motion'
 import { useTranslations } from 'next-intl'
 
 export function AboutTimeline() {
@@ -15,7 +15,7 @@ export function AboutTimeline() {
 
       <ol className="space-y-5 pl-6">
         {(['discover', 'build', 'share'] as const).map((step, index) => (
-          <motion.li
+          <m.li
             key={step}
             className="relative motion-reduce:!transform-none"
             initial={{ opacity: 0, x: -8 }}
@@ -27,7 +27,7 @@ export function AboutTimeline() {
 
             <h4 className="font-sans text-sm font-medium leading-6 text-ink">{t(`timeline.${step}`)}</h4>
             <p className="font-sans text-sm leading-6 text-muted">{t(`timeline.${step}Text`)}</p>
-          </motion.li>
+          </m.li>
         ))}
       </ol>
     </div>

@@ -2,7 +2,7 @@
 
 import { useRef, type ReactNode } from 'react'
 
-import { motion, useInView, useReducedMotion } from 'framer-motion'
+import { m, useInView, useReducedMotion } from 'framer-motion'
 import { cn } from '@/lib/cn'
 import { usePageReady } from '@/components/layout/loading/initial-loading-provider'
 
@@ -20,7 +20,7 @@ export function Reveal({
   const ref = useRef<HTMLDivElement>(null)
   const visible = useInView(ref, { once: true, amount: 0.15 })
   return (
-    <motion.div
+    <m.div
       ref={ref}
       className={cn('motion-reduce:!transform-none', className)}
       initial={{ opacity: 0, y: 14 }}
@@ -32,6 +32,6 @@ export function Reveal({
       }}
     >
       {children}
-    </motion.div>
+    </m.div>
   )
 }

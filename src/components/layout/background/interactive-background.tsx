@@ -8,7 +8,7 @@ import {
   useSpring,
   useTransform,
   useScroll,
-  motion,
+  m,
   type MotionStyle,
   type MotionValue,
 } from 'framer-motion'
@@ -58,7 +58,7 @@ export function InteractiveBackground() {
   }, [active, reduced, x, y])
 
   return (
-    <motion.div
+    <m.div
       aria-hidden="true"
       data-background-pattern
       className="pointer-events-none fixed inset-0 -z-10 overflow-hidden [contain:paint]"
@@ -70,6 +70,6 @@ export function InteractiveBackground() {
       <ConstructionLines style={cursorStyle}>
         <BackgroundDots highlighted radius={dotRadius} />
       </ConstructionLines>
-    </motion.div>
+    </m.div>
   )
 }

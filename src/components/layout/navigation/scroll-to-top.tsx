@@ -3,7 +3,7 @@
 import { useSyncExternalStore } from 'react'
 import {
   AnimatePresence,
-  motion,
+  m,
   useReducedMotion,
 } from 'framer-motion'
 import { useTranslations } from 'next-intl'
@@ -29,7 +29,7 @@ export function ScrollToTop() {
   return (
     <AnimatePresence>
       {visible && (
-        <motion.div
+        <m.div
           className="pointer-events-none fixed bottom-[max(1.25rem,env(safe-area-inset-bottom))] right-5 z-40 sm:right-8"
           initial={{ opacity: 0, y: reduced ? 0 : 12 }}
           animate={{ opacity: 1, y: 0 }}
@@ -46,7 +46,7 @@ export function ScrollToTop() {
           >
             <AnimatedArrow direction="up" size={20} />
           </ActionButton>
-        </motion.div>
+        </m.div>
       )}
     </AnimatePresence>
   )

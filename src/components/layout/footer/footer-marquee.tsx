@@ -1,7 +1,7 @@
 'use client'
 
 import { useRef } from 'react'
-import { motion, useInView, useReducedMotion } from 'framer-motion'
+import { m, useInView, useReducedMotion } from 'framer-motion'
 
 export function FooterMarquee({ lines }: { lines: readonly [string, string] }) {
   const container = useRef<HTMLDivElement>(null)
@@ -17,7 +17,7 @@ export function FooterMarquee({ lines }: { lines: readonly [string, string] }) {
       {lines.map((text, row) => (
         <div key={text} data-footer-marquee-row={row}>
           <p className="footer-signature page-container hidden motion-reduce:block">{text}</p>
-          <motion.div
+          <m.div
             className={`footer-signature flex w-max motion-reduce:hidden ${row === 1 ? 'text-transparent [-webkit-text-stroke:1px_rgb(var(--color-ink)/0.2)]' : ''}`}
             initial={false}
             animate={visible && !reduced
@@ -34,7 +34,7 @@ export function FooterMarquee({ lines }: { lines: readonly [string, string] }) {
                 ))}
               </div>
             ))}
-          </motion.div>
+          </m.div>
         </div>
       ))}
     </div>

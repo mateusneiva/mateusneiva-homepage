@@ -1,6 +1,6 @@
 'use client'
 
-import { motion, useReducedMotion } from 'framer-motion'
+import { m, useReducedMotion } from 'framer-motion'
 import { useTranslations } from 'next-intl'
 import { SiSpotify } from 'react-icons/si'
 import type { SpotifyTrack } from '@/lib/spotify/schema'
@@ -14,7 +14,7 @@ export function SpotifyTrackLink({ track }: { track: SpotifyTrack }) {
 
   return (
     <Tooltip label={t('open')} description={`${track.title} — ${track.artist}`} icon={<SiSpotify size={22} />}>
-      <motion.a
+      <m.a
         href={track.songUrl}
         target="_blank"
         rel="noopener noreferrer"
@@ -24,15 +24,15 @@ export function SpotifyTrackLink({ track }: { track: SpotifyTrack }) {
         whileHover="active"
         whileFocus="active"
       >
-        <motion.span
+        <m.span
           className="inline-flex items-center gap-1.5"
           variants={{ rest: { y: 0 }, active: { y: reduced ? 0 : -2 } }}
           transition={{ type: 'spring', stiffness: 360, damping: 24 }}
         >
           <LinkLabel className="pt-1">{t('open')}</LinkLabel>
           <AnimatedArrow size={14} />
-        </motion.span>
-      </motion.a>
+        </m.span>
+      </m.a>
     </Tooltip>
   )
 }
