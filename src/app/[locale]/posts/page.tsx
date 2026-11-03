@@ -31,7 +31,7 @@ export default async function PostsPage() {
   return (
     <main id="content" className="page-container min-h-[65vh]">
       <Section>
-        <SectionHeading eyebrow={t('eyebrow')} title={t('title')} description={t('description')} />
+        <SectionHeading eyebrow={t('eyebrow')} title={t('title')} description={t('description')} level={1} />
         {posts.length ? (
           <div className="relative isolate grid gap-5 md:grid-cols-2 lg:grid-cols-3">
             <ConstructionFrame

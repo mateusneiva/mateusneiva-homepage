@@ -70,9 +70,9 @@ export function ProjectVisual({
       )}
       {id === 'shiva' && (
         <div className="w-56 bg-[#0d1915] p-5 font-mono text-[11px]">
-          <div className="mb-5 text-stone-500">shiva / toolbox</div>
+          <div className="mb-5 text-stone-400">shiva / toolbox</div>
           <p className="text-emerald-300">
-            <span className="text-stone-500">$ </span>/status
+            <span className="text-stone-400">$ </span>/status
           </p>
           <p className="mt-2 text-stone-400">
             modules initialized<span className="ml-2 text-emerald-300">✓</span>

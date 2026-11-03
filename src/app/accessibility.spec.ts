@@ -18,10 +18,8 @@ for (const colorScheme of ['dark', 'light'] as const) {
       await page.goto(path)
       await page.evaluate(() => document.fonts.ready)
       await expect(page.locator('[data-initial-loading]')).toHaveCount(0)
-      // color-contrast is excluded: small, intentionally muted text still needs a design decision.
       const { violations } = await new AxeBuilder({ page })
         .withTags(['wcag2a', 'wcag2aa', 'wcag21aa'])
-        .disableRules(['color-contrast'])
         .analyze()
       expect(
         violations.map((violation) => ({ rule: violation.id, targets: violation.nodes.map((node) => node.target) })),
@@ -55,8 +53,7 @@ test('the home page can be navigated by keyboard with a visible focus indicator'
   expect(seen.size).toBeGreaterThan(6)
 })
 
-// /posts is excluded: its title is rendered as an h2, so the page has no h1 yet.
-for (const path of pages.slice(0, 6).filter((item) => item !== '/pt/posts')) {
+for (const path of pages.slice(0, 6)) {
   test(`${path} exposes a single main landmark and a single h1`, async ({ page }) => {
     await page.goto(path)
     await expect(page.locator('main')).toHaveCount(1)
