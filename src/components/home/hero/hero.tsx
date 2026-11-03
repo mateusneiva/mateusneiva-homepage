@@ -69,7 +69,7 @@ export function Hero() {
 
       <div className="mt-14 flex items-center justify-between font-mono text-[11px] text-subtle">
         <span>{t('caption')}</span>
-        <a href="#about" className="interactive-link group/link flex items-center gap-3 hover:text-accent">
+        <a href="#about" aria-label={t('scroll')} className="interactive-link group/link flex items-center gap-3 hover:text-accent">
           <LinkLabel className="hidden sm:inline">{t('scroll')}</LinkLabel>
           <AnimatedArrow direction="down" />
         </a>
