@@ -1,3 +1,263 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+@theme {
+  --container-site: 1200px;
+
+  --spacing-page: 1.5rem;
+  --spacing-page-wide: 2.5rem;
+
+  --text-hero: clamp(2.35rem, 4.6vw, 4rem);
+  --text-hero--line-height: 1.08;
+  --text-hero--letter-spacing: -0.035em;
+  --text-section: 1.875rem;
+  --text-section--line-height: 1.18;
+  --text-section--letter-spacing: -0.03em;
+  --text-section-wide: 2.6rem;
+  --text-section-wide--line-height: 1.18;
+  --text-section-wide--letter-spacing: -0.03em;
+  --text-card: 1.25rem;
+  --text-card--line-height: 1.375;
+  --text-card--letter-spacing: -0.025em;
+  --text-feature: 1.5rem;
+  --text-feature--line-height: 1.375;
+  --text-feature--letter-spacing: -0.025em;
+  --text-detail: 1.875rem;
+  --text-detail--line-height: 1.25;
+  --text-detail--letter-spacing: -0.025em;
+  --text-signature: clamp(2.4rem, 7vw, 6rem);
+  --text-signature--line-height: 1;
+  --text-signature--letter-spacing: -0.06em;
+  --text-eyebrow: 0.625rem;
+  --text-eyebrow--line-height: 1rem;
+  --text-eyebrow--letter-spacing: 0.18em;
+  --text-eyebrow-wide: 0.75rem;
+  --text-eyebrow-wide--line-height: 1rem;
+  --text-eyebrow-wide--letter-spacing: 0.18em;
+
+}
+
+@theme inline {
+  --font-sans: var(--font-sans), sans-serif;
+  --font-mono: var(--font-mono), monospace;
+  --font-serif: var(--font-serif), Georgia, serif;
+
+  --color-canvas: rgb(var(--color-canvas));
+  --color-surface: rgb(var(--color-surface));
+  --color-raised: rgb(var(--color-raised));
+  --color-tag: rgb(var(--color-tag));
+  --color-ink: rgb(var(--color-ink));
+  --color-muted: rgb(var(--color-muted));
+  --color-subtle: rgb(var(--color-subtle));
+  --color-accent: rgb(var(--color-accent));
+  --color-accent-ink: rgb(var(--color-accent-ink));
+  --color-danger: rgb(var(--color-danger));
+}
+
+@theme {
+  --animate-spotify-bar: spotify-bar 1s ease-in-out infinite;
+  --animate-logo-progress: logo-progress 1.4s ease-in-out infinite;
+
+  @keyframes spotify-bar {
+    0%,
+    100% {
+      transform: scaleY(0.35);
+    }
+    20% {
+      transform: scaleY(0.9);
+    }
+    40% {
+      transform: scaleY(0.55);
+    }
+    60% {
+      transform: scaleY(1);
+    }
+    80% {
+      transform: scaleY(0.45);
+    }
+  }
+
+  @keyframes logo-progress {
+    from {
+      transform: translateX(-100%);
+    }
+    to {
+      transform: translateX(200%);
+    }
+  }
+}
+
+@layer base {
+  @keyframes theme-reveal-right {
+    from {
+      clip-path: inset(0 100% 0 0);
+    }
+    to {
+      clip-path: inset(0 0 0 0);
+    }
+  }
+
+  @keyframes theme-reveal-left {
+    from {
+      clip-path: inset(0 0 0 100%);
+    }
+    to {
+      clip-path: inset(0 0 0 0);
+    }
+  }
+
+  html[data-theme-reveal]::view-transition {
+    pointer-events: none;
+  }
+
+  html[data-theme-reveal]::view-transition-group(root) {
+    animation: none;
+  }
+
+  html[data-theme-reveal]::view-transition-old(root) {
+    animation: none;
+    mix-blend-mode: normal;
+    z-index: 1;
+  }
+
+  html[data-theme-reveal]::view-transition-new(root) {
+    mix-blend-mode: normal;
+    z-index: 2;
+  }
+
+  html[data-theme-reveal='dark']::view-transition-new(root) {
+    animation: theme-reveal-right 600ms cubic-bezier(0.65, 0, 0.35, 1) both;
+  }
+
+  html[data-theme-reveal='light']::view-transition-new(root) {
+    animation: theme-reveal-left 600ms cubic-bezier(0.65, 0, 0.35, 1) both;
+  }
+
+  html[data-theme-fade],
+  html[data-theme-fade] * {
+    transition-property: color, background-color, border-color, fill, stroke;
+    transition-duration: 300ms;
+    transition-timing-function: ease;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html[data-theme-reveal]::view-transition-old(root),
+    html[data-theme-reveal]::view-transition-new(root) {
+      animation: none;
+    }
+
+    html[data-theme-fade],
+    html[data-theme-fade] * {
+      transition: none;
+    }
+  }
+}
+
+@layer components {
+  .theme-dark {
+    color-scheme: dark;
+    --color-canvas: 17 18 16;
+    --color-surface: 25 27 23;
+    --color-raised: 36 39 31;
+    --color-tag: 36 39 31;
+    --color-ink: 231 229 228;
+    --color-muted: 168 162 158;
+    --color-subtle: 152 150 141;
+    --color-accent: 190 242 100;
+    --color-accent-ink: 17 18 16;
+    --color-danger: 252 165 165;
+  }
+
+  .page-container {
+    margin-inline: auto;
+    width: 100%;
+    max-width: var(--container-site);
+    padding-inline: var(--spacing-page);
+
+    @variant sm {
+      padding-inline: var(--spacing-page-wide);
+    }
+  }
+
+  .interactive-link {
+    transition-property: color, opacity;
+    transition-duration: 200ms;
+
+    @media (prefers-reduced-motion: reduce) {
+      transition-property: none;
+    }
+  }
+
+  .heading-hero {
+    font-family: var(--font-serif);
+    font-weight: 500;
+    font-size: var(--text-hero);
+    line-height: var(--text-hero--line-height);
+    letter-spacing: var(--text-hero--letter-spacing);
+    color: rgb(var(--color-ink));
+  }
+
+  .heading-section {
+    font-family: var(--font-serif);
+    font-weight: 500;
+    font-size: var(--text-section);
+    line-height: var(--text-section--line-height);
+    letter-spacing: var(--text-section--letter-spacing);
+    color: rgb(var(--color-ink));
+
+    @variant sm {
+      font-size: var(--text-section-wide);
+      line-height: var(--text-section-wide--line-height);
+      letter-spacing: var(--text-section-wide--letter-spacing);
+    }
+  }
+
+  .heading-card {
+    font-family: var(--font-serif);
+    font-weight: 500;
+    font-size: var(--text-card);
+    line-height: var(--text-card--line-height);
+    letter-spacing: var(--text-card--letter-spacing);
+    color: rgb(var(--color-ink));
+  }
+
+  .heading-feature {
+    font-family: var(--font-serif);
+    font-weight: 500;
+    font-size: var(--text-feature);
+    line-height: var(--text-feature--line-height);
+    letter-spacing: var(--text-feature--letter-spacing);
+    color: rgb(var(--color-ink));
+  }
+
+  .heading-detail {
+    font-family: var(--font-serif);
+    font-weight: 500;
+    font-size: var(--text-detail);
+    line-height: var(--text-detail--line-height);
+    letter-spacing: var(--text-detail--letter-spacing);
+    color: rgb(var(--color-ink));
+  }
+
+  .footer-signature {
+    font-family: var(--font-serif);
+    font-weight: 600;
+    font-size: var(--text-signature);
+    line-height: var(--text-signature--line-height);
+    letter-spacing: var(--text-signature--letter-spacing);
+    color: rgb(var(--color-ink) / 0.5);
+  }
+
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-weight: 500;
+    font-size: var(--text-eyebrow);
+    line-height: var(--text-eyebrow--line-height);
+    letter-spacing: var(--text-eyebrow--letter-spacing);
+    text-transform: uppercase;
+    color: rgb(var(--color-accent));
+
+    @variant sm {
+      font-size: var(--text-eyebrow-wide);
+    }
+  }
+}
