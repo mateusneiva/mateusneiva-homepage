@@ -2,6 +2,7 @@ import { cn } from '@/lib/cn'
 import type { ReactNode } from 'react'
 import type { ProjectSectionId } from '../navigation/project-sections'
 import { ConstructionFrame } from '@/components/layout/construction/construction-frame'
+import { AnchoredHeading } from '@/components/ui/typography/anchored-heading'
 
 export function ProjectDetailSection({
   id,
@@ -18,9 +19,9 @@ export function ProjectDetailSection({
     <section id={id} aria-labelledby={`${id}-title`} className={cn('scroll-mt-8', className)}>
       <div className="relative isolate mb-6">
         <ConstructionFrame variant="title" />
-        <h2 id={`${id}-title`} className="heading-detail">
+        <AnchoredHeading as="h2" id={`${id}-title`} anchor={id} className="heading-detail">
           {title}
-        </h2>
+        </AnchoredHeading>
       </div>
       {children}
     </section>

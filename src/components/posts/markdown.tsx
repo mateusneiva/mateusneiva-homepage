@@ -3,6 +3,7 @@ import type { ReactNode } from 'react'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import { LinkLabel } from '@/components/ui/typography/link-label'
+import { AnchoredHeading } from '@/components/ui/typography/anchored-heading'
 import { slugify } from '@/lib/slugify'
 
 const markdownClasses = [
@@ -35,9 +36,14 @@ export function Markdown({ content }: { content: string }) {
         skipHtml
         components={{
           h2: ({ children }) => (
-            <h2 id={slugify(textOf(children))} className="scroll-mt-8">
+            <AnchoredHeading as="h2" id={slugify(textOf(children))} className="scroll-mt-8">
               {children}
-            </h2>
+            </AnchoredHeading>
+          ),
+          h3: ({ children }) => (
+            <AnchoredHeading as="h3" id={slugify(textOf(children))} className="scroll-mt-8">
+              {children}
+            </AnchoredHeading>
           ),
           p: ({ node, children }) => {
             const [only] = node?.children ?? []

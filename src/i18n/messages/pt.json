@@ -249,6 +249,9 @@
     "hint": "Sua mensagem será enviada diretamente para meu e-mail.",
     "invalid": "Confira seu nome, um e-mail válido e uma mensagem com pelo menos 10 caracteres."
   },
+  "Headings": {
+    "copied": "Link copiado"
+  },
   "Footer": {
     "note": "Código, design e muito amor — com o apoio da pessoa que eu amo ❤️",
     "role": "Desenvolvedor de software",
