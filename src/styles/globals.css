@@ -178,6 +178,35 @@
     }
   }
 
+  /* Sections below the hero skip style, layout and paint until they near the viewport. The clip margin
+     keeps the divider and construction frames that sit just outside each section box visible. The
+     intrinsic heights are the content-box heights (rendered height minus section padding) for phone, tablet and
+     desktop, so the scrollbar stays steady. */
+  main > section[id] {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 900px;
+    overflow-clip-margin: 2rem;
+
+    &#about { contain-intrinsic-size: auto 2872px; }
+    &#projects { contain-intrinsic-size: auto 2272px; }
+    &#posts { contain-intrinsic-size: auto 802px; }
+    &#contact { contain-intrinsic-size: auto 832px; }
+
+    @variant sm {
+      &#about { contain-intrinsic-size: auto 2408px; }
+      &#projects { contain-intrinsic-size: auto 1308px; }
+      &#posts { contain-intrinsic-size: auto 558px; }
+      &#contact { contain-intrinsic-size: auto 870px; }
+    }
+
+    @variant lg {
+      &#about { contain-intrinsic-size: auto 1588px; }
+      &#projects { contain-intrinsic-size: auto 1248px; }
+      &#posts { contain-intrinsic-size: auto 488px; }
+      &#contact { contain-intrinsic-size: auto 460px; }
+    }
+  }
+
   .interactive-link {
     transition-property: color, opacity;
     transition-duration: 200ms;
