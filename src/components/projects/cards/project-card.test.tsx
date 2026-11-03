@@ -23,6 +23,18 @@ it.each(projects)('renders $name as one accessible link to its details page', (p
   expect(screen.queryByText('Ver projeto')).not.toBeInTheDocument()
 })
 
+it('shows the repository stars and forks without adding a second link', () => {
+  const project = projects.find(({ id }) => id === 'softness')!
+  render(
+    <NextIntlClientProvider locale="pt" messages={messages} timeZone="UTC">
+      <ProjectCard project={project} index={0} stats={{ stargazers_count: 12, forks_count: 1 }} />
+    </NextIntlClientProvider>,
+  )
+  expect(screen.getByLabelText('12 estrelas no GitHub')).toBeInTheDocument()
+  expect(screen.getByLabelText('1 fork no GitHub')).toBeInTheDocument()
+  expect(screen.getAllByRole('link')).toHaveLength(1)
+})
+
 it('uses the chosen project image while preserving the accessible card link', () => {
   const project = { ...projects.find(({ id }) => id === 'softness')!, image: '/projects/custom-softness.png' }
   const { container } = render(

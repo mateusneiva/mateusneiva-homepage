@@ -6,14 +6,16 @@ import { useTranslations } from 'next-intl'
 import { Section } from '@/components/ui/motion/animated-section'
 import { SectionHeading } from '@/components/ui/typography/section-heading'
 import { projects, type ProjectCategory } from '@/data/projects'
+import type { RepositoryStats } from '@/lib/github/repository'
 import { ProjectCard } from '@/components/projects/cards/project-card'
 import { SelectionButton } from '@/components/ui/buttons/selection-button'
 import { ConstructionFrame } from '@/components/layout/construction/construction-frame'
 
-export function Projects() {
+export function Projects({ stats = {} }: { stats?: Record<string, RepositoryStats | null> }) {
   const t = useTranslations('Projects')
   const [filter, setFilter] = useState<ProjectCategory | 'all'>('all')
   const selected = projects.filter((project) => filter === 'all' || project.category === filter)
+
   return (
     <Section id="projects">
       <SectionHeading eyebrow={t('eyebrow')} title={t('title')} description={t('description')} />
@@ -43,7 +45,12 @@ export function Projects() {
             caption={`${String(selected.length).padStart(2, '0')} / projects`}
           />
           {selected.map((project, index) => (
-            <ProjectCard key={`${filter}-${project.id}`} project={project} index={index} />
+            <ProjectCard
+              key={`${filter}-${project.id}`}
+              project={project}
+              index={index}
+              stats={stats[project.id]}
+            />
           ))}
         </div>
       </LayoutGroup>
