@@ -6,6 +6,7 @@ import { getPost, getPosts } from '@/lib/posts'
 import { getLocalPosts } from '@/lib/posts/local'
 import { readHeadings } from '@/lib/markdown-headings'
 import { Markdown } from '@/components/posts/markdown'
+import { PostAuthor } from '@/components/posts/post-author'
 import { BackLink } from '@/components/ui/buttons/back-link'
 import { Tag } from '@/components/ui/tags/tag'
 import { ReadingArticle } from '@/components/ui/reading/reading-article'
@@ -104,6 +105,7 @@ export default async function PostPage({ params }: Props) {
           ))}
         </ul>
         <Markdown content={post.content} />
+        <PostAuthor />
         <ReadingPager
           label={t('pager')}
           previousLabel={t('previous')}

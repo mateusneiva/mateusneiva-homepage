@@ -220,6 +220,10 @@
     "pager": "More posts",
     "previous": "Previous post",
     "next": "Next post",
+    "author": {
+      "label": "Written by",
+      "bio": "Software developer. I write about what I build and learn along the way."
+    },
     "notFound": "Post not found",
     "indexDescription": "Notes on development, projects, and technology."
   },
