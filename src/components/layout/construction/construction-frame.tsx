@@ -53,7 +53,7 @@ export function ConstructionFrame({
       )}
       {columns && <ConstructionColumns layout={columns} />}
       {caption && (
-        <span className="absolute -top-4 right-4 bg-canvas px-2 font-mono text-[8px] uppercase tracking-[0.16em] text-subtle/60 sm:right-6">
+        <span className="absolute -top-4 right-4 bg-canvas px-2 font-mono text-[8px] uppercase tracking-[0.16em] text-subtle sm:right-6">
           {caption}
         </span>
       )}

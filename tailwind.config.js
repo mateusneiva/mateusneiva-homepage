@@ -109,7 +109,7 @@ module.exports = {
           '--color-tag': '36 39 31',
           '--color-ink': '231 229 228',
           '--color-muted': '168 162 158',
-          '--color-subtle': '141 139 130',
+          '--color-subtle': '152 150 141',
           '--color-accent': '190 242 100',
           '--color-accent-ink': '17 18 16',
           '--color-danger': '252 165 165',
@@ -137,7 +137,7 @@ module.exports = {
         '.heading-detail': heading('detail'),
         '.footer-signature': {
           ...heading('signature', 'semibold'),
-          color: 'rgb(var(--color-ink) / 0.15)',
+          color: 'rgb(var(--color-ink) / 0.5)',
         },
         '.eyebrow': {
           fontFamily: theme('fontFamily.mono'),

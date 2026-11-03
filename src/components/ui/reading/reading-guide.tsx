@@ -60,7 +60,7 @@ export function ReadingGuide({
                   activeId === id ? 'bg-surface text-accent' : 'text-subtle hover:text-ink',
                 )}
               >
-                <span aria-hidden="true" className="text-[10px] opacity-60">
+                <span aria-hidden="true" className="text-[10px]">
                   {String(index + 1).padStart(2, '0')}
                 </span>
                 <LinkLabel>{label}</LinkLabel>
