@@ -10,7 +10,7 @@ const fieldStyle = tv({
     label: 'group/field block font-mono text-xs text-muted transition-colors duration-300 focus-within:text-accent',
     control: [
       'mt-2 block w-full border-b border-ink/30 bg-surface px-4 py-3.5 font-sans text-base leading-relaxed text-ink sm:border-ink/20 sm:bg-canvas',
-      'outline-none placeholder:text-muted placeholder:transition-colors placeholder:duration-300 sm:placeholder:text-subtle/75',
+      'outline-hidden placeholder:text-muted placeholder:transition-colors placeholder:duration-300 sm:placeholder:text-subtle/75',
       'hover:border-ink/40 hover:bg-raised focus:border-accent focus:bg-raised focus:placeholder:text-muted sm:hover:bg-raised/40',
       'focus:shadow-[0_0_0_2px_rgb(var(--color-accent)/0.3)]',
       'transition-[background-color,border-color,box-shadow] duration-300 ease-out motion-reduce:transition-none',
