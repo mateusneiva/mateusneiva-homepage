@@ -9,7 +9,7 @@ export function ProjectDetailSection({
   children,
   className,
 }: {
-  id: ProjectSectionId
+  id: ProjectSectionId | 'project-links'
   title: string
   children: ReactNode
   className?: string

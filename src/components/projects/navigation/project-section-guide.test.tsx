@@ -15,12 +15,12 @@ function renderGuide(headings?: { id: string; title: string }[]) {
   )
 }
 
-it('exposes six labeled section links and identifies the current location', () => {
+it('exposes five labeled section links and identifies the current location', () => {
   renderGuide()
   expect(
     screen.getByRole('navigation', { name: 'Nesta página' })
   ).toBeInTheDocument()
-  expect(screen.getAllByRole('link')).toHaveLength(6)
+  expect(screen.getAllByRole('link')).toHaveLength(5)
   projectSections.forEach(({ id, label }) => {
     expect(
       screen.getByRole('link', { name: messages.ProjectDetails[label] })
@@ -69,7 +69,6 @@ it('lists the case study headings after the lead sections', () => {
     '#project-stack',
     '#contexto',
     '#desafios',
-    '#project-links',
   ])
   expect(screen.getByRole('link', { name: 'Desafios' })).toBeInTheDocument()
 })

@@ -2,18 +2,13 @@
 
 import { useTranslations } from 'next-intl'
 import { ReadingGuide } from '@/components/ui/reading/reading-guide'
-import {
-  projectSections,
-  projectLeadSections,
-  projectClosingSection,
-} from './project-sections'
+import { projectSections, projectLeadSections } from './project-sections'
 
 export function ProjectSectionGuide({ headings }: { headings?: { id: string; title: string }[] }) {
   const t = useTranslations('ProjectDetails')
   const sections = (headings ? projectLeadSections : projectSections).map(({ id, label }) => ({ id: id as string, label: t(label) }))
   if (headings) {
     sections.push(...headings.map(({ id, title }) => ({ id, label: title })))
-    sections.push({ id: projectClosingSection.id, label: t(projectClosingSection.label) })
   }
 
   return (
