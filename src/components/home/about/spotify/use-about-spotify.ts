@@ -2,22 +2,28 @@
 
 import { useEffect, useRef, useState, useSyncExternalStore, type RefObject } from 'react'
 import { useViewportActivity } from '@/components/ui/motion/use-viewport-activity'
-import { getSpotifyCacheSnapshot, subscribeSpotifyCache, writeSpotifyCache } from '@/lib/spotify/cache'
-import {
-  spotifyPlaybackSchema,
-  spotifyProfileResponseSchema,
-  type SpotifyCache,
-  type SpotifyPlayback,
-  type SpotifyProfile,
-} from '@/lib/spotify/schema'
+import type { SpotifyCache, SpotifyPlayback, SpotifyProfile } from '@/lib/spotify/schema'
 
 const POLL_INTERVAL_MS = 30_000
 const RETRY_INTERVAL_MS = 60_000
 const CLOCK_INTERVAL_MS = 60_000
 
+// The Spotify schemas pull in zod, so they are only fetched once the widget becomes active.
+const loadRuntime = () =>
+  Promise.all([import('@/lib/spotify/cache'), import('@/lib/spotify/schema')]).then(([cache, schema]) => ({ cache, schema }))
+
+type SpotifyRuntime = Awaited<ReturnType<typeof loadRuntime>>
+
+const noSubscription = () => () => {}
+
 export function useAboutSpotify(container: RefObject<HTMLElement | null>) {
   const active = useViewportActivity(container)
-  const cached = useSyncExternalStore(subscribeSpotifyCache, getSpotifyCacheSnapshot, () => null)
+  const [runtime, setRuntime] = useState<SpotifyRuntime | null>(null)
+  const cached = useSyncExternalStore(
+    runtime?.cache.subscribeSpotifyCache ?? noSubscription,
+    runtime?.cache.getSpotifyCacheSnapshot ?? (() => null),
+    () => null,
+  )
   const [playback, setPlayback] = useState<SpotifyPlayback | null>(null)
   const [profile, setProfile] = useState<SpotifyProfile | null>(null)
   const [cachedAt, setCachedAt] = useState<string | null>(null)
@@ -27,6 +33,17 @@ export function useAboutSpotify(container: RefObject<HTMLElement | null>) {
   const profileLoaded = useRef(false)
 
   useEffect(() => {
+    if (!active || runtime) return
+    let cancelled = false
+    void loadRuntime().then((loaded) => {
+      if (!cancelled) setRuntime(loaded)
+    })
+    return () => {
+      cancelled = true
+    }
+  }, [active, runtime])
+
+  useEffect(() => {
     if (!cached) return
 
     lastKnown.current = cached
@@ -34,7 +51,8 @@ export function useAboutSpotify(container: RefObject<HTMLElement | null>) {
   }, [cached])
 
   useEffect(() => {
-    if (!active || profileLoaded.current) return
+    if (!active || !runtime || profileLoaded.current) return
+    const { schema, cache: spotifyCache } = runtime
     const controller = new AbortController()
 
     async function updateProfile() {
@@ -45,7 +63,7 @@ export function useAboutSpotify(container: RefObject<HTMLElement | null>) {
         })
         if (!response.ok) return
 
-        const result = spotifyProfileResponseSchema.safeParse(await response.json())
+        const result = schema.spotifyProfileResponseSchema.safeParse(await response.json())
         if (controller.signal.aborted || !result.success || !result.data.profile) return
 
         profileRef.current = result.data.profile
@@ -54,7 +72,7 @@ export function useAboutSpotify(container: RefObject<HTMLElement | null>) {
         if (lastKnown.current) {
           const cached = { ...lastKnown.current, profile: result.data.profile }
           lastKnown.current = cached
-          writeSpotifyCache(cached)
+          spotifyCache.writeSpotifyCache(cached)
         }
       } catch {
         // Preserve a cached identity if the profile cannot be refreshed.
@@ -65,10 +83,11 @@ export function useAboutSpotify(container: RefObject<HTMLElement | null>) {
 
     void updateProfile()
     return () => controller.abort()
-  }, [active])
+  }, [active, runtime])
 
   useEffect(() => {
-    if (!active) return
+    if (!active || !runtime) return
+    const { schema, cache: spotifyCache } = runtime
     const controller = new AbortController()
     let timer: ReturnType<typeof setTimeout> | undefined
     const clock = setInterval(() => setNow(new Date()), CLOCK_INTERVAL_MS)
@@ -82,7 +101,7 @@ export function useAboutSpotify(container: RefObject<HTMLElement | null>) {
           cache: 'no-store',
         })
         if (response.ok) {
-          const result = spotifyPlaybackSchema.safeParse(await response.json())
+          const result = schema.spotifyPlaybackSchema.safeParse(await response.json())
           if (result.success) next = result.data
         }
       } catch {
@@ -100,7 +119,7 @@ export function useAboutSpotify(container: RefObject<HTMLElement | null>) {
           ...(profileRef.current ? { profile: profileRef.current } : {}),
         }
         lastKnown.current = cached
-        writeSpotifyCache(cached)
+        spotifyCache.writeSpotifyCache(cached)
         setPlayback(next)
         setCachedAt(null)
       } else if ((next.status === 'unavailable' || next.status === 'idle') && lastKnown.current) {
@@ -125,7 +144,7 @@ export function useAboutSpotify(container: RefObject<HTMLElement | null>) {
       clearTimeout(timer)
       clearInterval(clock)
     }
-  }, [active])
+  }, [active, runtime])
 
   const currentPlayback = playback ?? cached?.playback ?? null
   const currentProfile = profile ?? cached?.profile ?? null

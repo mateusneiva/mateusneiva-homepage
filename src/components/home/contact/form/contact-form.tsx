@@ -1,14 +1,21 @@
 'use client'
 
-import { useForm } from 'react-hook-form'
+import { useForm, type Resolver } from 'react-hook-form'
 import { useState } from 'react'
-import { zodResolver } from '@hookform/resolvers/zod'
 import { useTranslations } from 'next-intl'
 import { AnimatedArrow } from '@/components/ui/icons/animated-arrow'
-import { contactSchema, type ContactValues } from '@/lib/contact/schema'
+import type { ContactValues } from '@/lib/contact/schema'
 import { ActionButton } from '@/components/ui/buttons/action-button'
 import { ContactField } from './contact-field'
 import { ConstructionFrame } from '@/components/layout/construction/construction-frame'
+
+// Zod is large, so validation code is only fetched when the form is first used.
+const loadValidation = () => Promise.all([import('@hookform/resolvers/zod'), import('@/lib/contact/schema')])
+
+const lazyResolver: Resolver<ContactValues> = async (values, context, options) => {
+  const [{ zodResolver }, { contactSchema }] = await loadValidation()
+  return zodResolver(contactSchema)(values, context, options)
+}
 
 export function ContactForm() {
   const t = useTranslations('Contact')
@@ -19,7 +26,7 @@ export function ContactForm() {
     reset,
     formState: { errors, isSubmitting },
   } = useForm<ContactValues>({
-    resolver: zodResolver(contactSchema),
+    resolver: lazyResolver,
     defaultValues: { name: '', email: '', message: '' },
   })
   const invalid = Object.keys(errors).length > 0
@@ -47,6 +54,7 @@ export function ContactForm() {
   return (
     <form
       onSubmit={handleSubmit(sendMessage)}
+      onFocus={() => void loadValidation()}
       noValidate
       aria-label={t('formLabel')}
       aria-busy={isSubmitting}

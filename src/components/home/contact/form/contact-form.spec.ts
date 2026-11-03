@@ -73,3 +73,22 @@ for (const locale of ['pt', 'en']) {
     await expect(form.getByRole('button', { name: labels.submit, exact: true })).toBeEnabled()
   })
 }
+
+test('form validation code loads on first interaction, not with the page', async ({ page }) => {
+  const zodChunks: string[] = []
+  page.on('response', async (response) => {
+    if (response.request().resourceType() !== 'script') return
+    const body = await response.text().catch(() => '')
+    if (body.includes('Invalid input')) zodChunks.push(response.url())
+  })
+  await page.goto('/pt')
+  await expect(page.locator('[data-initial-loading]')).toHaveCount(0)
+  await page.waitForLoadState('networkidle')
+  expect(zodChunks).toEqual([])
+
+  await page.locator('#contact').scrollIntoViewIfNeeded()
+  await page.getByRole('textbox', { name: 'Seu nome', exact: true }).fill('A')
+  await page.getByRole('button', { name: 'Enviar mensagem', exact: true }).click()
+  await expect(page.locator('#contact [role="alert"]')).toBeVisible()
+  expect(zodChunks).not.toEqual([])
+})
