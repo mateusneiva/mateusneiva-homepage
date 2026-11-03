@@ -7,6 +7,7 @@ import { ProjectDetailsHeader } from '@/components/projects/details/project-deta
 import { ProjectDetailsContent } from '@/components/projects/details/project-details-content'
 import { ProjectSectionGuide } from '@/components/projects/navigation/project-section-guide'
 import { getCaseStudy } from '@/lib/projects/case-study'
+import { getRepositoryStats } from '@/lib/github/repository'
 import { ReadingArticle } from '@/components/ui/reading/reading-article'
 import { ReadingPager } from '@/components/ui/reading/reading-pager'
 
@@ -42,7 +43,7 @@ export default async function ProjectPage({ params }: Props) {
   const { locale, slug } = await params
   const project = getProject(slug)
   if (!project) notFound()
-  const caseStudy = await getCaseStudy(locale, slug)
+  const [caseStudy, stats] = await Promise.all([getCaseStudy(locale, slug), getRepositoryStats(project.repository)])
   const t = await getTranslations({ locale, namespace: 'ProjectDetails' })
   const summaries = await getTranslations({ locale, namespace: 'Projects' })
   const index = projects.findIndex((item) => item.slug === slug)
@@ -55,7 +56,7 @@ export default async function ProjectPage({ params }: Props) {
     >
       <ReadingArticle className="grid min-w-0 gap-10 lg:grid-cols-[13rem_minmax(0,1fr)] lg:gap-x-12 lg:gap-y-14">
         <div className="min-w-0 lg:col-start-2 lg:row-start-1">
-          <ProjectDetailsHeader project={project} />
+          <ProjectDetailsHeader project={project} stats={stats} />
         </div>
         <ProjectSectionGuide headings={caseStudy?.headings} />
         <div className="min-w-0 lg:col-start-2 lg:row-start-2" data-project-content>

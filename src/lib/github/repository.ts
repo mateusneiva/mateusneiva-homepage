@@ -9,9 +9,15 @@ const repositorySchema = z.object({
   forks_count: z.number().int().nonnegative(),
 })
 
-export const getRepositoryStats = cache(async () => {
+export type RepositoryStats = z.infer<typeof repositorySchema>
+
+const repositoryPattern = /^https:\/\/github\.com\/([\w.-]+\/[\w.-]+)\/?$/
+
+export const getRepositoryStats = cache(async (url: string = repositoryUrl): Promise<RepositoryStats | null> => {
+  const path = repositoryPattern.exec(url)?.[1]
+  if (!path) return null
   try {
-    const response = await fetch('https://api.github.com/repos/mateusneiva/mateusneiva-homepage', {
+    const response = await fetch(`https://api.github.com/repos/${path}`, {
       headers: {
         Accept: 'application/vnd.github+json',
         'X-GitHub-Api-Version': '2022-11-28',

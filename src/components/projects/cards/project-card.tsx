@@ -3,13 +3,17 @@
 import { m, useReducedMotion } from 'framer-motion'
 import { useTranslations } from 'next-intl'
 import type { Project } from '@/data/projects'
+import type { RepositoryStats } from '@/lib/github/repository'
 import { ProjectVisual } from './project-visual'
+import { ProjectStats } from '../stats/project-stats'
 import { TechnologyTag } from '@/components/ui/tags/technology-tag'
 import { Link } from '@/i18n/navigation'
 import { LinkLabel } from '@/components/ui/typography/link-label'
 import { MouseCardSurface } from '@/components/ui/motion/mouse-card-surface'
 
-export function ProjectCard({ project, index }: { project: Project; index: number }) {
+type ProjectCardProps = { project: Project; index: number; stats?: RepositoryStats | null }
+
+export function ProjectCard({ project, index, stats }: ProjectCardProps) {
   const t = useTranslations('Projects')
   const reduced = useReducedMotion()
   return (
@@ -37,8 +41,9 @@ export function ProjectCard({ project, index }: { project: Project; index: numbe
             <h3 className="heading-card">
               <LinkLabel scope="card">{project.name}</LinkLabel>
             </h3>
-            <p className="mb-6 mt-3 text-sm leading-6 text-muted">{t(project.id)}</p>
-            <ul className="mt-auto flex flex-wrap gap-2">
+            <p className="mt-3 text-sm leading-6 text-muted">{t(project.id)}</p>
+            <ProjectStats stats={stats} className="mt-4" />
+            <ul className="mt-auto flex flex-wrap gap-2 pt-6">
               {project.stack.map((tech) => (
                 <li key={tech}>
                   <TechnologyTag name={tech} />
