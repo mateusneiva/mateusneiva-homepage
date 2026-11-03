@@ -20,15 +20,10 @@ export function useInitialLoading() {
       setLoading(false)
     }
 
-    if (document.readyState === 'complete') {
-      void finish()
-    } else {
-      window.addEventListener('load', finish, { once: true })
-    }
+    void finish()
 
     return () => {
       cancelled = true
-      window.removeEventListener('load', finish)
     }
   }, [loading])
 

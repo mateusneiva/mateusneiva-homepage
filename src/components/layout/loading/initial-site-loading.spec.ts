@@ -18,7 +18,7 @@ for (const reducedMotion of ['no-preference', 'reduce'] as const) {
     const logo = loading.locator(':scope > span').first()
     await expect(logo.locator('svg use').first()).toHaveAttribute('href', '/logo.svg#logo-mark')
     await expect(logo).toHaveCSS('animation-name', 'none')
-    await expect(page.locator('[data-hero-copy]')).toHaveCSS('opacity', '0')
+    await expect(page.locator('[data-hero-copy]')).toHaveCSS('opacity', '1')
     await expect(loading.locator(':scope > div > span')).toHaveCSS('animation-name', reducedMotion === 'reduce' ? 'none' : 'logo-progress')
     release()
     await expect(loading).toHaveCount(0)

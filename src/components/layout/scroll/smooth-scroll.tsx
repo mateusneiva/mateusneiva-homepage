@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useSyncExternalStore } from 'react'
 import { frame, cancelFrame } from 'framer-motion'
 import { ReactLenis, type LenisRef } from 'lenis/react'
 import type { LenisOptions } from 'lenis'
@@ -17,7 +17,7 @@ const options: LenisOptions = {
   prevent: (node) => node.matches('textarea, input, select, [data-lenis-prevent]'),
 }
 
-export function SmoothScroll() {
+function LenisScroll() {
   const ref = useRef<LenisRef>(null)
   const pathname = usePathname()
   const locale = useLocale()
@@ -72,4 +72,22 @@ export function SmoothScroll() {
   }, [pathname, locale])
 
   return <ReactLenis root options={options} ref={ref} />
+}
+
+const finePointerQuery = '(hover: hover) and (pointer: fine)'
+
+function subscribeFinePointer(onChange: () => void) {
+  const query = window.matchMedia(finePointerQuery)
+  query.addEventListener('change', onChange)
+  return () => query.removeEventListener('change', onChange)
+}
+
+export function SmoothScroll() {
+  const finePointer = useSyncExternalStore(
+    subscribeFinePointer,
+    () => window.matchMedia(finePointerQuery).matches,
+    () => false,
+  )
+
+  return finePointer ? <LenisScroll /> : null
 }

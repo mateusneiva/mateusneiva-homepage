@@ -27,3 +27,14 @@ test('container reaches 1200px and the footer has two counter-flow text rows', a
   await expect(page.locator('[data-footer-marquee-row="0"]')).toContainText('Da curiosidade às boas ideias.')
   await expect(page.locator('[data-footer-marquee-row="1"]')).toContainText('Do código às novas possibilidades.')
 })
+
+test('touch devices keep native scrolling without starting Lenis', async ({ page, isMobile }) => {
+  test.skip(!isMobile, 'Lenis is only started for fine-pointer devices.')
+  await page.emulateMedia({ reducedMotion: 'no-preference' })
+  await page.goto('/pt')
+  await expect(page.locator('[data-initial-loading]')).toHaveCount(0)
+  await expect(page.locator('html')).not.toHaveClass(/lenis/)
+  await page.locator('footer nav').first().getByRole('link', { name: 'Sobre', exact: true }).click()
+  await expect(page).toHaveURL(/#about$/)
+  await expect(page.locator('#about')).toBeInViewport()
+})

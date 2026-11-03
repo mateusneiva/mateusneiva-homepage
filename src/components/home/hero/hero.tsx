@@ -30,13 +30,7 @@ export function Hero() {
         <DotFieldCanvas mask="wave" radius={4.5} spacing={12} alpha={1} trailRadius={180} />
       </m.div>
       <div className="flex max-w-2xl flex-1 items-center">
-        <m.div
-          className="motion-reduce:!transform-none"
-          data-hero-copy
-          initial={{ opacity: 0 }}
-          animate={{ opacity: ready ? 1 : 0 }}
-          transition={{ duration: reduced ? 0 : 0.65 }}
-        >
+        <div data-hero-copy>
           <p className="eyebrow mb-7 flex items-center gap-3">
             <span className="h-2 w-2 bg-accent" />
             {t('eyebrow')}
@@ -64,7 +58,7 @@ export function Hero() {
             </ActionLink>
           </div>
           <HomeSocialLinks />
-        </m.div>
+        </div>
       </div>
 
       <div className="mt-14 flex items-center justify-between font-mono text-[11px] text-subtle">
