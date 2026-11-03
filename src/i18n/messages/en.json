@@ -249,6 +249,9 @@
     "hint": "Your message will be sent directly to my inbox.",
     "invalid": "Check your name, a valid email, and a message with at least 10 characters."
   },
+  "Headings": {
+    "copied": "Link copied"
+  },
   "Footer": {
     "note": "Code, design, and lots of love — with the support of the person I love ❤️",
     "role": "Software developer",

@@ -1,7 +1,15 @@
 // @vitest-environment jsdom
 import { render, screen } from '@testing-library/react'
+import { NextIntlClientProvider } from 'next-intl'
 import { expect, it } from 'vitest'
-import { Markdown } from './markdown'
+import messages from '@/i18n/messages/pt.json'
+import { Markdown as MarkdownContent } from './markdown'
+
+const Markdown = ({ content }: { content: string }) => (
+  <NextIntlClientProvider locale="pt" messages={messages} timeZone="UTC">
+    <MarkdownContent content={content} />
+  </NextIntlClientProvider>
+)
 
 it('anchors level-two headings with a stable slug', () => {
   render(<Markdown content={'## Decisões & limites\n\nTexto.'} />)
