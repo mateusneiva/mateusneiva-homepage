@@ -262,7 +262,8 @@
     "signatureReturn": "From code to new possibilities.",
     "stars": "stars",
     "repositoryStars": "{count, plural, one {# star on GitHub} other {# stars on GitHub}}",
-    "repositoryForks": "{count, plural, one {# fork on GitHub} other {# forks on GitHub}}"
+    "repositoryForks": "{count, plural, one {# fork on GitHub} other {# forks on GitHub}}",
+    "repositoryCommit": "Version {sha} on GitHub"
   },
   "NotFound": {
     "title": "This path went off the map.",
