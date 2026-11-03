@@ -26,3 +26,9 @@ export const getRepositoryStats = cache(async () => {
     return null
   }
 })
+
+const commitShaPattern = /^[0-9a-f]{7,40}$/
+
+export function getCommitSha(sha: string | undefined = process.env.VERCEL_GIT_COMMIT_SHA): string | null {
+  return sha && commitShaPattern.test(sha) ? sha.slice(0, 7) : null
+}

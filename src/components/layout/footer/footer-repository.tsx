@@ -1,12 +1,13 @@
 import { getTranslations } from 'next-intl/server'
-import { FiGitBranch, FiGithub, FiStar } from 'react-icons/fi'
-import { getRepositoryStats, repositoryUrl } from '@/lib/github/repository'
+import { FiGitBranch, FiGitCommit, FiGithub, FiStar } from 'react-icons/fi'
+import { getCommitSha, getRepositoryStats, repositoryUrl } from '@/lib/github/repository'
 
 export async function FooterRepository() {
   const [t, stats] = await Promise.all([
     getTranslations('Footer'),
     getRepositoryStats(),
   ])
+  const commitSha = getCommitSha()
   const className = 'inline-flex items-center gap-1.5 transition-colors duration-200 hover:text-muted focus-visible:text-muted motion-reduce:transition-none'
   return (
     <div className="flex flex-wrap items-center gap-x-4 gap-y-2" data-footer-repository>
@@ -26,6 +27,12 @@ export async function FooterRepository() {
             <span>{stats.forks_count} forks</span>
           </a>
         </>
+      )}
+      {commitSha && (
+        <a href={`${repositoryUrl}/commit/${commitSha}`} target="_blank" rel="noopener noreferrer" className={className} aria-label={t('repositoryCommit', { sha: commitSha })}>
+          <FiGitCommit size={12} aria-hidden="true" />
+          <span>{commitSha}</span>
+        </a>
       )}
     </div>
   )
