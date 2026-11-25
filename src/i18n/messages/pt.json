@@ -220,6 +220,10 @@
     "pager": "Outros posts",
     "previous": "Post anterior",
     "next": "Próximo post",
+    "author": {
+      "label": "Escrito por",
+      "bio": "Desenvolvedor de software. Escrevo sobre o que construo e aprendo pelo caminho."
+    },
     "notFound": "Post não encontrado",
     "indexDescription": "Notas sobre desenvolvimento, projetos e tecnologia."
   },

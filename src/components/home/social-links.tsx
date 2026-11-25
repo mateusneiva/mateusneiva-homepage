@@ -2,11 +2,11 @@
 
 import { useTranslations } from 'next-intl'
 import { m, useReducedMotion } from 'framer-motion'
-import { socialIconLinks } from '@/data/social'
+import { socialIconLinks, socialLinks } from '@/data/social'
 import { Tooltip } from '@/components/ui/tooltip/tooltip'
 import { cn } from '@/lib/cn'
 
-export function HomeSocialLinks({ className }: { className?: string }) {
+export function HomeSocialLinks({ className, resume: withResume = true }: { className?: string; resume?: boolean }) {
   const t = useTranslations('Social')
   const contact = useTranslations('Contact')
   const reduced = useReducedMotion()
@@ -17,7 +17,7 @@ export function HomeSocialLinks({ className }: { className?: string }) {
       className={cn('mt-6 flex flex-wrap gap-1 sm:gap-2', className)}
       data-social-links
     >
-      {socialIconLinks.map((link) => {
+      {(withResume ? socialIconLinks : socialLinks).map((link) => {
         const { label, href, icon: Icon } = link
         const resume = href === '/resume.pdf'
         const name = resume ? contact('resume') : label
